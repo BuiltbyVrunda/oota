@@ -92,6 +92,9 @@ CREATE TABLE dishes (
     allergens     TEXT[]       NOT NULL DEFAULT '{}',      -- nuts, dairy, gluten, egg, shellfish, soy
     image_url     TEXT,
     is_available  BOOLEAN      NOT NULL DEFAULT TRUE,
+    -- [extension] who added the dish from the in-app "Add a dish" form (NULL = seeded)
+    added_by      INTEGER      REFERENCES users(user_id) ON DELETE SET NULL,
+    created_at    TIMESTAMPTZ  NOT NULL DEFAULT now(),
     avg_rating    NUMERIC(2,1) NOT NULL DEFAULT 0 CHECK (avg_rating BETWEEN 0 AND 5),
     review_count  INTEGER      NOT NULL DEFAULT 0 CHECK (review_count >= 0),
     search_vector TSVECTOR

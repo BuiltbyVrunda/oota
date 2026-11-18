@@ -14,18 +14,20 @@ import { ReviewSummary } from '../components/restaurant/ReviewSummary'
 import { Button } from '../components/ui/Button'
 import { useActivity } from '../context/ActivityContext'
 import { useCatalog } from '../context/CatalogContext'
-import { useReviews, type ReviewDraft } from '../context/ReviewsContext'
+import { useRestaurantReviews, useReviews, type ReviewDraft } from '../context/ReviewsContext'
+import { errorMessage } from '../api/client'
 import { useToast } from '../context/ToastContext'
 import { useScrollSpy } from '../hooks/useScrollSpy'
 
 export function RestaurantPage() {
   const { slug = '' } = useParams()
   const { hash } = useLocation()
-  const { bySlug, menuOf, status } = useCatalog()
-  const { forRestaurant, myReviewFor, upsert, remove } = useReviews()
+  const { bySlug, menuOf, status, error } = useCatalog()
+  const { myReviewFor, upsert, remove } = useReviews()
   const { recordView } = useActivity()
   const { push } = useToast()
   const r = bySlug(slug)
+  const reviewsState = useRestaurantReviews(r?.id)
   const [vegOnly, setVegOnly] = useState(false)
   const [modal, setModal] = useState(false)
   const viewed = useRef<string | null>(null)
@@ -47,6 +49,15 @@ export function RestaurantPage() {
     return () => window.clearTimeout(t)
   }, [highlightId])
 
+  if (status === 'error') {
+    return (
+      <PageContainer className="pt-20">
+        <EmptyState icon={<Store className="size-6" />} title="The menu couldn’t be loaded" actions={<Link to="/"><Button>Back home</Button></Link>}>
+          {error}
+        </EmptyState>
+      </PageContainer>
+    )
+  }
   if (status === 'ready' && !r) {
     return (
       <PageContainer className="pt-20">
@@ -58,19 +69,23 @@ export function RestaurantPage() {
   }
   if (!r) return null
 
-  const reviews = forRestaurant(r.id)
+  const reviews = reviewsState.list
   const mine = myReviewFor(r.id)
   const hasNonVeg = menu.some((d) => d.diet === 'nonveg' || d.diet === 'egg')
 
   const submit = async (d: ReviewDraft) => {
     const before = r.avgRating
-    await upsert(r.id, d)
-    setModal(false)
-    push({ tone: 'success', title: mine ? 'Review updated' : 'Review posted', body: `Thanks! ${r.name} was ${before.toFixed(1)}★ — your picks have been re-ranked.` })
+    try {
+      const now = await upsert(r.id, d)
+      setModal(false)
+      push({ tone: 'success', title: mine ? 'Review updated' : 'Review posted', body: `${r.name}: ${before.toFixed(1)}★ → ${now.avgRating.toFixed(1)}★. Your picks have been re-ranked.` })
+    } catch (e) {
+      push({ tone: 'error', title: 'Couldn’t save your review', body: errorMessage(e) })
+    }
   }
   const del = async () => {
     const snapshot = mine
-    await remove(r.id)
+    try { await remove(r.id) } catch (e) { push({ tone: 'error', title: 'Couldn’t delete', body: errorMessage(e) }); return }
     push({ tone: 'info', title: 'Review deleted', action: snapshot ? { label: 'Undo', onClick: () => void upsert(r.id, snapshot) } : undefined })
   }
 

@@ -1,51 +1,61 @@
-import { createContext, useCallback, useContext, useMemo, type ReactNode } from 'react'
-import { DEMO_PASSWORD } from '../data/users'
-import { SEED } from '../data/seedWorld'
-import { useLocalStorage } from '../hooks/useLocalStorage'
+import { createContext, useCallback, useContext, useEffect, useState, type ReactNode } from 'react'
+import { ApiError, errorMessage } from '../api/client'
+import { endpoints } from '../api/endpoints'
 import type { User } from '../types'
+import { useLive } from './LiveContext'
 
-interface StoredUser extends User { password: string }
-type Result = { ok: true } | { ok: false; field?: 'email' | 'password' | 'fullName'; message: string }
+type Field = 'email' | 'password' | 'fullName'
+type Result = { ok: true } | { ok: false; field?: Field; message: string }
 
 interface AuthValue {
   user: User | null
+  status: 'loading' | 'ready'
   login: (email: string, password: string) => Promise<Result>
   signup: (fullName: string, email: string, password: string) => Promise<Result>
   logout: () => void
 }
-
 const Ctx = createContext<AuthValue | null>(null)
-const seedUsers = (): StoredUser[] => SEED.users.map((u) => ({ ...u, password: DEMO_PASSWORD }))
 
+function toResult(e: unknown): Result {
+  if (e instanceof ApiError) {
+    const field = (Object.keys(e.fields ?? {}).find((k) => ['email', 'password', 'fullName'].includes(k)) as Field | undefined)
+    return { ok: false, field, message: e.message }
+  }
+  return { ok: false, message: errorMessage(e) }
+}
+
+/** Session = httpOnly JWT cookie set by the API. /auth/me tells us who is logged in (re-checked on DB changes). */
 export function AuthProvider({ children }: { children: ReactNode }) {
-  const [users, setUsers] = useLocalStorage<StoredUser[]>('oota:v1:users', seedUsers)
-  const [sessionId, setSessionId] = useLocalStorage<number | null>('oota:v1:session', null)
+  const { version } = useLive()
+  const [user, setUser] = useState<User | null>(null)
+  const [status, setStatus] = useState<'loading' | 'ready'>('loading')
 
-  const user = useMemo(() => {
-    const u = users.find((x) => x.id === sessionId)
-    return u ? { id: u.id, fullName: u.fullName, email: u.email } : null
-  }, [users, sessionId])
+  useEffect(() => {
+    let alive = true
+    endpoints.me().then(
+      (r) => { if (alive) { setUser(r.user); setStatus('ready') } },
+      (e) => {
+        if (!alive) return
+        // 401 = logged out (or the user row was deleted in the terminal). Other errors: keep current state.
+        if (e instanceof ApiError && e.status === 401) setUser(null)
+        setStatus('ready')
+      },
+    )
+    return () => { alive = false }
+  }, [version])
 
   const login = useCallback(async (email: string, password: string): Promise<Result> => {
-    const u = users.find((x) => x.email.toLowerCase() === email.trim().toLowerCase())
-    if (!u) return { ok: false, field: 'email', message: 'No account with that email. Check the spelling or create one.' }
-    if (u.password !== password) return { ok: false, field: 'password', message: 'That password doesn’t match. Demo accounts use demo1234.' }
-    setSessionId(u.id)
-    return { ok: true }
-  }, [users, setSessionId])
-
+    try { setUser((await endpoints.login(email, password)).user); return { ok: true } } catch (e) { return toResult(e) }
+  }, [])
   const signup = useCallback(async (fullName: string, email: string, password: string): Promise<Result> => {
-    const e = email.trim().toLowerCase()
-    if (users.some((x) => x.email.toLowerCase() === e)) return { ok: false, field: 'email', message: 'An account with this email already exists. Log in instead.' }
-    const id = Math.max(...users.map((u) => u.id)) + 1
-    setUsers((prev) => [...prev, { id, fullName: fullName.trim(), email: e, password }])
-    setSessionId(id)
-    return { ok: true }
-  }, [users, setUsers, setSessionId])
+    try { setUser((await endpoints.signup(fullName, email, password)).user); return { ok: true } } catch (e) { return toResult(e) }
+  }, [])
+  const logout = useCallback(() => {
+    setUser(null)
+    void endpoints.logout().catch(() => {})
+  }, [])
 
-  const logout = useCallback(() => setSessionId(null), [setSessionId])
-
-  return <Ctx.Provider value={{ user, login, signup, logout }}>{children}</Ctx.Provider>
+  return <Ctx.Provider value={{ user, status, login, signup, logout }}>{children}</Ctx.Provider>
 }
 
 export function useAuth(): AuthValue {

@@ -1,10 +1,7 @@
 import { createContext, useContext, useMemo, type ReactNode } from 'react'
-import { applyRatings } from '../data/catalog'
-import { cuisines } from '../data/cuisines'
-import { baseDishes } from '../data/dishes'
-import { baseRestaurants } from '../data/restaurants'
+import { endpoints } from '../api/endpoints'
+import { useResource } from '../hooks/useResource'
 import type { Cuisine, Dish, Restaurant } from '../types'
-import { useReviews } from './ReviewsContext'
 
 interface CatalogValue {
   cuisines: Cuisine[]; restaurants: Restaurant[]; dishes: Dish[]
@@ -16,22 +13,25 @@ interface CatalogValue {
   refresh: () => void
 }
 const Ctx = createContext<CatalogValue | null>(null)
+const EMPTY = { cuisines: [] as Cuisine[], restaurants: [] as Restaurant[], dishes: [] as Dish[] }
 
-/** Restaurants, dishes, cuisines. Cached ratings are recomputed from reviews (same aggregate the backend syncs). */
+/** Restaurants, dishes, cuisines from PostgreSQL (GET /api/catalog). Refetched the moment the database changes. */
 export function CatalogProvider({ children }: { children: ReactNode }) {
-  const { all } = useReviews()
+  const r = useResource('catalog', endpoints.catalog)
   const value = useMemo<CatalogValue>(() => {
-    const { restaurants, dishes } = applyRatings(baseRestaurants, baseDishes, all)
-    const rBySlug = new Map(restaurants.map((r) => [r.slug, r]))
-    const rById = new Map(restaurants.map((r) => [r.id, r]))
-    const cById = new Map(cuisines.map((c) => [c.id, c]))
+    // a failed refetch (e.g. a table dropped in the terminal) must show, so don't keep serving stale data on error
+    const data = r.status === 'error' ? EMPTY : r.data ?? EMPTY
+    const rBySlug = new Map(data.restaurants.map((x) => [x.slug, x]))
+    const rById = new Map(data.restaurants.map((x) => [x.id, x]))
+    const cById = new Map(data.cuisines.map((c) => [c.id, c]))
+    const menus = new Map<number, Dish[]>()
+    for (const d of data.dishes) menus.set(d.restaurantId, [...(menus.get(d.restaurantId) ?? []), d])
     return {
-      cuisines, restaurants, dishes, status: 'ready', error: null,
+      ...data, status: r.status, error: r.error,
       bySlug: (s) => rBySlug.get(s), byId: (id) => rById.get(id), cuisineById: (id) => cById.get(id),
-      menuOf: (id) => dishes.filter((d) => d.restaurantId === id),
-      refresh: () => {},
+      menuOf: (id) => menus.get(id) ?? [], refresh: r.refresh,
     }
-  }, [all])
+  }, [r.data, r.status, r.error, r.refresh])
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>
 }
 

@@ -9,6 +9,8 @@ import { CatalogProvider } from './context/CatalogContext'
 import { FavouritesProvider } from './context/FavouritesContext'
 import { PreferencesProvider } from './context/PreferencesContext'
 import { ReviewsProvider } from './context/ReviewsContext'
+import { LikeBurstProvider } from './context/LikeBurstContext'
+import { LiveProvider } from './context/LiveContext'
 import { ToastProvider } from './context/ToastContext'
 import { router } from './router'
 
@@ -31,9 +33,11 @@ export default function App() {
   return (
     <MotionConfig reducedMotion="user">
       <ToastProvider>
+        <LiveProvider>
         <AuthProvider>
           <PreferencesProvider>
             <ActivityProvider>
+              <LikeBurstProvider>
               <FavouritesProvider>
                 <ReviewsProvider>
                   <CatalogProvider>
@@ -42,9 +46,11 @@ export default function App() {
                   </CatalogProvider>
                 </ReviewsProvider>
               </FavouritesProvider>
+              </LikeBurstProvider>
             </ActivityProvider>
           </PreferencesProvider>
         </AuthProvider>
+        </LiveProvider>
       </ToastProvider>
       <AnimatePresence>{splash && <Splash onDone={endSplash} />}</AnimatePresence>
     </MotionConfig>

@@ -7,9 +7,10 @@ import { AuthPage } from '../../pages/AuthPage'
 
 /** Logged-in guard. Users who haven't onboarded are sent to /onboarding first. */
 export function RequireAuth({ allowUnonboarded = false }: { allowUnonboarded?: boolean }) {
-  const { user } = useAuth()
-  const { prefs } = usePreferences()
+  const { user, status } = useAuth()
+  const { prefs, status: prefsStatus } = usePreferences()
   const loc = useLocation()
+  if (status === 'loading' || (user && prefsStatus === 'loading')) return <BootLoader />
   if (!user) return <Navigate to="/login" replace state={{ from: loc.pathname + loc.search }} />
   if (!allowUnonboarded && !prefs.onboarded) return <Navigate to="/onboarding" replace />
   return <Outlet />
@@ -17,7 +18,8 @@ export function RequireAuth({ allowUnonboarded = false }: { allowUnonboarded?: b
 
 /** /login and /signup render the same mounted AuthPage, so the card morphs between modes instead of remounting. */
 export function PublicOnly() {
-  const { user } = useAuth()
+  const { user, status } = useAuth()
+  if (status === 'loading') return <BootLoader />
   if (user) return <Navigate to="/" replace />
   return (
     <AuthLayout>
@@ -28,5 +30,14 @@ export function PublicOnly() {
         </div>
       </div>
     </AuthLayout>
+  )
+}
+
+/** Shown for the split second while the session cookie is checked. */
+function BootLoader() {
+  return (
+    <div className="grid min-h-dvh place-items-center" role="status" aria-label="Loading">
+      <span className="size-10 animate-spin rounded-full border-[3px] border-seam border-t-haldi" />
+    </div>
   )
 }

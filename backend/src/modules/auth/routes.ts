@@ -3,7 +3,7 @@ import { Router } from 'express'
 import rateLimit from 'express-rate-limit'
 import { z } from 'zod'
 import { q } from '../../db/pg.ts'
-import { clearSession, requireUser, setSession } from '../../middleware/auth.ts'
+import { clearSession, setSession } from '../../middleware/auth.ts'
 import { HttpError } from '../../middleware/error.ts'
 import { body } from '../../middleware/validate.ts'
 
@@ -42,9 +42,11 @@ authRouter.post('/login', body(loginSchema), async (req, res) => {
 
 authRouter.post('/logout', (_req, res) => { clearSession(res); res.status(204).end() })
 
-authRouter.get('/me', requireUser, async (req, res) => {
+/** { user } or { user: null } — 200 either way, so a logged-out check isn't an error. */
+authRouter.get('/me', async (req, res) => {
+  if (!req.user) { res.json({ user: null }); return }
   // re-read from Postgres so a user deleted in the terminal is logged out
-  const [u] = await q('SELECT user_id AS id, full_name AS "fullName", email FROM users WHERE user_id = $1', [req.user!.id])
-  if (!u) { clearSession(res); throw new HttpError(401, 'UNAUTHENTICATED', 'Your account no longer exists.') }
-  res.json({ user: u })
+  const [u] = await q('SELECT user_id AS id, full_name AS "fullName", email FROM users WHERE user_id = $1', [req.user.id])
+  if (!u) clearSession(res)
+  res.json({ user: u ?? null })
 })

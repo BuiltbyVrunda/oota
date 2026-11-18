@@ -23,9 +23,9 @@ export function RestaurantCard({ rec, variant = 'portrait', eager, onOpen }: { r
   const { cuisineById } = useCatalog()
   const cuisines = r.cuisineIds.map((c) => cuisineById(c)?.name).filter(Boolean).join(' · ')
   return (
-    <Link to={`/restaurant/${r.slug}`} onClick={onOpen}
+    <Link to={`/restaurant/${r.slug}`} onClick={onOpen} data-like-surface
       className={cn('frost-mat group block rounded-[20px] transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-e3', frame[variant])}>
-      <div className="relative size-full overflow-hidden rounded-[14px]">
+      <div data-like-origin className="relative size-full overflow-hidden rounded-[14px]">
       <SmartImage src={r.coverUrl} alt={`${r.name}, ${cuisines} in ${r.area}`} width={1200} height={700} eager={eager}
         className="absolute inset-0" imgClassName="transition-transform duration-700 group-hover:scale-[1.06]" />
       <span aria-hidden className="absolute inset-0 bg-gradient-to-t from-graphite/80 via-graphite/5 to-graphite/10" />

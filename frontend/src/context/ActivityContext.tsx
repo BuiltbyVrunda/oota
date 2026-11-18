@@ -1,6 +1,6 @@
-import { createContext, useCallback, useContext, type ReactNode } from 'react'
-import { SEED } from '../data/seedWorld'
-import { useLocalStorage } from '../hooks/useLocalStorage'
+import { createContext, useCallback, useContext, useMemo, type ReactNode } from 'react'
+import { endpoints } from '../api/endpoints'
+import { useResource } from '../hooks/useResource'
 import type { SearchEntry, ViewEntry } from '../types'
 import { useAuth } from './AuthContext'
 
@@ -13,28 +13,33 @@ interface ActivityValue {
 }
 const Ctx = createContext<ActivityValue | null>(null)
 
+/** Search history + recently viewed — MongoDB (search_history with a 90-day TTL, restaurant_views). */
 export function ActivityProvider({ children }: { children: ReactNode }) {
   const { user } = useAuth()
-  const uid = user?.id ?? 0
-  const demo = SEED.demo.find((d) => d.userId === uid)
-  const [searches, setSearches] = useLocalStorage<SearchEntry[]>(`oota:v1:searches:${uid}`, () =>
-    [...(demo?.searches ?? [])].sort((a, b) => b.at.localeCompare(a.at)))
-  const [views, setViews] = useLocalStorage<ViewEntry[]>(`oota:v1:views:${uid}`, () =>
-    [...(demo?.views ?? [])].sort((a, b) => b.at.localeCompare(a.at)))
+  const s = useResource(user ? `searches:${user.id}` : null, endpoints.searches)
+  const v = useResource(user ? `views:${user.id}` : null, endpoints.views)
+  const ms = s.mutate
+  const mv = v.mutate
 
   const recordSearch = useCallback((e: Omit<SearchEntry, 'at'>) => {
     const q = e.query.trim()
     if (!q) return
-    setSearches((prev) => [{ ...e, query: q, at: new Date().toISOString() }, ...prev].slice(0, 30))
-  }, [setSearches])
+    ms((prev) => [{ ...e, query: q, at: new Date().toISOString() }, ...(prev ?? [])].slice(0, 30))
+    void endpoints.recordSearch({ ...e, query: q }).catch(() => {})
+  }, [ms])
 
   const recordView = useCallback((restaurantId: number) => {
-    setViews((prev) => [{ restaurantId, at: new Date().toISOString() }, ...prev.filter((v) => v.restaurantId !== restaurantId)].slice(0, 20))
-  }, [setViews])
+    mv((prev) => [{ restaurantId, at: new Date().toISOString() }, ...(prev ?? []).filter((x) => x.restaurantId !== restaurantId)].slice(0, 20))
+    void endpoints.recordView(restaurantId).catch(() => {})
+  }, [mv])
 
-  const clearSearches = useCallback(() => setSearches([]), [setSearches])
+  const clearSearches = useCallback(() => {
+    ms(() => [])
+    void endpoints.clearSearches().catch(() => {})
+  }, [ms])
 
-  return <Ctx.Provider value={{ searches, views, recordSearch, recordView, clearSearches }}>{children}</Ctx.Provider>
+  const value = useMemo(() => ({ searches: s.data ?? [], views: v.data ?? [], recordSearch, recordView, clearSearches }), [s.data, v.data, recordSearch, recordView, clearSearches])
+  return <Ctx.Provider value={value}>{children}</Ctx.Provider>
 }
 
 export function useActivity(): ActivityValue {
