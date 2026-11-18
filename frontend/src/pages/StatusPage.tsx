@@ -9,12 +9,17 @@ import { cn } from '../utils/cn'
 import { relativeTime } from '../utils/format'
 
 const DEMOS: { title: string; sql: string; shell?: boolean }[] = [
-  { title: 'Add a dish (watch it appear on Tuppa & Co.)', sql: `INSERT INTO dishes (restaurant_id, category_id, cuisine_id, name, description, price, diet, spice_level, flavour_tags)
+  { title: 'Add a row: a new dish on Tuppa & Co. (appears on its menu + in search)', sql: `INSERT INTO dishes (restaurant_id, category_id, cuisine_id, name, description, price, diet, spice_level, flavour_tags)
 SELECT 1, category_id, 1, 'Ghee Pudi Idli', 'Mini idlis in podi and ghee', 120, 'veg', 2, '{spicy,rich}'
 FROM menu_categories WHERE restaurant_id = 1 AND name = 'Dosas';` },
-  { title: 'Change a price', sql: `UPDATE dishes SET price = 99 WHERE name = 'Ghee Roast Dosa';` },
-  { title: 'Delete a restaurant (cascades to its menu)', sql: `DELETE FROM restaurants WHERE slug = 'smash-yard';` },
-  { title: 'Drop a table (Saved breaks gracefully)', sql: `DROP TABLE favourite_restaurants;` },
+  { title: 'Change a row: a price', sql: `UPDATE dishes SET price = 99 WHERE name = 'Ghee Roast Dosa';` },
+  { title: 'Hide a restaurant (status CHECK + diner filter)', sql: `UPDATE restaurants SET status = 'pending' WHERE slug = 'chaat-gully';` },
+  { title: 'Delete a row: a dish nobody ordered', sql: `DELETE FROM dishes WHERE name = 'Ghee Pudi Idli';` },
+  { title: 'Delete a restaurant (orders first: orders → restaurants is RESTRICT; the rest cascades)', sql: `BEGIN;
+DELETE FROM orders WHERE restaurant_id = (SELECT restaurant_id FROM restaurants WHERE slug = 'smash-yard');
+DELETE FROM restaurants WHERE slug = 'smash-yard';
+COMMIT;` },
+  { title: 'Drop a table (Saved shows a clear error, the rest keeps working)', sql: `DROP TABLE favourite_restaurants;` },
   { title: 'Restore everything', sql: 'cd backend && npm run reset', shell: true },
 ]
 

@@ -1,0 +1,56 @@
+BEGIN;
+BEGIN
+INSERT INTO orders (user_id, restaurant_id) VALUES (2, 4) RETURNING order_id;
+ order_id 
+----------
+       41
+(1 row)
+
+INSERT 0 1
+INSERT INTO order_items (order_id, dish_id, quantity, unit_price)
+  SELECT currval('orders_order_id_seq'), dish_id, 2, price FROM dishes WHERE dish_id = 28;
+INSERT 0 1
+INSERT INTO order_items (order_id, dish_id, quantity, unit_price)
+  SELECT currval('orders_order_id_seq'), dish_id, 1, price FROM dishes WHERE dish_id = 29;
+INSERT 0 1
+SELECT order_id, total_amount FROM orders WHERE order_id = currval('orders_order_id_seq');
+ order_id | total_amount 
+----------+--------------
+       41 |       920.00
+(1 row)
+
+COMMIT;
+COMMIT
+SELECT COUNT(*) AS orders_before FROM orders;
+ orders_before 
+---------------
+            41
+(1 row)
+
+BEGIN;
+BEGIN
+INSERT INTO orders (user_id, restaurant_id) VALUES (2, 4);
+INSERT 0 1
+INSERT INTO order_items (order_id, dish_id, quantity, unit_price) SELECT currval('orders_order_id_seq'), 28, 1, 280;
+INSERT 0 1
+INSERT INTO order_items (order_id, dish_id, quantity, unit_price) SELECT currval('orders_order_id_seq'), 29, 99, 360;
+COMMIT;
+ROLLBACK
+SELECT COUNT(*) AS orders_after FROM orders;
+ERROR:  new row for relation "order_items" violates check constraint "order_items_quantity_check"
+DETAIL:  Failing row contains (42, 29, 99, 360.00).
+ orders_after 
+--------------
+           41
+(1 row)
+
+UPDATE order_items SET quantity = 3 WHERE order_id = (SELECT MAX(order_id) FROM orders) AND dish_id = 28;
+UPDATE 1
+SELECT order_id, total_amount FROM orders WHERE order_id = (SELECT MAX(order_id) FROM orders);
+ order_id | total_amount 
+----------+--------------
+       41 |      1200.00
+(1 row)
+
+DELETE FROM orders WHERE order_id = (SELECT MAX(order_id) FROM orders);
+DELETE 1

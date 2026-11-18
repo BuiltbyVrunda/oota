@@ -434,7 +434,7 @@ function dashboardFact(ctx: Ctx, top: Recommendation<Restaurant>[]): string {
   if (latest) {
     const r = ctx.restaurantById.get(latest.restaurantId)
     const n = top.filter((t) => t.reasons.some((x) => x.startsWith('You rated'))).length
-    if (r && n > 0) return `${n} ${n === 1 ? 'pick' : 'picks'} shaped by your ratings since ${r.name}`
+    if (r && n > 0) return `${n} ${n === 1 ? 'pick' : 'picks'} shaped by your ratings, most recently ${r.name}`
   }
   const s = ctx.searchList[0]
   if (s) return `Fresh picks for “${s.query}” and ${top.length} places that fit your taste`

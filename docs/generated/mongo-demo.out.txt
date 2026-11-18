@@ -1,0 +1,55 @@
+rs0 [direct: primary] oota> 
+rs0 [direct: primary] oota> --- Pipeline 1: per-restaurant average, count and 1–5★ distribution ($group)
+
+rs0 [direct: primary] oota> | | | | | | | | {"_id":1,"count":6,"r5":4,"r4":1,"r3":1,"r2":0,"r1":0,"avg":4.5}
+{"_id":5,"count":6,"r5":2,"r4":3,"r3":0,"r2":1,"r1":0,"avg":4}
+{"_id":9,"count":7,"r5":6,"r4":0,"r3":1,"r2":0,"r1":0,"avg":4.71}
+
+rs0 [direct: primary] oota> 
+rs0 [direct: primary] oota> --- Pipeline 2: a diner's favourite review tags ($unwind → $group → $sort)
+
+rs0 [direct: primary] oota> | | | | | {"_id":"Generous portions","count":3,"avgRating":4.33}
+{"_id":"Worth the wait","count":2,"avgRating":5}
+{"_id":"Authentic","count":1,"avgRating":5}
+{"_id":"Loud","count":1,"avgRating":4}
+{"_id":"Pricey","count":1,"avgRating":3}
+
+rs0 [direct: primary] oota> 
+rs0 [direct: primary] oota> --- Pipeline 3: per-dish rating from embedded dishRatings ($unwind of an array of sub-documents)
+
+rs0 [direct: primary] oota> | | | | | {"_id":28,"n":3,"avg":4.67}
+{"_id":159,"n":3,"avg":4.67}
+{"_id":46,"n":2,"avg":5}
+{"_id":129,"n":2,"avg":5}
+{"_id":79,"n":2,"avg":5}
+
+rs0 [direct: primary] oota> 
+rs0 [direct: primary] oota> --- Indexes on reviews
+
+rs0 [direct: primary] oota> {"name":"_id_","key":{"_id":1},"unique":false}
+{"name":"by_restaurant_recent","key":{"restaurantId":1,"createdAt":-1},"unique":false}
+{"name":"by_user_recent","key":{"userId":1,"createdAt":-1},"unique":false}
+{"name":"one_per_user_place","key":{"userId":1,"restaurantId":1},"unique":true}
+
+rs0 [direct: primary] oota> --- TTL index on search_history
+
+rs0 [direct: primary] oota> {"name":"ttl_90d","key":{"createdAt":1},"expireAfterSeconds":7776000}
+
+rs0 [direct: primary] oota> 
+rs0 [direct: primary] oota> --- explain(): reviews for one restaurant, newest first
+
+rs0 [direct: primary] oota> 
+rs0 [direct: primary] oota> 
+rs0 [direct: primary] oota> {
+ "plan": "FETCH → IXSCAN (by_restaurant_recent)",
+ "docsExamined": 6,
+ "keysExamined": 6,
+ "returned": 6
+}
+
+rs0 [direct: primary] oota> 
+rs0 [direct: primary] oota> --- Unique index enforces one review per diner per restaurant
+
+rs0 [direct: primary] oota> | rejected: E11000 duplicate key error collection: oota.reviews index: one_per_user_place
+
+rs0 [direct: primary] oota> 

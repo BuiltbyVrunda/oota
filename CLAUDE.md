@@ -2,6 +2,15 @@
 
 Read this fully before doing anything. It is the single source of truth. `docs/PROMPTS.md` has the prompts to run, in order.
 
+> **Current state (2026-11-18) — all three phases are built.** Changes made with the builder (Vrunda) that override the text below:
+> * **Three account types, three logins, three cookies:** diners (`users`, `/login`), restaurant partners (`restaurant_owners`, 1:1 with `restaurants`, `/partner/*`) and admins (`admins`, `/admin/*`). **Only partners list food.** Partners self-register at `/partner/signup`; `restaurants.status` ∈ pending/approved/rejected (CHECK) and diners only see approved ones.
+> * **Ordering:** cart ("tiffin") → `POST /api/orders` (transaction, trigger total) → `/orders`; partners move orders PLACED → PREPARING → DELIVERED (or CANCELLED), enforced in SQL.
+> * **Live updates:** `db/postgres/realtime.sql` (statement NOTIFY triggers + DDL event triggers) and Mongo change streams (compose runs Mongo as replica set `rs0`) → `GET /api/events` (SSE) → React data hooks refetch. Admin → Live database page shows all tables/collections.
+> * **Uploads:** `POST /api/uploads` (raw image, magic-byte checked, 6 MB) → `backend/uploads/`, served at `/uploads/…`.
+> * **Design:** light "Liquid Tiffin" (see §5 override), Coastal morning background, Clear frost cards, Instagram-style like burst, enamel-tiffin splash.
+> * **Docs:** `docs/Oota-DBMS-Explainer.pdf` (built by `python3 docs/pdf/build_html.py && node frontend/scripts/build-explainer.mjs` from live DB output), `docs/REPORT.md`, `README.md`.
+> * Repo root is this macOS folder (not `F:\DBMSminiproject`); linter is oxlint (Vite template default), not ESLint.
+
 ## 1. What we are building
 
 **Oota** (Kannada "meal") is a personalised food discovery website for **Bengaluru** (prices in ₹). Users sign up, pick tastes, explore restaurants and menus, search dishes, rate/review food, save favourites. Every user gets **different** recommendations based on (a) declared preferences, (b) search history, (c) their own ratings, (d) recently viewed. Every recommendation shows **why** it is there.

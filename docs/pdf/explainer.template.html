@@ -1,0 +1,645 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<title>Oota — DBMS Explainer</title>
+<style>
+  @font-face { font-family: 'Bricolage'; src: url('{{FONT_BRICOLAGE}}') format('woff2'); font-weight: 200 800; }
+  @font-face { font-family: 'Geist'; src: url('{{FONT_GEIST}}') format('woff2'); font-weight: 100 900; }
+  @font-face { font-family: 'Kannada'; src: url('{{FONT_KANNADA}}') format('woff2'); font-weight: 600; }
+  @page { size: A4; margin: 16mm 14mm 16mm 14mm; }
+  :root {
+    --ink: #1d1c1a; --ink-2: #3c505e; --ink-3: #576c7b; --haldi: #ffb020; --haldi-ink: #8a5a00; --chilli: #ff5a3c;
+    --leaf: #22c06b; --kokum: #e0459a; --coconut: #2aa6f0; --veg: #17803d; --danger: #c0281b;
+    --glass: rgb(255 255 255 / 0.66); --rim: rgb(255 255 255 / 0.95); --seam: rgb(29 28 26 / 0.09);
+  }
+  * { box-sizing: border-box; }
+  /* the root background paints the whole sheet, margins included */
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; background: #f1f8fd url('{{SHOTS}}/field.jpg') center / cover fixed no-repeat; }
+  @page landscape { size: A4 landscape; margin: 12mm 14mm 14mm 14mm; }
+  section.wide { page: landscape; }
+  body { margin: 0; font-family: 'Geist', system-ui, sans-serif; font-size: 10.2pt; line-height: 1.5; color: var(--ink); }
+  /* the light behind the glass — fixed, so Chromium repeats it on every printed page */
+  /* the light behind the glass: one pre-rendered image (embedded once), fixed so Chromium repeats it on every page,
+     sized to cover both portrait and landscape sheets */
+  .field { position: fixed; left: -20mm; top: -20mm; width: 340mm; height: 340mm; z-index: -1;
+           background: url('{{SHOTS}}/field.jpg') center / 100% 100% no-repeat; }
+  h1, h2, h3, h4 { font-family: 'Bricolage', 'Geist', sans-serif; font-weight: 650; letter-spacing: -0.02em; line-height: 1.12; margin: 0; }
+  h2 { font-size: 21pt; margin: 0 0 3mm; }
+  h3 { font-size: 13pt; margin: 5mm 0 2mm; }
+  h4 { font-size: 11pt; margin: 0 0 1.5mm; }
+  p { margin: 0 0 2.4mm; text-wrap: pretty; }
+  .lead { font-size: 11.2pt; color: var(--ink-2); max-width: 165mm; }
+  .kn { font-family: 'Kannada'; font-weight: 600; }
+  code, pre { font-family: 'SF Mono', ui-monospace, Menlo, Consolas, monospace; }
+  code { font-size: 8.8pt; background: rgb(255 255 255 / 0.7); border: 1px solid var(--seam); padding: 0.2mm 1.2mm; border-radius: 1.5mm; }
+  pre { margin: 0; font-size: 7.6pt; line-height: 1.42; white-space: pre-wrap; word-break: break-word; }
+  section { break-before: page; }
+  section.first { break-before: avoid; }
+  .glass { background: linear-gradient(135deg, rgb(255 255 255 / 0.82), rgb(255 255 255 / 0.55)); border: 1px solid var(--rim);
+           box-shadow: inset 0 1px 0 rgb(255 255 255), 0 3mm 8mm -4mm rgb(29 28 26 / 0.18); border-radius: 5mm; padding: 5mm 5.5mm; margin-bottom: 4mm; break-inside: avoid; }
+  .glass.tint-haldi { background: linear-gradient(135deg, rgb(255 236 200 / 0.85), rgb(255 255 255 / 0.6)); }
+  .glass.tint-coconut { background: linear-gradient(135deg, rgb(214 238 255 / 0.85), rgb(255 255 255 / 0.6)); }
+  .glass.tint-leaf { background: linear-gradient(135deg, rgb(214 248 228 / 0.85), rgb(255 255 255 / 0.6)); }
+  .glass.tint-kokum { background: linear-gradient(135deg, rgb(255 224 240 / 0.85), rgb(255 255 255 / 0.6)); }
+  .glass.flow { break-inside: auto; }
+  .eyebrowless { color: var(--ink-3); font-size: 9pt; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; }
+  .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3mm; }
+  table { width: 100%; border-collapse: collapse; font-size: 8.8pt; }
+  th { text-align: left; font-weight: 650; font-size: 8.4pt; color: var(--ink-3); padding: 1.6mm 2mm; border-bottom: 1px solid var(--seam); }
+  td { padding: 1.7mm 2mm; border-bottom: 1px solid var(--seam); vertical-align: top; }
+  tr:last-child td { border-bottom: 0; }
+  tr { break-inside: avoid; }
+  td code { font-size: 8pt; }
+  .pill { display: inline-block; font-size: 7.6pt; font-weight: 700; padding: 0.4mm 2mm; border-radius: 9mm; margin-right: 1mm; }
+  .pg { background: rgb(42 166 240 / 0.16); color: #0b4f7a; } .mg { background: rgb(34 192 107 / 0.18); color: #0d5a31; }
+  .x { background: rgb(255 176 32 / 0.25); color: var(--haldi-ink); }
+  .shot { width: 100%; border-radius: 3.5mm; border: 1.5mm solid rgb(255 255 255 / 0.85); box-shadow: 0 3mm 8mm -4mm rgb(29 28 26 / 0.3); display: block; }
+  figure { margin: 0; break-inside: avoid; } figcaption { font-size: 8.4pt; color: var(--ink-3); margin-top: 1.5mm; }
+  .q { padding: 4mm 4.5mm; }
+  .q .qid { display: inline-block; background: var(--ink); color: white; font-family: 'Geist'; font-size: 8pt; padding: 0.3mm 2mm; border-radius: 9mm; margin-right: 1.5mm; vertical-align: 1px; }
+  .sql { background: rgb(29 28 26 / 0.05); border-radius: 2.5mm; padding: 2.5mm 3mm; margin: 2mm 0; color: #22303a; }
+  .out { background: rgb(255 255 255 / 0.85); border: 1px solid var(--seam); border-radius: 2.5mm; padding: 2.5mm 3mm; color: #111; }
+  .term { background: #15181c; color: #e7edf2; border-radius: 3mm; padding: 3mm 3.5mm; }
+  .term .c { color: #8fd3a6; }
+  .recipe { display: grid; grid-template-columns: 9mm 1fr; gap: 3mm; }
+  .recipe .n { width: 9mm; height: 9mm; border-radius: 50%; display: grid; place-items: center; font-family: 'Bricolage'; font-weight: 700; color: #2a1a00;
+               background: linear-gradient(180deg, #ffc23d, #ffb020 60%, #f09a0c); box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.6); }
+  .see { border-left: 0; background: rgb(23 128 61 / 0.08); border-radius: 2.5mm; padding: 2mm 3mm; margin-top: 2mm; font-size: 9pt; }
+  .why { background: rgb(42 166 240 / 0.09); border-radius: 2.5mm; padding: 2mm 3mm; margin-top: 2mm; font-size: 9pt; }
+  .stat { text-align: center; } .stat b { display: block; font-family: 'Bricolage'; font-size: 20pt; line-height: 1.1; } .stat span { font-size: 8.4pt; color: var(--ink-3); }
+  .arch { display: grid; grid-template-columns: 1fr 22mm 1fr 22mm 1fr; align-items: center; gap: 0; }
+  .node { text-align: center; padding: 4mm; } .node b { display: block; font-family: 'Bricolage'; font-size: 12pt; } .node span { font-size: 8.4pt; color: var(--ink-3); }
+  .arrow { text-align: center; font-size: 8pt; color: var(--ink-3); } .arrow i { display: block; height: 0.6mm; background: linear-gradient(90deg, var(--coconut), var(--leaf)); border-radius: 1mm; margin: 1mm 0; font-style: normal; }
+  .mermaid { display: flex; justify-content: center; }
+  .mermaid svg { max-width: 100% !important; max-height: 132mm; width: auto; height: auto; }
+  .cover { height: 255mm; display: flex; flex-direction: column; justify-content: space-between; }
+  .wordmark { display: inline-flex; align-items: center; gap: 3mm; }
+  .lid { display: grid; place-items: center; width: 17mm; height: 13mm; border-radius: 3mm; font-size: 15pt;
+         background: linear-gradient(180deg, #fbfaf7, #dedbd3 52%, #c9c5bc); box-shadow: inset 0 1px 0 #fff, inset 0 -1px 0 rgb(0 0 0 / 0.2), 0 1mm 2mm rgb(0 0 0 / 0.2); color: #2b2925; }
+  .toc li { margin: 0.6mm 0; } .toc { columns: 2; padding-left: 5mm; font-size: 9.6pt; }
+  .small { font-size: 8.6pt; color: var(--ink-3); }
+  .ok { color: var(--veg); font-weight: 650; } .bad { color: var(--danger); font-weight: 650; }
+  .callout { font-family: 'Bricolage'; font-size: 26pt; font-weight: 700; letter-spacing: -0.03em; }
+</style>
+</head>
+<body>
+
+<!-- ============================================================ COVER -->
+<section class="first cover">
+  <div>
+    <div class="wordmark"><span class="lid kn">ಊಟ</span><span style="font-family:'Bricolage';font-weight:700;font-size:26pt;letter-spacing:-0.03em">Oota</span></div>
+    <h1 style="font-size:40pt;margin-top:14mm;max-width:170mm">How Oota uses PostgreSQL and MongoDB</h1>
+    <p class="lead" style="margin-top:5mm">The DBMS explainer for Oota, a personalised food discovery and ordering app for Bengaluru: what the project is,
+      every database feature it uses and why, the full schema, and a step-by-step script for the live terminal-to-UI demo.</p>
+    <div class="glass" style="margin-top:8mm;display:grid;grid-template-columns:repeat(6,1fr);gap:2mm">
+      <div class="stat"><b>{{N_REST}}</b><span>restaurants</span></div>
+      <div class="stat"><b>{{N_DISH}}</b><span>dishes</span></div>
+      <div class="stat"><b>{{N_USERS}}</b><span>diners</span></div>
+      <div class="stat"><b>{{N_REVIEWS}}</b><span>reviews (Mongo)</span></div>
+      <div class="stat"><b>{{N_ORDERS}}</b><span>orders</span></div>
+      <div class="stat"><b>11 + 4</b><span>tables + collections</span></div>
+    </div>
+  </div>
+  <figure><img class="shot" src="{{SHOTS}}/dashboard-meera.jpg" alt="Oota dashboard"></figure>
+  <div style="display:flex;justify-content:space-between;align-items:flex-end">
+    <div><b style="font-family:'Bricolage';font-size:13pt">Vrunda</b><br><span class="small">DBMS mini-project · PES University · November 2026</span></div>
+    <div class="small" style="text-align:right">PostgreSQL 16 · MongoDB 7 · Node 22 + Express 5 · React 19 + TypeScript<br>All restaurants, people and reviews are fictional demo data.</div>
+  </div>
+</section>
+
+<!-- ============================================================ CONTENTS + PROJECT -->
+<section>
+  <h2>Contents</h2>
+  <ol class="toc glass" style="padding-left:9mm">
+    <li>The project in one page</li><li>Architecture and the two databases</li><li>Every DBMS feature, and why</li>
+    <li>ER diagram</li><li>Relational schema (all 11 tables)</li><li>MongoDB collections</li><li>Normalisation</li>
+    <li>Triggers, functions and views</li><li>Indexes, with EXPLAIN ANALYZE</li><li>Transactions, with a rollback</li>
+    <li>14 queries with real output</li><li>MongoDB pipelines and indexes</li><li>Keeping the two databases consistent</li>
+    <li><b>Live demo: change it in the terminal, watch the UI</b></li><li>Demo accounts</li><li>Viva questions</li><li>Appendix: schema.sql</li>
+  </ol>
+
+  <h2 style="margin-top:6mm">1 · The project in one page</h2>
+  <p class="lead">Oota (Kannada for “meal”) helps people in Bengaluru decide where and what to eat. Each diner gets a different home screen,
+    built from what they said they like, what they searched for, and what they rated, and every recommendation says why it is there.
+    Restaurants list and manage their own food; an admin runs the platform.</p>
+  <div class="grid3">
+    <div class="glass tint-coconut"><h4>Diners</h4><p class="small" style="color:var(--ink-2)">Sign up, pick tastes, get a personalised dashboard, search with filters, open menus, save (with a like animation), review, and order. Orders update live as the kitchen moves them along.</p><p class="small"><code>/login</code> · table <code>users</code></p></div>
+    <div class="glass tint-haldi"><h4>Restaurant partners</h4><p class="small" style="color:var(--ink-2)">Register their restaurant (pending until approved), then add, edit, price and sell out dishes, read reviews and run orders: Placed → Preparing → Delivered. <b>Only restaurants can list food.</b></p><p class="small"><code>/partner/login</code> · table <code>restaurant_owners</code></p></div>
+    <div class="glass tint-kokum"><h4>Admin</h4><p class="small" style="color:var(--ink-2)">Approves restaurants, manages every restaurant, dish, diner and review across both databases, and has a live view of all tables and collections.</p><p class="small"><code>/admin/login</code> · table <code>admins</code></p></div>
+  </div>
+  <div class="grid3" style="margin-top:1mm">
+    <figure><img class="shot" src="{{SHOTS}}/dashboard-ananya.jpg" alt=""><figcaption>Ananya (veg, South Indian)</figcaption></figure>
+    <figure><img class="shot" src="{{SHOTS}}/dashboard-rohan.jpg" alt=""><figcaption>Rohan (biryani, kebabs, burgers)</figcaption></figure>
+    <figure><img class="shot" src="{{SHOTS}}/dashboard-meera.jpg" alt=""><figcaption>Meera (vegan, cafés)</figcaption></figure>
+  </div>
+  <p class="small" style="margin-top:2mm">Same app, same database, three different dashboards — the recommender scores every restaurant per diner:
+    <code>0.30·cuisine + 0.25·search + 0.20·rating + 0.15·taste + 0.10·quality</code>, after hard diet/allergen filters in SQL.</p>
+</section>
+
+<!-- ============================================================ ARCHITECTURE -->
+<section>
+  <h2>2 · Architecture and the two databases</h2>
+  <div class="glass">
+    <div class="arch">
+      <div class="node glass" style="margin:0"><b>React app</b><span>diner · partner · admin<br>Vite, TypeScript</span></div>
+      <div class="arrow">JSON over HTTP<i></i>live events (SSE)</div>
+      <div class="node glass" style="margin:0"><b>Express API</b><span>Node 22 · raw SQL (pg)<br>zod validation · JWT cookies</span></div>
+      <div class="arrow">SQL / queries<i></i>NOTIFY · change stream</div>
+      <div class="node glass" style="margin:0"><b><span style="color:#0b6aa8">PostgreSQL 16</span> + <span style="color:#0d7a40">MongoDB 7</span></b><span>Docker containers</span></div>
+    </div>
+  </div>
+  <p>The frontend never talks to a database directly. Every read and write goes through the API, which runs parameterised SQL against PostgreSQL
+    and driver calls against MongoDB. When either database changes — through the app <i>or typed into a terminal</i> — PostgreSQL triggers call
+    <code>pg_notify</code> and MongoDB emits a change-stream event; the API forwards both to every open browser over Server-Sent Events, and the page refetches.
+    That is why the live demo works without refreshing.</p>
+
+  <h3>Why two databases</h3>
+  <div class="glass">
+    <table>
+      <tr><th style="width:24%">Data</th><th style="width:15%">Store</th><th>Why this store</th></tr>
+      <tr><td>users, admins, restaurant partners, restaurants, cuisines, menu sections, dishes, favourites, orders, order items</td><td><span class="pill pg">PostgreSQL</span></td>
+          <td>Fixed shape and lots of relationships (a dish belongs to a section belongs to a restaurant; an order has items that point at dishes). We need foreign keys,
+          CHECK constraints, transactions for orders, joins, aggregates, views and full-text search. Money and identity must be exactly consistent.</td></tr>
+      <tr><td>taste preferences, reviews, search history, recently viewed</td><td><span class="pill mg">MongoDB</span></td>
+          <td>Shape varies per user (any number of tags, optional per-dish ratings, a snapshot of whatever filters were on), it is append-heavy, and it is always read
+          “all of one user’s …” or “all of one restaurant’s …”. Documents fit that naturally, and aggregation pipelines compute ratings and tag stats.
+          A TTL index ages search history out automatically.</td></tr>
+      <tr><td>avg_rating, review_count on restaurants and dishes</td><td><span class="pill pg">PG</span><span class="pill x">cache</span></td>
+          <td>A deliberate, documented denormalisation: the truth is the Mongo review aggregate; Postgres keeps a copy so sorting and filtering by rating is one indexed SQL query.
+          See section 13.</td></tr>
+    </table>
+  </div>
+  <p class="small">The two stores are linked by ids: a Mongo document’s <code>userId</code>, <code>restaurantId</code> and <code>dishId</code> are Postgres primary keys. Referential integrity across
+    the boundary is enforced by the API (it checks the Postgres row exists before writing to Mongo) and repaired by idempotent re-syncs.</p>
+</section>
+
+<!-- ============================================================ FEATURES -->
+<section>
+  <h2>3 · Every DBMS feature, and why</h2>
+  <div class="glass flow">
+    <table>
+      <tr><th style="width:21%">Feature</th><th style="width:27%">Where in Oota</th><th>What it does here / why</th></tr>
+      <tr><td><b>Primary keys</b> (SERIAL)</td><td>every table; composite PKs on <code>restaurant_cuisines</code>, <code>favourite_restaurants</code>, <code>order_items</code></td><td>Identify rows. Composite keys make “a diner saves a place once” and “a dish appears once per order” impossible to violate.</td></tr>
+      <tr><td><b>Foreign keys + ON DELETE CASCADE</b></td><td>dishes → restaurants, menu sections, owner login, favourites…</td><td>Delete a restaurant and its menu, sections, cuisine links, saves and partner login go with it. No orphans.</td></tr>
+      <tr><td><b>Foreign keys, RESTRICT</b> (no action)</td><td><code>order_items → dishes</code>, <code>orders → restaurants</code></td><td>Order history is protected: you cannot delete a dish someone has ordered. The app turns this error into “mark it sold out instead”.</td></tr>
+      <tr><td><b>UNIQUE</b></td><td>emails, slugs, <code>(restaurant_id, name)</code> of menu sections, <code>restaurant_owners.restaurant_id</code></td><td>One account per email; one login per restaurant (a 1 : 1 relationship); no duplicate section names.</td></tr>
+      <tr><td><b>CHECK constraints</b></td><td>email regex, price &gt; 0, rating 0–5, spice 0–3, diet ∈ {veg, egg, nonveg, vegan}, quantity 1–20, order status, restaurant status</td><td>The database itself refuses bad data, whatever the client sends. Demonstrated live in the rollback demo.</td></tr>
+      <tr><td><b>Arrays</b> <code>TEXT[]</code></td><td><code>dishes.flavour_tags</code>, <code>allergens</code>, <code>restaurants.gallery_urls</code></td><td>Small, ordered lists queried with <code>@&gt;</code> (contains) and <code>&amp;&amp;</code> (overlaps) — e.g. “not containing nuts”.</td></tr>
+      <tr><td><b>Trigger: full-text vector</b></td><td><code>trg_dish_search_vector</code> (BEFORE INSERT/UPDATE)</td><td>Rebuilds <code>search_vector</code> from name (weight A) and description (B) on every change, so search is never stale.</td></tr>
+      <tr><td><b>Trigger: order total</b></td><td><code>trg_order_total</code> (AFTER INSERT/UPDATE/DELETE on order_items)</td><td><code>orders.total_amount</code> is always Σ quantity × unit_price — the app never computes money.</td></tr>
+      <tr><td><b>Triggers + NOTIFY</b></td><td><code>trg_notify_*</code> on every table, statement-level</td><td><code>pg_notify('oota_changes', …)</code> on INSERT/UPDATE/DELETE/TRUNCATE → live UI updates.</td></tr>
+      <tr><td><b>Event triggers</b></td><td><code>evt_notify_drop</code>, <code>evt_notify_ddl</code></td><td>Fire on DDL — <code>DROP TABLE</code>, <code>ALTER TABLE</code>, <code>CREATE TABLE</code> — so even schema changes reach the UI.</td></tr>
+      <tr><td><b>Views</b></td><td><code>v_restaurant_summary</code>, <code>v_popular_dishes</code></td><td>Named, reusable joins + aggregates (cuisines per restaurant; times each dish was ordered).</td></tr>
+      <tr><td><b>Indexes</b></td><td>B-tree (rating, area, foreign keys), composite <code>(user_id, placed_at DESC)</code>, <b>partial</b> on pending restaurants, <b>GIN</b> on <code>search_vector</code> and <code>flavour_tags</code></td><td>Fast lookups for the exact queries the app runs. Measured: 4.8 ms → 0.03 ms (section 9).</td></tr>
+      <tr><td><b>Full-text search</b></td><td>Discover → Dishes, search suggestions</td><td><code>websearch_to_tsquery</code> + prefix <code>to_tsquery('dos:*')</code> + ranking with <code>ts_rank</code>, ILIKE as a fallback.</td></tr>
+      <tr><td><b>Transactions</b></td><td>placing an order; restaurant sign-up (restaurant + cuisines + login); adding a dish (section + dish); deleting a restaurant</td><td>All-or-nothing. A bad line item rolls the whole order back (section 10).</td></tr>
+      <tr><td><b>Joins, GROUP BY / HAVING, subqueries, CTEs, window functions, EXISTS, UNION</b></td><td>catalogue, partner stats, admin lists, report queries</td><td>See the 14 queries in section 11.</td></tr>
+      <tr><td><b>Upsert</b> (<code>ON CONFLICT</code>)</td><td>favourites (idempotent save), menu sections (find-or-create)</td><td>Safe to repeat; no race between “check” and “insert”.</td></tr>
+      <tr><td><span class="pill mg">Mongo</span> <b>documents + embedded arrays</b></td><td>reviews with <code>tags[]</code> and <code>dishRatings[]</code></td><td>One review is one document — no join table needed for its tags or per-dish ratings.</td></tr>
+      <tr><td><span class="pill mg">Mongo</span> <b>unique compound index</b></td><td><code>reviews {userId, restaurantId}</code></td><td>One review per diner per place; editing is an upsert.</td></tr>
+      <tr><td><span class="pill mg">Mongo</span> <b>TTL index</b></td><td><code>search_history.createdAt</code>, 90 days</td><td>Old searches delete themselves.</td></tr>
+      <tr><td><span class="pill mg">Mongo</span> <b>aggregation pipelines</b></td><td>ratings + 1–5★ distribution; a diner’s favourite tags; per-dish ratings</td><td><code>$match → $unwind → $group → $sort</code>. Feeds the rating cache and the partner dashboard.</td></tr>
+      <tr><td><span class="pill mg">Mongo</span> <b>change streams</b> (replica set)</td><td>whole <code>oota</code> database</td><td>Mongo edits in <code>mongosh</code> show up live in the UI too.</td></tr>
+      <tr><td><b>Security</b></td><td>bcrypt (cost 10), JWT in httpOnly cookies (one per account type), parameterised SQL, rate limits</td><td>No plain-text passwords; no SQL injection (values are always <code>$1</code> placeholders).</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- ============================================================ ER -->
+<section class="wide">
+  <h2>4 · ER diagram — PostgreSQL</h2>
+  <p class="small">Crow’s feet: <code>||</code> exactly one · <code>o{</code> zero or more · <code>|{</code> one or more. PK = primary key, FK = foreign key, UK = unique.</p>
+  <div class="glass" style="padding:3mm">
+<pre class="mermaid">
+erDiagram
+  USERS ||--o{ FAVOURITE_RESTAURANTS : saves
+  RESTAURANTS ||--o{ FAVOURITE_RESTAURANTS : "saved as"
+  USERS ||--o{ ORDERS : places
+  RESTAURANTS ||--o{ ORDERS : receives
+  ORDERS ||--|{ ORDER_ITEMS : contains
+  DISHES ||--o{ ORDER_ITEMS : "ordered as"
+  RESTAURANTS ||--|| RESTAURANT_OWNERS : "managed by"
+  RESTAURANTS ||--o{ MENU_CATEGORIES : has
+  MENU_CATEGORIES ||--o{ DISHES : groups
+  RESTAURANTS ||--o{ DISHES : serves
+  CUISINES ||--o{ DISHES : "style of"
+  RESTAURANTS ||--o{ RESTAURANT_CUISINES : offers
+  CUISINES ||--o{ RESTAURANT_CUISINES : "offered by"
+  USERS { int user_id PK
+          string email UK
+          string password_hash }
+  ADMINS { int admin_id PK
+           string email UK
+           string password_hash }
+  RESTAURANT_OWNERS { int owner_id PK
+                      int restaurant_id FK,UK
+                      string email UK }
+  RESTAURANTS { int restaurant_id PK
+                string slug UK
+                int price_level
+                numeric avg_rating
+                string status }
+  CUISINES { int cuisine_id PK
+             string slug UK }
+  RESTAURANT_CUISINES { int restaurant_id PK,FK
+                        int cuisine_id PK,FK }
+  MENU_CATEGORIES { int category_id PK
+                    int restaurant_id FK
+                    string name }
+  DISHES { int dish_id PK
+           int restaurant_id FK
+           int category_id FK
+           int cuisine_id FK
+           numeric price
+           string diet
+           tsvector search_vector }
+  FAVOURITE_RESTAURANTS { int user_id PK,FK
+                          int restaurant_id PK,FK }
+  ORDERS { int order_id PK
+           int user_id FK
+           int restaurant_id FK
+           string status
+           numeric total_amount }
+  ORDER_ITEMS { int order_id PK,FK
+                int dish_id PK,FK
+                int quantity
+                numeric unit_price }
+</pre>
+  </div>
+  <p class="small"><code>ADMINS</code> stands alone on purpose — admins are not diners and own nothing. <code>RESTAURANT_OWNERS</code> is 1 : 1 with <code>RESTAURANTS</code> (its FK is UNIQUE).
+    The three account types are disjoint, so they are three tables (separate logins, separate cookies), not one table with a role column.</p>
+</section>
+
+<section>
+  <h2>Links into MongoDB</h2>
+  <p class="small">Dotted lines are references by id from MongoDB documents to PostgreSQL rows. MongoDB has no foreign keys; the API checks the Postgres row exists before it writes, and cleans up both sides on delete.</p>
+  <div class="glass" style="padding:3mm">
+<pre class="mermaid">
+erDiagram
+  USERS ||..|| USER_PREFERENCES : "_id = user_id"
+  USERS ||..o{ REVIEWS : "userId"
+  RESTAURANTS ||..o{ REVIEWS : "restaurantId"
+  DISHES ||..o{ REVIEWS : "dishRatings[].dishId"
+  USERS ||..o{ SEARCH_HISTORY : "userId"
+  RESTAURANTS ||..o{ SEARCH_HISTORY : "clickedRestaurantId"
+  USERS ||..o{ RESTAURANT_VIEWS : "userId"
+  RESTAURANTS ||..o{ RESTAURANT_VIEWS : "restaurantId"
+  USERS { int user_id PK }
+  RESTAURANTS { int restaurant_id PK }
+  DISHES { int dish_id PK }
+  USER_PREFERENCES { int _id PK
+                     array cuisineIds
+                     string diet
+                     array flavours }
+  REVIEWS { objectId _id PK
+            int userId
+            int restaurantId
+            int rating
+            array tags
+            array dishRatings }
+  SEARCH_HISTORY { objectId _id PK
+                   int userId
+                   string query
+                   object filters
+                   date createdAt }
+  RESTAURANT_VIEWS { objectId _id PK
+                     int userId
+                     int restaurantId
+                     date viewedAt }
+</pre>
+  </div>
+</section>
+
+<!-- ============================================================ RELATIONAL SCHEMA -->
+<section>
+  <h2>5 · Relational schema</h2>
+  <p class="small"><u>underlined</u> = primary key, <i>italic</i> = foreign key. Every table is in 3NF (section 7).</p>
+  <div class="glass flow">
+    <table>
+      <tr><th style="width:19%">Table</th><th style="width:45%">Columns</th><th>Keys and constraints</th></tr>
+      <tr><td><b>users</b><br><span class="small">diners</span></td><td><u>user_id</u>, full_name, email, password_hash, phone, city, created_at</td><td>email UNIQUE + CHECK (regex); city default 'Bengaluru'</td></tr>
+      <tr><td><b>admins</b></td><td><u>admin_id</u>, full_name, email, password_hash, created_at</td><td>email UNIQUE + CHECK</td></tr>
+      <tr><td><b>restaurant_owners</b><br><span class="small">partner logins</span></td><td><u>owner_id</u>, <i>restaurant_id</i>, full_name, email, password_hash, created_at</td><td>restaurant_id UNIQUE → restaurants ON DELETE CASCADE (1 : 1); email UNIQUE + CHECK</td></tr>
+      <tr><td><b>cuisines</b></td><td><u>cuisine_id</u>, slug, name, image_url</td><td>slug UNIQUE, name UNIQUE</td></tr>
+      <tr><td><b>restaurants</b></td><td><u>restaurant_id</u>, slug, name, description, address, area, city, phone, price_level, cost_for_two, is_pure_veg, opens_at, closes_at, cover_url, gallery_urls[], avg_rating, review_count, trending_score, status, created_at</td><td>slug UNIQUE; CHECK price_level 1–4, cost_for_two &gt; 0, avg_rating 0–5, review_count ≥ 0, trending_score 0–100, status ∈ {pending, approved, rejected}</td></tr>
+      <tr><td><b>restaurant_cuisines</b><br><span class="small">M : N</span></td><td><u><i>restaurant_id</i>, <i>cuisine_id</i></u></td><td>both FKs CASCADE</td></tr>
+      <tr><td><b>menu_categories</b></td><td><u>category_id</u>, <i>restaurant_id</i>, name, sort_order</td><td>UNIQUE (restaurant_id, name); FK CASCADE</td></tr>
+      <tr><td><b>dishes</b></td><td><u>dish_id</u>, <i>restaurant_id</i>, <i>category_id</i>, <i>cuisine_id</i>, name, description, price, diet, spice_level, flavour_tags[], allergens[], image_url, is_available, avg_rating, review_count, created_at, search_vector</td><td>CHECK price &gt; 0, diet ∈ {veg, egg, nonveg, vegan}, spice_level 0–3, avg_rating 0–5; restaurant/category FKs CASCADE; cuisine FK restrict; search_vector filled by trigger</td></tr>
+      <tr><td><b>favourite_restaurants</b><br><span class="small">M : N</span></td><td><u><i>user_id</i>, <i>restaurant_id</i></u>, saved_at</td><td>both FKs CASCADE</td></tr>
+      <tr><td><b>orders</b></td><td><u>order_id</u>, <i>user_id</i>, <i>restaurant_id</i>, status, total_amount, placed_at</td><td>status ∈ {PLACED, PREPARING, DELIVERED, CANCELLED}; total_amount ≥ 0 and maintained by trigger; user FK CASCADE; restaurant FK RESTRICT</td></tr>
+      <tr><td><b>order_items</b></td><td><u><i>order_id</i>, <i>dish_id</i></u>, quantity, unit_price</td><td>quantity 1–20, unit_price &gt; 0 (copied at order time); order FK CASCADE, dish FK RESTRICT</td></tr>
+    </table>
+  </div>
+  <h3>Indexes</h3>
+  <div class="glass"><table>
+    <tr><th>Index</th><th>On</th><th>Serves</th></tr>
+    <tr><td><code>idx_dishes_search</code> (GIN)</td><td>dishes(search_vector)</td><td>full-text dish search</td></tr>
+    <tr><td><code>idx_dishes_flavour</code> (GIN)</td><td>dishes(flavour_tags)</td><td><code>flavour_tags @&gt; '{spicy,crispy}'</code></td></tr>
+    <tr><td><code>idx_orders_user</code></td><td>orders(user_id, placed_at DESC)</td><td>“my orders, newest first”</td></tr>
+    <tr><td><code>idx_restaurants_status</code> (partial)</td><td>restaurants(status) WHERE status &lt;&gt; 'approved'</td><td>the admin approval queue — tiny, because almost every row is approved</td></tr>
+    <tr><td><code>idx_restaurants_rating</code>, <code>idx_restaurants_city_area</code></td><td>restaurants</td><td>sorting by rating, filtering by area</td></tr>
+    <tr><td><code>idx_dishes_restaurant</code>, <code>idx_dishes_cuisine</code>, <code>idx_rc_cuisine</code></td><td>foreign-key columns</td><td>menu loads and cuisine filters (Postgres does not index FKs automatically)</td></tr>
+  </table></div>
+</section>
+
+<!-- ============================================================ MONGO + NORMALISATION -->
+<section>
+  <h2>6 · MongoDB collections</h2>
+  <div class="grid2">
+    <div class="glass tint-leaf"><h4>reviews</h4><pre>{ _id, restaurantId, userId, userName,
+  rating: 1-5, text, tags: [string],
+  dishRatings: [{ dishId, rating }],
+  createdAt, updatedAt }</pre>
+      <p class="small" style="margin-top:2mm">Indexes: <code>{restaurantId:1, createdAt:-1}</code> (a restaurant’s reviews, newest first) ·
+      <code>{userId:1, createdAt:-1}</code> (a diner’s reviews) · <b>unique</b> <code>{userId:1, restaurantId:1}</code></p></div>
+    <div class="glass tint-leaf"><h4>user_preferences</h4><pre>{ _id: userId (the Postgres user_id),
+  cuisineIds: [int], diet, allergens: [string],
+  spiceLevel: 0-3, flavours: [string],
+  onboardedAt, updatedAt }</pre>
+      <p class="small" style="margin-top:2mm">One document per diner; <code>_id</code> <i>is</i> the link to Postgres, so it is unique by construction.</p></div>
+    <div class="glass tint-leaf"><h4>search_history</h4><pre>{ _id, userId, query, filters: { … any shape … },
+  resultCount?, clickedRestaurantId?, createdAt }</pre>
+      <p class="small" style="margin-top:2mm">Indexes: <code>{userId:1, createdAt:-1}</code> · <b>TTL</b> on createdAt, 90 days. The filter snapshot has a different shape every time — a document fits it.</p></div>
+    <div class="glass tint-leaf"><h4>restaurant_views</h4><pre>{ _id, userId, restaurantId, viewedAt }</pre>
+      <p class="small" style="margin-top:2mm">Index <code>{userId:1, viewedAt:-1}</code>; the API keeps the latest 20 per diner (“Pick up where you left off”).</p></div>
+  </div>
+
+  <h2 style="margin-top:6mm">7 · Normalisation</h2>
+  <div class="glass flow">
+    <p><b>1NF.</b> Every column holds one value of one type. The two kinds of multi-valued data were split out: a restaurant’s cuisines are rows in
+      <code>restaurant_cuisines</code>, a diner’s saves are rows in <code>favourite_restaurants</code>, an order’s lines are rows in <code>order_items</code>.
+      <code>flavour_tags</code>, <code>allergens</code> and <code>gallery_urls</code> stay as arrays on purpose: they are small, owned by one row, never joined on,
+      and queried as a whole with <code>@&gt;</code> / <code>&amp;&amp;</code> (backed by a GIN index). Treating each as one atomic value is a standard, defensible choice.</p>
+    <p><b>2NF.</b> Every table with a composite key (<code>restaurant_cuisines</code>, <code>favourite_restaurants</code>, <code>order_items</code>) has no column that depends on only
+      part of the key: <code>saved_at</code> depends on the (user, restaurant) pair; <code>quantity</code> and <code>unit_price</code> on the (order, dish) pair.</p>
+    <p><b>3NF.</b> No non-key column depends on another non-key column. A dish does not repeat its restaurant’s name or area — it stores <code>restaurant_id</code>;
+      an order does not repeat the diner’s email. Menu sections were promoted to their own table instead of repeating a section name on every dish.</p>
+    <p><b>Deliberate, controlled exceptions.</b> <code>order_items.unit_price</code> copies the dish price <i>at order time</i> — it is a historical fact, not a duplicate
+      (the dish price may change later). <code>orders.total_amount</code> is derivable, but a trigger keeps it exactly equal to its items, so it can never drift.
+      <code>avg_rating</code>/<code>review_count</code> are a cache of the Mongo aggregate (section 13), kept so rating sort/filter stays one indexed query.
+      <code>price_level</code> is derived from <code>cost_for_two</code> by the API whenever cost changes.</p>
+  </div>
+</section>
+
+<!-- ============================================================ TRIGGERS / VIEWS -->
+<section>
+  <h2>8 · Triggers, functions and views</h2>
+  <div class="glass"><h4>Full-text vector — <code>fn_dish_search_vector</code> + <code>trg_dish_search_vector</code></h4>
+<pre class="sql">CREATE FUNCTION fn_dish_search_vector() RETURNS trigger AS $$
+BEGIN
+    NEW.search_vector :=
+        setweight(to_tsvector('english', coalesce(NEW.name, '')), 'A') ||
+        setweight(to_tsvector('english', coalesce(NEW.description, '')), 'B');
+    RETURN NEW;
+END $$ LANGUAGE plpgsql;
+CREATE TRIGGER trg_dish_search_vector BEFORE INSERT OR UPDATE OF name, description ON dishes
+FOR EACH ROW EXECUTE FUNCTION fn_dish_search_vector();</pre>
+    <p class="small">BEFORE trigger: edits the row before it is written. A name match (weight A) ranks above a description match (B). A partner adds a dish → it is searchable that instant.</p></div>
+  <div class="glass"><h4>Order total — <code>fn_recalc_order_total</code> + <code>trg_order_total</code></h4>
+<pre class="sql">CREATE FUNCTION fn_recalc_order_total() RETURNS trigger AS $$
+DECLARE oid INTEGER := COALESCE(NEW.order_id, OLD.order_id);
+BEGIN
+    UPDATE orders SET total_amount = (SELECT COALESCE(SUM(quantity * unit_price), 0)
+                                        FROM order_items WHERE order_id = oid)
+     WHERE order_id = oid;
+    RETURN NULL;
+END $$ LANGUAGE plpgsql;
+CREATE TRIGGER trg_order_total AFTER INSERT OR UPDATE OR DELETE ON order_items
+FOR EACH ROW EXECUTE FUNCTION fn_recalc_order_total();</pre>
+    <p class="small">AFTER trigger on the child table keeps the parent’s total correct on every insert, update and delete of a line item. Verified in Q12: every order matches.</p></div>
+  <div class="glass"><h4>Live changes — row triggers + event triggers (<code>db/postgres/realtime.sql</code>)</h4>
+<pre class="sql">CREATE FUNCTION fn_notify_change() RETURNS trigger AS $$
+BEGIN
+    PERFORM pg_notify('oota_changes', json_build_object('source','postgres','table',TG_TABLE_NAME,'op',TG_OP)::text);
+    RETURN NULL;
+END $$ LANGUAGE plpgsql;
+-- for every app table:  AFTER INSERT OR UPDATE OR DELETE … FOR EACH STATEMENT  (+ AFTER TRUNCATE)
+CREATE EVENT TRIGGER evt_notify_drop ON sql_drop        EXECUTE FUNCTION fn_notify_ddl();
+CREATE EVENT TRIGGER evt_notify_ddl  ON ddl_command_end WHEN TAG IN ('CREATE TABLE','ALTER TABLE') EXECUTE FUNCTION fn_notify_ddl();</pre>
+    <p class="small">Statement-level, so a 1,000-row UPDATE sends one notification, not 1,000. The event triggers catch schema changes such as <code>DROP TABLE</code>.</p></div>
+  <div class="grid2">
+    <div class="glass"><h4>View <code>v_restaurant_summary</code></h4><p class="small">Restaurants joined to their cuisines (<code>ARRAY_AGG</code>) with a dish count from a correlated subquery — one place to read a restaurant “card”.</p></div>
+    <div class="glass"><h4>View <code>v_popular_dishes</code></h4><p class="small">Every dish with <code>SUM(quantity)</code> over its order items (LEFT JOIN, so never-ordered dishes show 0) — the basis of “Trending”.</p></div>
+  </div>
+</section>
+
+<!-- ============================================================ INDEX DEMO -->
+<section>
+  <h2>9 · Indexes, measured with EXPLAIN ANALYZE</h2>
+  <p>On a 300,000-row benchmark table with the same shape as <code>orders</code> (created and dropped by <code>docs/index-demo.sql</code>), the query the app runs for
+    “my orders, newest first”:</p>
+  <pre class="sql">SELECT * FROM bench_orders WHERE user_id = 42 ORDER BY placed_at DESC LIMIT 10;</pre>
+  <div class="grid2" style="margin-top:3mm">
+    <div class="glass tint-kokum"><h4>Before — no index <span class="bad" style="float:right">{{T_BEFORE}} ms</span></h4><pre class="out">{{IDX_BEFORE}}</pre>
+      <p class="small" style="margin-top:2mm">Reads every row (two parallel workers), throws ~300,000 away, then sorts the survivors.</p></div>
+    <div class="glass tint-leaf"><h4>After — <code>(user_id, placed_at DESC)</code> <span class="ok" style="float:right">{{T_AFTER}} ms</span></h4><pre class="out">{{IDX_AFTER}}</pre>
+      <p class="small" style="margin-top:2mm">Jumps straight to user 42 and reads 10 index entries already in the right order — no sort at all.</p></div>
+  </div>
+  <div class="glass tint-haldi" style="text-align:center"><span class="callout">{{SPEEDUP}} faster</span><br><span class="small">same query, same data — only the composite B-tree index changed. The app’s real <code>orders</code> table has exactly this index (<code>idx_orders_user</code>).</span></div>
+</section>
+
+<!-- ============================================================ TRANSACTION -->
+<section>
+  <h2>10 · Transactions, with a rollback</h2>
+  <p>Placing an order writes one <code>orders</code> row and several <code>order_items</code> rows. They must all exist or none. The API wraps them in
+    <code>BEGIN … COMMIT</code> and rolls back on any error. Here is the same thing in <code>psql</code> (<code>docs/transaction-demo.sql</code>), real output:</p>
+  <div class="glass"><pre class="out">{{TX_OUT}}</pre></div>
+  <div class="grid3">
+    <div class="glass tint-leaf"><h4>1 · Good order</h4><p class="small">2 × ₹280 + 1 × ₹360 → the trigger sets the total to <b>₹920</b>. COMMIT.</p></div>
+    <div class="glass tint-kokum"><h4>2 · Bad order</h4><p class="small">The second line breaks <code>CHECK (quantity BETWEEN 1 AND 20)</code>. COMMIT becomes <b>ROLLBACK</b>: the order row inserted first is gone too — the count stays 41.</p></div>
+    <div class="glass tint-coconut"><h4>3 · Trigger on UPDATE</h4><p class="small">Changing a quantity from 2 to 3 makes the trigger recompute the total: ₹920 → <b>₹1,200</b>.</p></div>
+  </div>
+</section>
+
+<!-- ============================================================ QUERIES -->
+<section>
+  <h2>11 · 14 queries with real output</h2>
+  <p class="small">Run them yourself: <code>docker exec -i oota-postgres psql -U oota -d oota &lt; docs/queries.sql</code>. Output below was captured from the seeded database when this PDF was built.</p>
+  {{Q_BLOCKS}}
+</section>
+
+<!-- ============================================================ MONGO -->
+<section>
+  <h2>12 · MongoDB pipelines and indexes</h2>
+  <div class="glass tint-leaf"><h4>Pipeline 1 — rating, count and 1–5★ distribution per restaurant (<code>$match → $group → $project</code>)</h4>
+    <p class="small">This is exactly what the review sync runs, and what the partner dashboard’s rating bars show.</p><pre class="out">{{MG_P1}}</pre></div>
+  <div class="grid2">
+    <div class="glass tint-leaf"><h4>Pipeline 2 — a diner’s favourite tags (<code>$unwind tags → $group → $sort</code>)</h4><pre class="out">{{MG_P2}}</pre></div>
+    <div class="glass tint-leaf"><h4>Pipeline 3 — per-dish rating from embedded <code>dishRatings</code></h4><pre class="out">{{MG_P3}}</pre></div>
+  </div>
+  <div class="grid2">
+    <div class="glass"><h4>Index used — <code>explain('executionStats')</code></h4>
+      <pre class="out">{{MG_EXPLAIN}}</pre>
+      <p class="small" style="margin-top:2mm">“A restaurant’s reviews, newest first” is an index scan that touches only the 6 matching documents.</p></div>
+    <div class="glass"><h4>Unique index in action</h4><pre class="out">{{MG_UNIQUE}}</pre>
+      <p class="small" style="margin-top:2mm">A second review by the same diner for the same place is refused by the database itself (E11000).</p>
+      <h4 style="margin-top:3mm">TTL index</h4><pre class="out">{{MG_TTL}}</pre><p class="small">7,776,000 s = 90 days.</p></div>
+  </div>
+</section>
+
+<!-- ============================================================ CONSISTENCY -->
+<section>
+  <h2>13 · Keeping the two databases consistent</h2>
+  <p>A review lives in MongoDB, but a restaurant’s <code>avg_rating</code> lives in PostgreSQL. When a diner posts or edits a review:</p>
+  <div class="glass">
+    <ol style="margin:0;padding-left:5mm">
+      <li><b>Validate</b> the request, and check in Postgres that the restaurant exists (and that any rated dishes belong to it).</li>
+      <li><b>Write MongoDB first</b> — an upsert on <code>{userId, restaurantId}</code> (the unique index makes it one review per diner per place).</li>
+      <li><b>Recompute</b> that restaurant’s aggregate with pipeline 1 (and each rated dish with pipeline 3).</li>
+      <li><b>Write PostgreSQL second</b> — <code>UPDATE restaurants SET avg_rating = …, review_count = …</code> (and the same for dishes).</li>
+    </ol>
+  </div>
+  <div class="grid2">
+    <div class="glass tint-haldi"><h4>Why no distributed transaction?</h4><p class="small">Two-phase commit across Postgres and Mongo would be heavy and fragile for a rating. Instead step 4 is
+      <b>idempotent</b>: it recomputes from the source of truth rather than adding to a counter. If it fails, running it again — <code>npm run resync</code> — produces the correct value.
+      The worst case is a rating that is briefly stale, never a wrong one that stays wrong.</p></div>
+    <div class="glass tint-coconut"><h4>Other cross-database rules</h4><p class="small">Deleting a diner (admin) deletes their Postgres rows (cascading saves and orders) and their Mongo
+      preferences, reviews, searches and views, then re-syncs the restaurants they had reviewed. Deleting a restaurant deletes its Mongo reviews and views.
+      Mongo documents only ever reference ids that the API has just checked in Postgres.</p></div>
+  </div>
+</section>
+
+<!-- ============================================================ LIVE DEMO -->
+<section>
+  <h2>14 · Live demo: change it in the terminal, watch the UI</h2>
+  <p class="lead">The lecturer names a change; you type it into a database shell; the open app updates within about a second — no refresh. Here is how to set up and what to type.</p>
+
+  <h3>Before the viva (once)</h3>
+  <div class="glass">
+<pre class="term"><span class="c"># 1. start both databases (Docker Desktop must be running)</span>
+docker compose up -d
+<span class="c"># 2. backend: install, configure, build the schema, load the demo data, run</span>
+cd backend &amp;&amp; npm install &amp;&amp; cp ../.env.example .env
+npm run reset          <span class="c"># = migrate (schema.sql + realtime.sql) + seed (both databases)</span>
+npm run dev            <span class="c"># API on http://localhost:4000</span>
+<span class="c"># 3. frontend, in a second terminal</span>
+cd frontend &amp;&amp; npm install &amp;&amp; npm run dev     <span class="c"># open http://localhost:5173</span></pre>
+  </div>
+  <div class="grid2">
+    <div class="glass"><h4>Screen layout that works best</h4><p class="small">Left half: the browser. Open <b>three tabs</b> — a diner (Ananya, <code>/restaurant/tuppa-and-co</code>), the
+      admin <b>Live database</b> page (<code>/admin/live</code>: every table’s row count + a change feed), and the restaurant partner (<code>/partner/menu</code>).
+      Right half: a terminal with a database shell.</p></div>
+    <div class="glass"><h4>Open a database shell</h4>
+<pre class="term"><span class="c"># PostgreSQL</span>
+docker exec -it oota-postgres psql -U oota -d oota
+<span class="c"># MongoDB</span>
+docker exec -it oota-mongo mongosh oota</pre></div>
+  </div>
+  <figure style="margin-top:2mm"><img class="shot" src="{{SHOTS}}/admin-live.jpg" alt="Live database page"><figcaption>Admin → Live database: row counts per table and collection, missing tables in red, and a live change feed.</figcaption></figure>
+</section>
+
+<section>
+  <h3 style="margin-top:0">Recipes</h3>
+  <div class="glass recipe"><div class="n">1</div><div>
+    <h4>Add a row — a new dish</h4>
+<pre class="sql">INSERT INTO dishes (restaurant_id, category_id, cuisine_id, name, description, price, diet, spice_level, flavour_tags)
+SELECT 1, category_id, 1, 'Ghee Pudi Idli', 'Mini idlis in podi and ghee', 120, 'veg', 2, '{spicy,rich}'
+FROM menu_categories WHERE restaurant_id = 1 AND name = 'Dosas';</pre>
+    <div class="see"><b>You see:</b> “Ghee Pudi Idli · ₹120” appears in Tuppa &amp; Co.’s Dosas section, in the partner’s menu, and the <code>dishes</code> count ticks up on the Live database page. Search Discover for “pudi” — it is found.</div>
+    <div class="why"><b>Why:</b> the row trigger sends NOTIFY → the API pushes an SSE event → the page refetches. The <code>trg_dish_search_vector</code> trigger built its full-text vector on insert, which is why search finds it.</div>
+  </div></div>
+  <div class="glass recipe"><div class="n">2</div><div>
+    <h4>Change a row — a price</h4>
+    <pre class="sql">UPDATE dishes SET price = 99 WHERE name = 'Ghee Roast Dosa';</pre>
+    <div class="see"><b>You see:</b> the price changes to ₹99 on the restaurant page and in Discover.</div>
+    <div class="why"><b>Try a bad value:</b> <code>UPDATE dishes SET price = -5 WHERE dish_id = 1;</code> → <span class="bad">ERROR … violates check constraint</span>. Nothing changes in the UI: the database refused it.</div>
+  </div></div>
+  <div class="glass recipe"><div class="n">3</div><div>
+    <h4>Delete a row</h4>
+    <pre class="sql">DELETE FROM dishes WHERE name = 'Ghee Pudi Idli';</pre>
+    <div class="see"><b>You see:</b> the dish disappears from the menu.</div>
+    <div class="why"><b>Try one that was ordered:</b> <code>DELETE FROM dishes WHERE dish_id = 205;</code> (Mango Panna Cotta, ordered 6 times) → <span class="bad">ERROR … violates foreign key constraint on order_items</span>. Order history is protected (RESTRICT). Mark it sold out instead: <code>UPDATE dishes SET is_available = false WHERE dish_id = 205;</code> — it vanishes for diners but stays in old orders.</div>
+  </div></div>
+  <div class="glass recipe"><div class="n">4</div><div>
+    <h4>Delete a whole restaurant (cascade)</h4>
+<pre class="sql">SELECT COUNT(*) FROM dishes WHERE restaurant_id = 18;          -- 9
+BEGIN;
+DELETE FROM orders WHERE restaurant_id = 18;                    -- orders → restaurants is RESTRICT
+DELETE FROM restaurants WHERE slug = 'smash-yard';              -- cascades: dishes, sections, cuisines, saves, partner login
+COMMIT;
+SELECT COUNT(*) FROM dishes WHERE restaurant_id = 18;          -- 0</pre>
+    <div class="see"><b>You see:</b> Smash Yard vanishes from every dashboard and Discover; Rohan’s Saved loses it; its partner login stops working; counts drop on the Live database page.</div>
+  </div></div>
+  <div class="glass recipe"><div class="n">5</div><div>
+    <h4>Hide a restaurant without deleting it</h4>
+    <pre class="sql">UPDATE restaurants SET status = 'pending' WHERE slug = 'chaat-gully';</pre>
+    <div class="see"><b>You see:</b> Chaat Gully disappears for diners and appears in the admin’s approval queue with an Approve button. Approve it in the admin UI → it is back.</div>
+  </div></div>
+</section>
+
+<section>
+  <div class="glass recipe"><div class="n">6</div><div>
+    <h4>Drop a table</h4>
+    <pre class="sql">DROP TABLE favourite_restaurants;</pre>
+    <div class="see"><b>You see:</b> within a second, Saved shows “The ‘favourite_restaurants’ table is missing from PostgreSQL…”, and the Live database page shows the table <span class="bad">in red, crossed out</span>. Everything else — dashboard, search, menus, orders — keeps working.</div>
+    <div class="why"><b>Why:</b> the <code>evt_notify_drop</code> <i>event trigger</i> fires on DDL; the API maps Postgres error 42P01 (undefined table) to a clear message. Try <code>DROP TABLE dishes CASCADE;</code> for a bigger effect (the two views go too).</div>
+  </div></div>
+  <div class="glass recipe"><div class="n">7</div><div>
+    <h4>Restore everything</h4>
+    <pre class="term">cd backend &amp;&amp; npm run reset</pre>
+    <div class="see"><b>You see:</b> the app comes back by itself within a second or two. <code>reset</code> re-runs <code>schema.sql</code> + <code>realtime.sql</code> and re-seeds both databases.</div>
+  </div></div>
+  <div class="glass recipe"><div class="n">8</div><div>
+    <h4>Add a row in MongoDB — a review</h4>
+<pre class="sql">db.reviews.insertOne({ restaurantId: 1, userId: 5, userName: 'Priya Hegde', rating: 1,
+  text: 'Added live from mongosh during the viva.', tags: [], dishRatings: [], createdAt: new Date() })</pre>
+    <div class="see"><b>You see:</b> the review appears at the top of Tuppa &amp; Co.’s reviews immediately (change stream). The <i>average</i> does not move yet.</div>
+    <div class="why"><b>Why:</b> the average is Postgres’s cached copy. Run <code>cd backend &amp;&amp; npm run resync</code> (the idempotent review sync) → the rating drops from 4.5 to 4.0 everywhere. This is the cross-database consistency trade-off from section 13, live. (Posting through the app does both steps automatically.)</div>
+  </div></div>
+  <div class="glass recipe"><div class="n">9</div><div>
+    <h4>Change the schema</h4>
+    <pre class="sql">ALTER TABLE restaurants ADD COLUMN instagram VARCHAR(60);</pre>
+    <div class="see"><b>You see:</b> “restaurants · ALTER TABLE” in the Live database change feed (the <code>evt_notify_ddl</code> event trigger). Extra columns don’t break the app; dropping a column the API uses would show a “column missing” error, fixed by <code>npm run reset</code>.</div>
+  </div></div>
+  <div class="glass recipe"><div class="n">10</div><div>
+    <h4>Transaction and trigger, live</h4>
+    <pre class="term">docker exec -i oota-postgres psql -U oota -d oota &lt; docs/transaction-demo.sql</pre>
+    <div class="see"><b>You see:</b> a new order for Rohan at Hosa Biryani Mane (<code>/partner/orders</code> as <code>hosa-biryani-mane@partner.oota.demo</code>), its total computed by the trigger, and a failed order that leaves <i>no trace</i>. Or place one from the app: tap ADD on dishes → Checkout → Place order, then move it to Preparing as the partner and watch the diner’s Orders page follow.</div>
+  </div></div>
+</section>
+
+<!-- ============================================================ ACCOUNTS + VIVA -->
+<section>
+  <h2>15 · Demo accounts</h2>
+  <div class="glass"><table>
+    <tr><th>Who</th><th>Log in at</th><th>Email</th><th>Password</th></tr>
+    <tr><td>Diner — Ananya (veg, South Indian)</td><td><code>/login</code></td><td><code>ananya@oota.demo</code></td><td><code>demo1234</code></td></tr>
+    <tr><td>Diner — Rohan (biryani, kebabs)</td><td><code>/login</code></td><td><code>rohan@oota.demo</code></td><td><code>demo1234</code></td></tr>
+    <tr><td>Diner — Meera (vegan, cafés)</td><td><code>/login</code></td><td><code>meera@oota.demo</code></td><td><code>demo1234</code></td></tr>
+    <tr><td>Restaurant partner (any of the {{N_OWNERS}} restaurants)</td><td><code>/partner/login</code></td><td><code>&lt;slug&gt;@partner.oota.demo</code>, e.g. <code>tuppa-and-co@partner.oota.demo</code></td><td><code>demo1234</code></td></tr>
+    <tr><td>Admin</td><td><code>/admin/login</code></td><td><code>admin@oota.demo</code></td><td><code>demo1234</code></td></tr>
+  </table><p class="small" style="margin-top:2mm">New restaurants register at <code>/partner/signup</code> and stay pending until the admin approves them. Passwords are stored as bcrypt hashes only.</p></div>
+  <div class="grid3">
+    <figure><img class="shot" src="{{SHOTS}}/partner-overview.jpg" alt=""><figcaption>Partner portal</figcaption></figure>
+    <figure><img class="shot" src="{{SHOTS}}/admin-restaurants.jpg" alt=""><figcaption>Admin console</figcaption></figure>
+    <figure><img class="shot" src="{{SHOTS}}/orders.jpg" alt=""><figcaption>Diner orders</figcaption></figure>
+  </div>
+
+  <h2 style="margin-top:6mm">16 · Viva questions</h2>
+  <div class="glass flow">
+    <p><b>Why not put everything in one database?</b> Orders and menus need constraints, joins and transactions — Postgres’s strengths. Reviews, preferences and search history change shape per user and are read per user or per restaurant — Mongo’s. Using each where it fits is the point of the project.</p>
+    <p><b>What happens if the Postgres update fails after the Mongo write?</b> The rating is briefly stale. The sync recomputes from Mongo, so re-running it (<code>npm run resync</code>) fixes it exactly; nothing is ever double-counted.</p>
+    <p><b>Why three account tables, not a role column?</b> The three are disjoint and carry different data: a partner belongs to exactly one restaurant (a UNIQUE FK), an admin owns nothing, a diner has orders and reviews. Separate tables let the schema say that, and separate logins and cookies keep the roles apart.</p>
+    <p><b>Why CASCADE in some places and RESTRICT in others?</b> Things that only make sense with their parent (a menu section, a save, a partner login) cascade. History that must survive (order items → dishes, orders → restaurants) restricts.</p>
+    <p><b>How is SQL injection prevented?</b> Every value goes in a <code>$1</code>, <code>$2</code>… placeholder; dynamic WHERE clauses are built from fixed SQL fragments plus placeholders, never by pasting input.</p>
+    <p><b>What does the GIN index do?</b> It indexes the <i>contents</i> of a value — the lexemes in a tsvector, the elements of an array — so “dishes containing ‘ghee’” or “tags contain spicy and crispy” don’t scan every row.</p>
+    <p><b>Why a partial index on status?</b> Almost every restaurant is approved; the admin only queries the few that are not. A partial index stores just those rows — tiny and fast.</p>
+    <p><b>Why is <code>unit_price</code> stored if the dish has a price?</b> Prices change; an old order must keep the price it was charged. It is a fact about the order, not a duplicate.</p>
+    <p><b>How does the UI update without refreshing?</b> Postgres triggers call <code>pg_notify</code>, Mongo emits change-stream events; the API LISTENs/watches and pushes Server-Sent Events; the React data hooks refetch when they arrive.</p>
+    <p><b>How are recommendations personal?</b> Diet and allergens are filtered in SQL first. Each remaining restaurant gets a weighted score from cuisine affinity, recent searches (halving every 7 days), the diner’s own ratings, taste fit and a Bayesian-smoothed rating, and the top two contributions become the plain-English reasons on the card.</p>
+  </div>
+</section>
+
+<!-- ============================================================ APPENDIX -->
+<section>
+  <h2>Appendix A · <code>db/postgres/schema.sql</code></h2>
+  <div class="glass flow"><pre class="sql" style="background:transparent;padding:0">{{SCHEMA_SQL}}</pre></div>
+</section>
+<section>
+  <h2>Appendix B · <code>db/postgres/realtime.sql</code></h2>
+  <div class="glass flow"><pre class="sql" style="background:transparent;padding:0">{{REALTIME_SQL}}</pre></div>
+</section>
+</body>
+</html>

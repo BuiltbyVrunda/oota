@@ -1,0 +1,44 @@
+DROP TABLE IF EXISTS bench_orders;
+NOTICE:  table "bench_orders" does not exist, skipping
+DROP TABLE
+CREATE TABLE bench_orders AS
+SELECT g AS order_id, (random() * 5000)::int + 1 AS user_id, (random() * 24)::int + 1 AS restaurant_id,
+       round((random() * 2000 + 100)::numeric, 2) AS total_amount, now() - (random() * 365 || ' days')::interval AS placed_at
+FROM generate_series(1, 300000) g;
+SELECT 300000
+ANALYZE bench_orders;
+ANALYZE
+EXPLAIN (ANALYZE, COSTS OFF, TIMING ON) SELECT * FROM bench_orders WHERE user_id = 42 ORDER BY placed_at DESC LIMIT 10;
+                                           QUERY PLAN                                           
+------------------------------------------------------------------------------------------------
+ Limit (actual time=4.003..4.794 rows=10 loops=1)
+   ->  Gather Merge (actual time=4.003..4.792 rows=10 loops=1)
+         Workers Planned: 1
+         Workers Launched: 1
+         ->  Sort (actual time=3.277..3.277 rows=8 loops=2)
+               Sort Key: placed_at DESC
+               Sort Method: top-N heapsort  Memory: 26kB
+               Worker 0:  Sort Method: top-N heapsort  Memory: 26kB
+               ->  Parallel Seq Scan on bench_orders (actual time=0.127..3.224 rows=31 loops=2)
+                     Filter: (user_id = 42)
+                     Rows Removed by Filter: 149969
+ Planning Time: 0.091 ms
+ Execution Time: 4.809 ms
+(13 rows)
+
+CREATE INDEX idx_bench_user_time ON bench_orders (user_id, placed_at DESC);
+CREATE INDEX
+ANALYZE bench_orders;
+ANALYZE
+EXPLAIN (ANALYZE, COSTS OFF, TIMING ON) SELECT * FROM bench_orders WHERE user_id = 42 ORDER BY placed_at DESC LIMIT 10;
+                                              QUERY PLAN                                               
+-------------------------------------------------------------------------------------------------------
+ Limit (actual time=0.017..0.022 rows=10 loops=1)
+   ->  Index Scan using idx_bench_user_time on bench_orders (actual time=0.017..0.020 rows=10 loops=1)
+         Index Cond: (user_id = 42)
+ Planning Time: 0.080 ms
+ Execution Time: 0.029 ms
+(5 rows)
+
+DROP TABLE bench_orders;
+DROP TABLE

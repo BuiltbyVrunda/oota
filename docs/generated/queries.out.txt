@@ -1,0 +1,176 @@
+SELECT r.name, r.area, string_agg(DISTINCT c.name, ', ') AS cuisines, COUNT(DISTINCT d.dish_id) AS dishes
+FROM restaurants r
+JOIN restaurant_cuisines rc ON rc.restaurant_id = r.restaurant_id
+JOIN cuisines c ON c.cuisine_id = rc.cuisine_id
+LEFT JOIN dishes d ON d.restaurant_id = r.restaurant_id
+GROUP BY r.restaurant_id ORDER BY r.name LIMIT 6;
+       name       |     area     |      cuisines      | dishes 
+------------------+--------------+--------------------+--------
+ Appe Adda        | Jayanagar    | South Indian       |      9
+ Bale Ele Meals   | Basavanagudi | Karnataka Meals    |      9
+ Bao & Basil      | Whitefield   | Pan-Asian          |      9
+ Bean Atlas       | HSR Layout   | Café, Continental  |      9
+ Chaat Gully      | Basavanagudi | Street Food        |      9
+ Degree Kaapi Co. | Indiranagar  | Café, South Indian |      9
+(6 rows)
+
+SELECT area, COUNT(*) AS restaurants, ROUND(AVG(avg_rating), 2) AS avg_rating
+FROM restaurants WHERE status = 'approved'
+GROUP BY area HAVING COUNT(*) >= 3 ORDER BY avg_rating DESC;
+    area     | restaurants | avg_rating 
+-------------+-------------+------------
+ Koramangala |           5 |       4.30
+ Indiranagar |           5 |       4.20
+ HSR Layout  |           3 |       3.83
+ Whitefield  |           3 |       3.80
+(4 rows)
+
+SELECT restaurant, dish, avg_rating FROM (
+  SELECT r.name AS restaurant, d.name AS dish, d.avg_rating,
+         RANK() OVER (PARTITION BY d.restaurant_id ORDER BY d.avg_rating DESC, d.review_count DESC) AS rnk
+  FROM dishes d JOIN restaurants r ON r.restaurant_id = d.restaurant_id
+) t WHERE rnk = 1 ORDER BY avg_rating DESC, restaurant LIMIT 8;
+   restaurant   |       dish        | avg_rating 
+----------------+-------------------+------------
+ Appe Adda      | Green Chutney Jar |        5.0
+ Appe Adda      | Ragi Paddu        |        5.0
+ Appe Adda      | Sweet Banana Appe |        5.0
+ Bale Ele Meals | Obbattu (Holige)  |        5.0
+ Bale Ele Meals | Akki Rotti        |        5.0
+ Bale Ele Meals | Paal Payasa       |        5.0
+ Bale Ele Meals | Mysore Saaru      |        5.0
+ Bao & Basil    | Pork Belly Bao    |        5.0
+(8 rows)
+
+WITH rev AS (
+  SELECT restaurant_id, SUM(total_amount) AS revenue, COUNT(*) AS orders
+  FROM orders WHERE status <> 'CANCELLED' GROUP BY restaurant_id
+)
+SELECT r.name, rev.orders, rev.revenue,
+       ROUND(100.0 * rev.revenue / SUM(rev.revenue) OVER (), 1) AS pct_of_total
+FROM rev JOIN restaurants r USING (restaurant_id)
+ORDER BY rev.revenue DESC LIMIT 6;
+       name       | orders | revenue | pct_of_total 
+------------------+--------+---------+--------------
+ Ginza Noodle Bar |      3 | 6520.00 |         18.3
+ Mangala Coast    |      4 | 6280.00 |         17.6
+ Bao & Basil      |      2 | 4160.00 |         11.7
+ Sweet Shed       |      2 | 2180.00 |          6.1
+ Saaru & Sons     |      4 | 2170.00 |          6.1
+ Dhaba Number 9   |      3 | 2140.00 |          6.0
+(6 rows)
+
+SELECT r.name AS restaurant, d.name AS dish, d.price
+FROM dishes d JOIN restaurants r ON r.restaurant_id = d.restaurant_id
+WHERE d.price > (SELECT AVG(d2.price) FROM dishes d2 WHERE d2.restaurant_id = d.restaurant_id)
+ORDER BY d.price DESC LIMIT 6;
+    restaurant    |       dish       | price  
+------------------+------------------+--------
+ Forno Verde      | Funghi e Tartufo | 640.00
+ Forno Verde      | Diavola          | 620.00
+ Trattoria Ulsoor | Quattro Formaggi | 620.00
+ Ginza Noodle Bar | Tonkotsu Ramen   | 620.00
+ Ginza Noodle Bar | Tantanmen        | 600.00
+ Trattoria Ulsoor | Lasagne al Forno | 580.00
+(6 rows)
+
+SELECT d.name, r.name AS restaurant, ROUND(ts_rank(d.search_vector, q)::numeric, 3) AS rank
+FROM dishes d JOIN restaurants r ON r.restaurant_id = d.restaurant_id,
+     websearch_to_tsquery('english', 'ghee roast') q
+WHERE d.search_vector @@ q ORDER BY rank DESC;
+        name         |  restaurant   | rank  
+---------------------+---------------+-------
+ Mushroom Ghee Roast | Mangala Coast | 0.999
+ Prawn Ghee Roast    | Mangala Coast | 0.998
+ Ghee Roast Dosa     | Tuppa & Co.   | 0.997
+(3 rows)
+
+SELECT d.name, d.flavour_tags, d.diet FROM dishes d
+WHERE d.flavour_tags @> ARRAY['spicy', 'crispy'] ORDER BY d.name LIMIT 8;
+        name         |     flavour_tags      |  diet  
+---------------------+-----------------------+--------
+ Cheese Chilli Paddu | {crispy,creamy,spicy} | veg
+ Chicken Kebab       | {spicy,crispy}        | nonveg
+ Chilli Potato       | {spicy,crispy}        | vegan
+ Ghee Podi Dosa      | {spicy,crispy,rich}   | veg
+ Gobi 65             | {spicy,crispy}        | vegan
+ Mango Thokku Fries  | {tangy,spicy,crispy}  | vegan
+ Masala Paddu        | {spicy,crispy}        | vegan
+ Masala Vada Pav     | {spicy,crispy}        | vegan
+(8 rows)
+
+SELECT COUNT(*) AS vegan_nut_free_dishes FROM dishes
+WHERE is_available AND diet = ANY (ARRAY['vegan']) AND NOT (allergens && ARRAY['nuts']);
+ vegan_nut_free_dishes 
+-----------------------
+                    58
+(1 row)
+
+SELECT name, area, cuisines, avg_rating, review_count, dish_count
+FROM v_restaurant_summary ORDER BY avg_rating DESC, review_count DESC LIMIT 5;
+       name        |    area     |      cuisines      | avg_rating | review_count | dish_count 
+-------------------+-------------+--------------------+------------+--------------+------------
+ Kebab Kothi       | Frazer Town | {Mughlai}          |        4.7 |            7 |          9
+ Greenhouse 5      | Koramangala | {Café,Continental} |        4.5 |            6 |          9
+ Tuppa & Co.       | Jayanagar   | {"South Indian"}   |        4.5 |            6 |          9
+ Smash Yard        | Koramangala | {American}         |        4.4 |            7 |          9
+ Hosa Biryani Mane | Koramangala | {Biryani}          |        4.3 |            7 |          9
+(5 rows)
+
+SELECT name, restaurant_name, times_ordered FROM v_popular_dishes ORDER BY times_ordered DESC, name LIMIT 6;
+           name            | restaurant_name  | times_ordered 
+---------------------------+------------------+---------------
+ Mango Panna Cotta (Vegan) | Sweet Shed       |             6
+ Basil Fried Rice          | Bao & Basil      |             5
+ Kadle Manoli              | Mangala Coast    |             5
+ Tandoori Roti             | Dhaba Number 9   |             5
+ Ulavacharu                | Saaru & Sons     |             5
+ Banana Bread              | Degree Kaapi Co. |             4
+(6 rows)
+
+SELECT r.name FROM restaurants r
+WHERE NOT EXISTS (SELECT 1 FROM favourite_restaurants f WHERE f.restaurant_id = r.restaurant_id)
+ORDER BY r.name LIMIT 8;
+       name       
+------------------
+ Appe Adda
+ Bale Ele Meals
+ Bao & Basil
+ Bean Atlas
+ Chaat Gully
+ Dhaba Number 9
+ Ginza Noodle Bar
+ Kempu Kitchen
+(8 rows)
+
+SELECT COUNT(*) AS orders_checked,
+       COUNT(*) FILTER (WHERE o.total_amount = s.items_sum) AS totals_matching
+FROM orders o JOIN (SELECT order_id, SUM(quantity * unit_price) AS items_sum FROM order_items GROUP BY order_id) s USING (order_id);
+ orders_checked | totals_matching 
+----------------+-----------------
+             40 |              40
+(1 row)
+
+SELECT 'diners' AS account_type, COUNT(*) FROM users
+UNION ALL SELECT 'restaurant partners', COUNT(*) FROM restaurant_owners
+UNION ALL SELECT 'admins', COUNT(*) FROM admins;
+    account_type     | count 
+---------------------+-------
+ diners              |    23
+ restaurant partners |    24
+ admins              |     1
+(3 rows)
+
+SELECT u.full_name, COUNT(DISTINCT o.restaurant_id) AS restaurants, SUM(o.total_amount) AS spent
+FROM users u JOIN orders o ON o.user_id = u.user_id
+GROUP BY u.user_id HAVING COUNT(DISTINCT o.restaurant_id) > 1
+ORDER BY spent DESC LIMIT 5;
+  full_name  | restaurants |  spent  
+-------------+-------------+---------
+ Sameer Khan |           6 | 4285.00
+ Rohan Mehta |           3 | 4220.00
+ Zoya Baig   |           2 | 3720.00
+ Tanvi Joshi |           3 | 3510.00
+ Karthik Rao |           2 | 3320.00
+(5 rows)
+
