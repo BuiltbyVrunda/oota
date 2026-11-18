@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { useEffect, useRef } from 'react'
 import { cn } from '../../utils/cn'
+import { useIndicator } from '../../hooks/useIndicator'
 import { sectionId as slug } from '../../utils/menu'
 
 
@@ -9,6 +10,7 @@ export function MenuNav({ categories, active, vegOnly, onVegOnly, showVegToggle 
   categories: string[]; active: string | null; vegOnly: boolean; onVegOnly: (v: boolean) => void; showVegToggle: boolean
 }) {
   const scroller = useRef<HTMLDivElement>(null)
+  const pill = useIndicator(scroller, 'a[aria-current="true"]', `${active}|${categories.join('|')}`)
   useEffect(() => {
     // scroll only the pill row sideways — scrollIntoView would also nudge the page and fight the user's scroll
     const box = scroller.current
@@ -19,14 +21,15 @@ export function MenuNav({ categories, active, vegOnly, onVegOnly, showVegToggle 
     <nav aria-label="Menu categories" className="sticky top-[84px] z-20">
       <div className="liquid-lens flex items-center gap-2 rounded-full p-1.5">
         <div ref={scroller} className="no-scrollbar relative z-[2] flex min-w-0 flex-1 gap-1 overflow-x-auto">
+          {pill && <motion.span aria-hidden className="absolute left-0 top-0 rounded-full bg-ink" initial={false}
+            animate={{ x: pill.x, y: pill.y, width: pill.w, height: pill.h }} transition={{ type: 'spring', stiffness: 420, damping: 34 }} />}
           {categories.map((c) => {
             const id = slug(c)
             const on = active === id
             return (
               <a key={c} href={`#${id}`} data-cat={id} aria-current={on ? 'true' : undefined}
                 onClick={(e) => { e.preventDefault(); document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' }); history.replaceState(null, '', `#${id}`) }}
-                className={cn('relative flex h-10 shrink-0 items-center rounded-full px-4 text-[14px] font-medium transition-colors', on ? 'text-on-ink' : 'text-ink-2 hover:text-ink')}>
-                {on && <motion.span layoutId="menu-blob" className="absolute inset-0 -z-10 rounded-full bg-ink" transition={{ type: 'spring', stiffness: 420, damping: 34 }} />}
+                className={cn('relative z-[1] flex h-10 shrink-0 items-center rounded-full px-4 text-[14px] font-medium transition-colors', on ? 'text-on-ink' : 'text-ink-2 hover:text-ink')}>
                 {c}
               </a>
             )

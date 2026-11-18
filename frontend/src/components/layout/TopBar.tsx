@@ -1,10 +1,11 @@
 import { motion } from 'framer-motion'
 import { LogOut, Search, SlidersHorizontal } from 'lucide-react'
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
 import { useAuth } from '../../context/AuthContext'
 import { cn } from '../../utils/cn'
 import { firstName } from '../../utils/format'
+import { useIndicator } from '../../hooks/useIndicator'
 import { Wordmark } from '../common/Wordmark'
 import { Popover } from '../ui/Popover'
 import { NAV, isActive } from './nav'
@@ -14,6 +15,8 @@ export function TopBar() {
   const { user, logout } = useAuth()
   const { pathname } = useLocation()
   const navigate = useNavigate()
+  const navRef = useRef<HTMLElement>(null)
+  const pill = useIndicator(navRef, 'a[aria-current="page"]', pathname)
 
   // "/" jumps to search from anywhere
   useEffect(() => {
@@ -32,14 +35,14 @@ export function TopBar() {
       <div className="liquid-lens mx-auto flex h-16 max-w-[1240px] items-center gap-3 rounded-full pl-3 pr-2 sm:pl-5">
         <Link to="/" className="relative z-[2] rounded-full" aria-label="Oota home"><Wordmark /></Link>
 
-        <nav aria-label="Main" className="relative z-[2] mx-auto hidden items-center gap-1 md:flex">
+        <nav ref={navRef} aria-label="Main" className="relative z-[2] mx-auto hidden items-center gap-1 md:flex">
+          {pill && <motion.span aria-hidden className="absolute left-0 top-0 rounded-full bg-ink shadow-e2" initial={false}
+            animate={{ x: pill.x, y: pill.y, width: pill.w, height: pill.h }} transition={{ type: 'spring', stiffness: 420, damping: 34 }} />}
           {NAV.map(({ to, label, icon: Icon }) => {
             const active = isActive(pathname, to)
             return (
               <NavLink key={to} to={to} end={to === '/'}
-                className={cn('relative flex h-11 items-center gap-2 rounded-full px-4 text-[15px] font-medium transition-colors', active ? 'text-on-ink' : 'text-ink-2 hover:text-ink')}>
-                {active && <motion.span layoutId="nav-blob" className="absolute inset-0 -z-10 rounded-full bg-ink shadow-e2"
-                  transition={{ type: 'spring', stiffness: 380, damping: 30 }} />}
+                className={cn('relative z-[1] flex h-11 items-center gap-2 rounded-full px-4 text-[15px] font-medium transition-colors', active ? 'text-on-ink' : 'text-ink-2 hover:text-ink')}>
                 <Icon className="size-4" aria-hidden />
                 {label}
               </NavLink>
