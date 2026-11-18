@@ -1,0 +1,212 @@
+@import "tailwindcss";
+@import "./tokens.css";
+@import "./themes.css";
+
+@theme {
+  --color-ground: var(--ground);
+  --color-ground-2: var(--ground-2);
+  --color-graphite: var(--graphite);
+  --color-solid-plate: var(--solid-plate);
+  --color-plate: var(--plate);
+  --color-plate-strong: var(--plate-strong);
+  --color-brushed: var(--brushed);
+  --color-seam: var(--seam);
+  --color-seam-strong: var(--seam-strong);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-pewter: var(--pewter);
+  --color-steel-dark: var(--steel-dark);
+  --color-haldi: var(--haldi);
+  --color-haldi-ink: var(--haldi-ink);
+  --color-haldi-wash: var(--haldi-wash);
+  --color-on-haldi: var(--on-haldi);
+  --color-on-ink: var(--on-ink);
+  --color-on-photo: var(--on-photo);
+  --color-chilli: var(--chilli);
+  --color-leaf: var(--leaf);
+  --color-kokum: var(--kokum);
+  --color-coconut: var(--coconut);
+  --color-veg: var(--veg);
+  --color-veg-wash: var(--veg-wash);
+  --color-nonveg: var(--nonveg);
+  --color-egg: var(--egg);
+  --color-danger: var(--danger);
+  --color-danger-wash: var(--danger-wash);
+
+  --font-display: "Bricolage Grotesque Variable", system-ui, sans-serif;
+  --font-sans: "Geist Variable", system-ui, sans-serif;
+  --font-kannada: "Noto Sans Kannada", system-ui, sans-serif;
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-card: 18px;
+  --radius-tier: 28px;
+
+  --shadow-e1: var(--e1);
+  --shadow-e2: var(--e2);
+  --shadow-e3: var(--e3);
+  --shadow-engrave: var(--engrave);
+  --shadow-steel: var(--steel-engrave);
+
+  --ease-standard: var(--ease-standard);
+  --ease-liquid: var(--ease-liquid);
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    scrollbar-color: rgb(29 28 26 / 0.22) transparent;
+    scroll-padding-top: 96px;
+    background: var(--ground);
+  }
+  body {
+    /* transparent on purpose: the ambient field sits at z-index -10 and must show through */
+    background: transparent;
+    color: var(--ink);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.5;
+    min-height: 100dvh;
+    overflow-x: hidden;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+    line-height: 1.1;
+  }
+  p { text-wrap: pretty; }
+  ::selection { background: var(--haldi); color: var(--on-haldi); }
+  input, textarea { caret-color: var(--haldi); }
+  a { text-underline-offset: 3px; text-decoration-thickness: 1px; }
+  ::placeholder { color: var(--ink-3); opacity: 1; }
+  /* haldi alone is ~2:1 on white, so focus is a graphite ring with a haldi halo */
+  :focus-visible { outline: 2px solid var(--graphite); outline-offset: 2px; box-shadow: 0 0 0 5px var(--haldi); border-radius: 10px; }
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-thumb { background: rgb(29 28 26 / 0.18); border-radius: 999px; border: 2px solid var(--ground); }
+  ::-webkit-scrollbar-track { background: transparent; }
+}
+
+@layer components {
+  /* ---------- Liquid glass ----------
+     Performance rule: backdrop-filter is expensive (re-blurred every frame while anything behind it moves),
+     so it is used ONLY on floating chrome (.liquid-lens: top bar, tab bar, sticky menu nav, action bars) and
+     transient overlays (.liquid-strong: modal, popover, toast, sheet, dropdown). Big panels sit over the smooth
+     ambient field, where a blur would look identical, so they are translucent tinted fills with a specular rim.
+     .liquid       : big panels (tiers, sections)
+     .liquid-flat  : cards inside panels
+     .liquid-chip  : small controls/captions sitting on photos (brighter, still no blur)
+     .liquid-lens  : floating chrome (blurred)
+     .lit          : pointer-follow highlight (buttons only) */
+  .liquid, .liquid-flat, .liquid-lens, .liquid-chip {
+    position: relative;
+    isolation: isolate;
+    background: var(--glass-tint), var(--plate);
+    box-shadow: var(--glass-inner), var(--e2);
+  }
+  .liquid-flat { box-shadow: var(--glass-inner), var(--e1); }
+  .liquid-chip { background: var(--frost-grain), var(--glass-tint), rgb(255 255 255 / 0.78); box-shadow: var(--glass-inner), var(--e2); }
+  /* Frosted: heavy blur + milky fill + grain. Floating chrome only (top bar, tab bar, menu nav, action bars). */
+  .liquid-lens {
+    background: var(--frost-grain), var(--glass-tint), rgb(255 255 255 / 0.5);
+    -webkit-backdrop-filter: var(--frost-blur);
+    backdrop-filter: var(--frost-blur);
+  }
+  /* Frosted mat that photos sit on: frost shows around the photo's edges. No backdrop blur (perf) —
+     over the smooth ambient light a milky grained fill reads the same. */
+  .frost-mat {
+    position: relative;
+    isolation: isolate;
+    padding: 6px;
+    border-radius: var(--radius-card);
+    background: var(--frost-grain), var(--glass-tint), rgb(255 255 255 / 0.55);
+    box-shadow: var(--glass-inner), var(--e2);
+  }
+  .frost-mat::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: var(--glass-rim);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+  .liquid::before, .liquid-flat::before, .liquid-lens::before, .liquid-chip::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: var(--glass-rim);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    z-index: 1;
+  }
+  .liquid-strong {
+    background: var(--glass-tint), rgb(255 255 255 / 0.86);
+    box-shadow: var(--glass-inner), var(--e3);
+    -webkit-backdrop-filter: var(--glass-blur);
+    backdrop-filter: var(--glass-blur);
+  }
+  .lit::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(160px circle at var(--mx, 50%) var(--my, -40%), rgb(255 255 255 / 0.55), transparent 60%);
+    opacity: var(--lit, 0);
+    transition: opacity 200ms var(--ease-standard);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .lit:hover { --lit: 1; }
+
+  /* Engraved steel nameplate */
+  .steel-plate {
+    background: var(--steel-fill);
+    color: var(--steel-dark);
+    box-shadow: var(--steel-engrave);
+  }
+
+  /* Haldi "live" liquid button — saturated, glossy */
+  .haldi-gloss {
+    background:
+      linear-gradient(180deg, rgb(255 255 255 / 0.45) 0%, rgb(255 255 255 / 0) 48%),
+      linear-gradient(180deg, #ffc23d 0%, var(--haldi) 60%, #f09a0c 100%);
+    color: var(--on-haldi);
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.6), inset 0 -2px 4px rgb(160 90 0 / 0.35), 0 10px 26px -10px rgb(255 176 32 / 0.65);
+  }
+}
+
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .liquid-lens, .liquid-strong { background: var(--solid-plate); }
+}
+
+@layer utilities {
+  .tabular { font-variant-numeric: tabular-nums; }
+  .measure { max-width: 66ch; }
+  .no-scrollbar { scrollbar-width: none; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .wordmark-kn { font-family: var(--font-kannada); font-weight: 600; letter-spacing: 0; }
+  .text-shadow-photo { color: var(--on-photo); text-shadow: 0 1px 14px rgb(0 0 0 / 0.55); }
+}
+
+@keyframes shimmer { from { background-position: -200% 0; } to { background-position: 200% 0; } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

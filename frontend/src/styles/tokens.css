@@ -1,0 +1,90 @@
+/* Oota — "Liquid Tiffin", light.
+   User overrides (2026-11-18): liquid-glass surfaces, popping colours, white background, tinted cards.
+   Haldi still means "live". This file is the only place raw colour values live. */
+:root {
+  color-scheme: light;
+
+  /* ground */
+  /* --ground lives in themes.css (background options) */
+  --ground-2: #f3f1ec;              /* image placeholders */
+  --graphite: #1d1c1a;              /* photo scrims, dark pills */
+  --solid-plate: #ffffff;
+
+  /* spice field — vivid; ambient light, tints, highlights */
+  --haldi: #ffb020;
+  --chilli: #ff5a3c;
+  --leaf: #22c06b;
+  --kokum: #e0459a;
+  --coconut: #2aa6f0;
+
+  /* liquid glass (white, tinted by --tint which each surface can set) */
+  --tint: var(--haldi);
+  --plate: rgb(255 255 255 / 0.52);
+  --plate-strong: rgb(255 255 255 / 0.78);
+  --brushed: rgb(255 255 255 / 0.62);
+  --seam-strong: rgb(29 28 26 / 0.2);
+  --glass-tint:
+    linear-gradient(135deg, color-mix(in oklab, var(--tint) var(--tint-mix), transparent) 0%, color-mix(in oklab, var(--tint) calc(var(--tint-mix) * 0.35), transparent) 55%, color-mix(in oklab, var(--tint) calc(var(--tint-mix) * 0.7), transparent) 100%);
+  --glass-rim: linear-gradient(135deg, rgb(255 255 255 / 1) 0%, rgb(255 255 255 / 0.25) 35%, rgb(29 28 26 / 0.06) 65%, rgb(255 255 255 / 0.85) 100%);
+  --glass-blur: blur(16px) saturate(170%);
+  --frost-blur: blur(26px) saturate(165%) brightness(1.04);
+  /* fine grain: what makes clear glass read as frosted */
+  --frost-grain: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='f'><feTurbulence type='fractalNoise' baseFrequency='1.1' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.55 0'/></filter><rect width='100%' height='100%' filter='url(%23f)'/></svg>");
+  --glass-inner: inset 0 1px 0 rgb(255 255 255 / 0.95), inset 0 -1px 1px rgb(29 28 26 / 0.04), inset 0 0 28px rgb(255 255 255 / 0.45);
+
+  /* text (measured on white) */
+  --ink: #1d1c1a;                   /* 17.0:1 */
+  /* --ink-2, --ink-3, --seam are remapped per background in themes.css */
+  --pewter: #8a867d;                /* icons / non-text */
+  --on-ink: #ffffff;                /* text on dark pills */
+  --on-photo: #ffffff;              /* text over photo scrims */
+  --steel-dark: #2b2925;
+
+  --haldi-ink: #8a5a00;             /* accent text 6.1:1 */
+  --haldi-wash: rgb(255 176 32 / 0.2);
+  --on-haldi: #2a1a00;
+
+  /* diet + status (all >= 4.5:1 on white; diet always paired with a shape) */
+  --veg: #17803d;
+  --nonveg: #b8381c;
+  --egg: #9a5b00;
+  --danger: #c0281b;
+  --danger-wash: rgb(192 40 27 / 0.08);
+  --veg-wash: rgb(23 128 61 / 0.1);
+
+  /* depth — soft, ink-tinted */
+  --e1: 0 1px 2px rgb(29 28 26 / 0.06);
+  --e2: 0 10px 30px -12px rgb(29 28 26 / 0.22);
+  --e3: 0 30px 60px -18px rgb(29 28 26 / 0.3);
+  --engrave: inset 0 1px 0 rgb(255 255 255 / 0.9), inset 0 -1px 0 rgb(29 28 26 / 0.08);
+  --steel-engrave: inset 0 1px 0 rgb(255 255 255 / 1), inset 0 -1px 0 rgb(29 28 26 / 0.18), 0 1px 3px rgb(29 28 26 / 0.18);
+  --steel-fill: linear-gradient(180deg, #fbfaf7 0%, #e3e0d9 52%, #cfcbc3 100%);
+  --shimmer-a: rgb(29 28 26 / 0.05);
+  --shimmer-b: rgb(29 28 26 / 0.11);
+
+  /* splash: white ground, enamel-painted tiffin */
+  --splash-bg: #ffffff;
+  --enamel-1: linear-gradient(90deg, #0a5e30 0%, #1aa65b 12%, #8ef2b8 26%, #22c06b 40%, #1fb463 70%, #6fe3a1 80%, #0b5a2e 100%);
+  --enamel-2: linear-gradient(90deg, #9c5a00 0%, #f29a00 12%, #ffe7a6 26%, #ffb020 40%, #ffaa14 70%, #ffd57a 80%, #985700 100%);
+  --enamel-3: linear-gradient(90deg, #9a2410 0%, #f04a2b 12%, #ffc0b2 26%, #ff5a3c 40%, #fa5234 70%, #ff9c86 80%, #94200d 100%);
+  --enamel-lid: linear-gradient(90deg, #7a1650 0%, #cf3a8b 12%, #ffb6dc 26%, #e0459a 40%, #dc4196 70%, #f79ccb 80%, #74134b 100%);
+  --enamel-engrave: #4a2a00;
+  --handle-1: #77736c;
+  --handle-2: #f5f3ee;
+  --handle-3: #b8b4ac;
+  --handle-4: #6c6963;
+  --steel-band: linear-gradient(90deg, #8d8a84 0%, #e9e7e2 18%, #ffffff 30%, #c9c5bd 55%, #f0eee9 78%, #8d8a84 100%);
+
+  /* motion */
+  --ease-standard: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --dur-quick: 140ms;
+  --dur-standard: 220ms;
+}
+
+/* per-surface tints */
+.tint-haldi { --tint: var(--haldi); }
+.tint-chilli { --tint: var(--chilli); }
+.tint-leaf { --tint: var(--leaf); }
+.tint-kokum { --tint: var(--kokum); }
+.tint-coconut { --tint: var(--coconut); }
+.tint-none { --tint: transparent; }
