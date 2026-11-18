@@ -15,9 +15,11 @@ const signupSchema = z.object({
 const loginSchema = z.object({ email: z.string().trim().toLowerCase().min(3), password: z.string().min(1) })
 
 export const authRouter = Router()
-authRouter.use(rateLimit({ windowMs: 15 * 60_000, limit: 100, standardHeaders: 'draft-8', legacyHeaders: false }))
+// brute-force protection on credential endpoints only (not /me, which the app calls on every live update)
+const limiter = rateLimit({ windowMs: 10 * 60_000, limit: 30, standardHeaders: 'draft-8', legacyHeaders: false,
+  message: { error: { code: 'RATE_LIMITED', message: 'Too many attempts. Wait a few minutes and try again.' } } })
 
-authRouter.post('/signup', body(signupSchema), async (req, res) => {
+authRouter.post('/signup', limiter, body(signupSchema), async (req, res) => {
   const { fullName, email, password } = req.body as z.infer<typeof signupSchema>
   const exists = await q('SELECT 1 FROM users WHERE email = $1', [email])
   if (exists.length) throw new HttpError(409, 'EMAIL_TAKEN', 'An account with this email already exists. Log in instead.', { email: 'Already registered.' })
@@ -29,7 +31,7 @@ authRouter.post('/signup', body(signupSchema), async (req, res) => {
   res.status(201).json({ user: u })
 })
 
-authRouter.post('/login', body(loginSchema), async (req, res) => {
+authRouter.post('/login', limiter, body(loginSchema), async (req, res) => {
   const { email, password } = req.body as z.infer<typeof loginSchema>
   const [u] = await q<{ id: number; fullName: string; email: string; hash: string }>(
     'SELECT user_id AS id, full_name AS "fullName", email, password_hash AS hash FROM users WHERE email = $1', [email])

@@ -49,6 +49,9 @@ export function AddDishPage() {
   const preset = bySlug(params.get('restaurant') ?? '')
 
   const [restaurantId, setRestaurantId] = useState<number | ''>(preset?.id ?? '')
+  // a deep link (?restaurant=slug) can arrive before the catalogue has loaded — preselect once it does
+  const [presetApplied, setPresetApplied] = useState(Boolean(preset))
+  if (!presetApplied && preset) { setPresetApplied(true); if (restaurantId === '') setRestaurantId(preset.id) }
   const [category, setCategory] = useState('')
   const [newCategory, setNewCategory] = useState(false)
   const [name, setName] = useState('')
