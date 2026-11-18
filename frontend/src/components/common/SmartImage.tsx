@@ -8,7 +8,8 @@ interface Props { src: string; alt: string; width: number; height: number; class
 export function SmartImage({ src, alt, width, height, className, imgClassName, eager }: Props) {
   const [state, setState] = useState<'loading' | 'ok' | 'error'>('loading')
   return (
-    <div className={cn('relative overflow-hidden bg-ground-2', className)}>
+    // only default to `relative` when the caller hasn't positioned it (e.g. `absolute inset-0` to fill a card)
+    <div className={cn(!/\b(absolute|fixed|sticky)\b/.test(className ?? '') && 'relative', 'overflow-hidden bg-ground-2', className)}>
       {state === 'loading' && (
         <div aria-hidden className="absolute inset-0 bg-[length:200%_100%] [animation:shimmer_1.6s_linear_infinite]"
           style={{ backgroundImage: 'linear-gradient(90deg, var(--shimmer-a) 0%, var(--shimmer-b) 50%, var(--shimmer-a) 100%)' }} />

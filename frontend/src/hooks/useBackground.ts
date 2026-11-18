@@ -68,3 +68,43 @@ export function setBackgroundStrength(k: number) {
 export function useBackgroundStrength(): number {
   return useSyncExternalStore((cb) => { kListeners.add(cb); return () => kListeners.delete(cb) }, () => strength, () => 1)
 }
+
+/* ---- card colour (tint of every glass card) ---- */
+export const CARD_COLOURS = [
+  { id: 'spice', name: 'Spice mix', note: 'Each section its own spice' },
+  { id: 'clear', name: 'Clear frost', note: 'Untinted milky glass' },
+  { id: 'coconut', name: 'Coconut', note: 'Cool sky blue' },
+  { id: 'haldi', name: 'Haldi', note: 'Warm turmeric gold' },
+  { id: 'kokum', name: 'Kokum', note: 'Rosy magenta' },
+  { id: 'leaf', name: 'Curry leaf', note: 'Fresh green' },
+  { id: 'sunset', name: 'Sunset', note: 'Soft apricot' },
+] as const
+export type CardColourId = (typeof CARD_COLOURS)[number]['id']
+const C_KEY = 'oota:v1:card'
+const cListeners = new Set<() => void>()
+const validCard = (v: string | null): v is CardColourId => CARD_COLOURS.some((c) => c.id === v)
+
+function readCard(): CardColourId {
+  const fromUrl = new URLSearchParams(window.location.search).get('card')
+  if (validCard(fromUrl)) return fromUrl
+  try {
+    const v = window.localStorage.getItem(C_KEY)
+    return validCard(v) ? v : 'spice'
+  } catch {
+    return 'spice'
+  }
+}
+
+let card: CardColourId = typeof window === 'undefined' ? 'spice' : readCard()
+if (typeof document !== 'undefined') document.documentElement.dataset.card = card
+
+export function setCardColour(id: CardColourId) {
+  card = id
+  document.documentElement.dataset.card = id
+  try { window.localStorage.setItem(C_KEY, id) } catch { /* per-browser convenience only */ }
+  cListeners.forEach((l) => l())
+}
+
+export function useCardColour(): CardColourId {
+  return useSyncExternalStore((cb) => { cListeners.add(cb); return () => cListeners.delete(cb) }, () => card, () => 'spice')
+}

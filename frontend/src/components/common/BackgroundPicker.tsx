@@ -1,6 +1,6 @@
 import { Check } from 'lucide-react'
 import { useId } from 'react'
-import { BACKGROUNDS, setBackground, setBackgroundStrength, useBackground, useBackgroundStrength } from '../../hooks/useBackground'
+import { BACKGROUNDS, CARD_COLOURS, setBackground, setBackgroundStrength, setCardColour, useBackground, useBackgroundStrength, useCardColour } from '../../hooks/useBackground'
 import { cn } from '../../utils/cn'
 
 /** Live preview swatches: each one renders its own theme's ground + spice light in miniature. */
@@ -62,6 +62,36 @@ export function BackgroundStrength() {
         <button type="button" onClick={() => setBackgroundStrength(1)} disabled={pct === 100}
           className="h-8 rounded-full px-3 font-semibold text-haldi-ink hover:bg-haldi-wash disabled:opacity-40 disabled:hover:bg-transparent">Reset to 100%</button>
         <span>2× vivid</span>
+      </div>
+    </div>
+  )
+}
+
+/** Card colour: re-tints every glass card. Each swatch is a mini glass card rendered with that option. */
+export function CardColourPicker() {
+  const active = useCardColour()
+  return (
+    <div>
+      <p className="text-[15px] font-semibold">Card colour</p>
+      <div role="radiogroup" aria-label="Card colour" className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-7">
+        {CARD_COLOURS.map((c) => {
+          const on = active === c.id
+          return (
+            <button key={c.id} type="button" role="radio" aria-checked={on} onClick={() => setCardColour(c.id)} data-card={c.id}
+              className={cn('flex flex-col gap-2 rounded-card p-2 text-left transition-transform active:scale-[0.97]',
+                on ? 'shadow-[0_0_0_2px_var(--graphite),0_0_0_5px_var(--haldi)]' : 'hover:-translate-y-0.5')}>
+              <span aria-hidden className="relative flex h-16 gap-1 overflow-hidden rounded-[12px]">
+                {c.id === 'spice'
+                  ? (['tint-haldi', 'tint-chilli', 'tint-kokum', 'tint-leaf'] as const).map((t) => <span key={t} className={cn('liquid-flat flex-1 rounded-[8px]', t)} />)
+                  : <span className="liquid-flat tint-haldi flex-1 rounded-[10px]" />}
+              </span>
+              <span className="px-1">
+                <span className="block text-[14px] font-semibold">{c.name}</span>
+                <span className="block text-[12px] text-ink-3">{c.note}</span>
+              </span>
+            </button>
+          )
+        })}
       </div>
     </div>
   )

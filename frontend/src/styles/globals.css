@@ -116,6 +116,13 @@
     -webkit-backdrop-filter: var(--frost-blur);
     backdrop-filter: var(--frost-blur);
   }
+  /* Frosted panel: a big .liquid surface that floats over photos, so it gets the real frost.
+     Use sparingly (one per screen), e.g. the restaurant info panel over its cover photo. */
+  .liquid-frost {
+    background: var(--frost-grain), var(--glass-tint), rgb(255 255 255 / 0.55);
+    -webkit-backdrop-filter: var(--frost-blur);
+    backdrop-filter: var(--frost-blur);
+  }
   /* Frosted mat that photos sit on: frost shows around the photo's edges. No backdrop blur (perf) —
      over the smooth ambient light a milky grained fill reads the same. */
   .frost-mat {

@@ -1,6 +1,6 @@
 import { Check, RotateCcw } from 'lucide-react'
 import { useState, type ReactNode } from 'react'
-import { BackgroundPicker, BackgroundStrength } from '../components/common/BackgroundPicker'
+import { BackgroundPicker, BackgroundStrength, CardColourPicker } from '../components/common/BackgroundPicker'
 import { PageContainer } from '../components/layout/PageContainer'
 import { CuisineStep } from '../components/onboarding/CuisineStep'
 import { DietStep } from '../components/onboarding/DietStep'
@@ -46,9 +46,10 @@ export function PreferencesPage() {
       <h1 className="text-[34px] sm:text-[48px]">Your taste</h1>
       <p className="mt-1 text-[16px] text-ink-2">Everything Oota uses to pick for you. Change anything, any time.</p>
       <div className="mt-8 flex flex-col gap-6">
-        <Panel tint="tint-kokum" title="Appearance" body="Pick the light behind the glass. Saved on this device and applies instantly.">
+        <Panel tint="tint-kokum" title="Appearance" body="The light behind the glass, how strong it is, and the colour of the glass cards. Saved on this device; applies instantly.">
           <BackgroundPicker />
           <div className="mt-6"><BackgroundStrength /></div>
+          <div className="mt-8"><CardColourPicker /></div>
         </Panel>
         <Panel tint="tint-haldi" title="Cuisines" body="These lead your recommendations (30% of every match).">
           <CuisineStep value={draft.cuisineIds} onChange={(cuisineIds) => setDraft({ ...draft, cuisineIds })} min={1} />

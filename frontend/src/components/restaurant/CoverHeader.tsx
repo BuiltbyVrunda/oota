@@ -13,23 +13,23 @@ export function CoverHeader({ r, onRate, hasReview }: { r: Restaurant; onRate: (
   const cuisines = r.cuisineIds.map((c) => cuisineById(c)?.name).join(' · ')
   return (
     <header className="relative">
-      <div className="grid grid-cols-1 gap-3 lg:grid-cols-[minmax(0,1fr)_260px]">
+      <div className="grid grid-cols-1 gap-3 lg:h-[460px] lg:grid-cols-[minmax(0,1fr)_260px]">
         <motion.div initial={{ opacity: 0, scale: 1.02 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, ease: [0.2, 0.7, 0.2, 1] }}
-          className="frost-mat rounded-[30px] p-2">
-          <div className="relative overflow-hidden rounded-[22px]">
-          <SmartImage src={r.coverUrl} alt={`${r.name} — signature dish`} width={1200} height={700} eager className="aspect-[4/3] w-full sm:aspect-[16/8]" />
+          className="frost-mat rounded-[30px] p-2 lg:h-full">
+          <div className="relative overflow-hidden rounded-[22px] lg:h-full">
+          <SmartImage src={r.coverUrl} alt={`${r.name} — signature dish`} width={1200} height={700} eager className="aspect-[4/3] w-full sm:aspect-[16/8] lg:aspect-auto lg:h-full" />
           <span aria-hidden className="absolute inset-0 bg-gradient-to-t from-graphite/70 via-transparent to-transparent" />
           </div>
         </motion.div>
-        <ul className="hidden grid-rows-3 gap-3 lg:grid" aria-label="Gallery">
+        <ul className="hidden h-full grid-rows-3 gap-3 lg:grid" aria-label="Gallery">
           {r.galleryUrls.slice(0, 3).map((g, i) => (
-            <li key={g} className="frost-mat rounded-[20px]"><SmartImage src={g} alt={`${r.name} gallery photo ${i + 1}`} width={800} height={600} eager className="relative z-[2] size-full rounded-[14px]" /></li>
+            <li key={g} className="frost-mat min-h-0 rounded-[20px]"><SmartImage src={g} alt={`${r.name} gallery photo ${i + 1}`} width={800} height={600} eager className="relative z-[2] size-full rounded-[14px]" /></li>
           ))}
         </ul>
       </div>
 
       <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15, type: 'spring', stiffness: 260, damping: 28 }}
-        className="liquid relative -mt-20 mx-3 rounded-tier p-5 sm:mx-6 sm:-mt-28 sm:p-7 lg:mr-[284px]">
+        className="liquid liquid-frost relative -mt-20 mx-3 rounded-tier p-5 sm:mx-6 sm:-mt-28 sm:p-7 lg:mr-[284px]">
         <div className="relative z-[2]">
           <div className="flex flex-wrap items-center gap-2 text-[14px] text-ink-2">
             <span>{cuisines}</span>
