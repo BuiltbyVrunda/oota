@@ -13,6 +13,7 @@ export function SaveButton({ restaurantId, name, className, withLabel }: { resta
   const { isSaved, toggle } = useFavourites()
   const burst = useLikeBurst()
   const ref = useRef<HTMLButtonElement>(null)
+  const iconRef = useRef<HTMLSpanElement>(null) // the heart lands on the icon, not the middle of a labelled button
   const saved = isSaved(restaurantId)
   const [inFlight, setInFlight] = useState(false)
   const [landed, setLanded] = useState(0)
@@ -23,7 +24,7 @@ export function SaveButton({ restaurantId, name, className, withLabel }: { resta
   const like = useCallback((from?: { x: number; y: number }) => {
     const btn = ref.current
     if (!btn) return
-    const b = btn.getBoundingClientRect()
+    const b = (iconRef.current ?? btn).getBoundingClientRect()
     const to = { x: b.left + b.width / 2, y: b.top + b.height / 2 }
     // start from the photo this button belongs to (or straight above the button)
     let start = from
@@ -36,7 +37,7 @@ export function SaveButton({ restaurantId, name, className, withLabel }: { resta
     setInFlight(true)
     // live target: re-measured every frame of the flight
     const target = () => {
-      const el = ref.current
+      const el = iconRef.current ?? ref.current
       if (!el || !el.isConnected) return null
       const r = el.getBoundingClientRect()
       return { x: r.left + r.width / 2, y: r.top + r.height / 2 }
@@ -65,11 +66,13 @@ export function SaveButton({ restaurantId, name, className, withLabel }: { resta
     <button ref={ref} type="button" onClick={onClick} aria-pressed={saved} aria-label={saved ? `Remove ${name} from saved` : `Save ${name}`}
       className={cn('liquid-chip relative inline-flex items-center justify-center gap-2 rounded-full text-ink transition-transform active:scale-90',
         withLabel ? 'h-11 px-4 text-[15px] font-medium' : 'size-11', className)}>
-      <motion.span className="relative z-[2]" key={`${filled}-${landed}`}
+      <span ref={iconRef} className="relative z-[2] grid place-items-center">
+      <motion.span className="grid place-items-center" key={`${filled}-${landed}`}
         initial={{ scale: filled ? 0.4 : 1 }} animate={{ scale: filled ? [0.4, 1.35, 0.92, 1] : 1 }}
         transition={{ duration: 0.42, times: [0, 0.4, 0.7, 1], ease: 'easeOut' }}>
         <Heart className={cn('size-5 transition-colors', filled && 'fill-like-b text-like-b drop-shadow-[0_0_8px_var(--like-a)]')} aria-hidden />
       </motion.span>
+      </span>
       {withLabel && <span className="relative z-[2]">{saved ? 'Saved' : 'Save'}</span>}
     </button>
   )

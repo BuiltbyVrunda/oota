@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { LogOut, Search, SlidersHorizontal } from 'lucide-react'
+import { Database, LogOut, Plus, Search, SlidersHorizontal } from 'lucide-react'
 import { useEffect, useRef } from 'react'
 import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
 import { useAuth } from '../../context/AuthContext'
@@ -8,6 +8,7 @@ import { firstName } from '../../utils/format'
 import { useIndicator } from '../../hooks/useIndicator'
 import { Wordmark } from '../common/Wordmark'
 import { Popover } from '../ui/Popover'
+import { LiveIndicator } from './LiveIndicator'
 import { NAV, isActive } from './nav'
 
 
@@ -51,6 +52,7 @@ export function TopBar() {
         </nav>
 
         <div className="relative z-[2] ml-auto flex items-center gap-2 md:ml-0">
+          <LiveIndicator />
           <Link to="/discover?focus=1" className="hidden h-11 items-center gap-2 rounded-full border border-seam bg-brushed pl-3.5 pr-2 text-[14px] text-ink-3 hover:border-seam-strong hover:text-ink-2 lg:flex">
             <Search className="size-4" aria-hidden />
             <span className="w-40">Search dosa, ramen…</span>
@@ -71,8 +73,14 @@ export function TopBar() {
                   <p className="text-[16px] font-semibold">{user.fullName}</p>
                   <p className="text-[14px] text-ink-3">{user.email}</p>
                   <div className="my-3 h-px bg-seam" />
+                  <Link to="/add-dish" onClick={close} className="flex h-11 items-center gap-3 rounded-md px-2 text-[15px] hover:bg-brushed">
+                    <Plus className="size-4 text-pewter" aria-hidden /> Add a dish
+                  </Link>
                   <Link to="/preferences" onClick={close} className="flex h-11 items-center gap-3 rounded-md px-2 text-[15px] hover:bg-brushed">
-                    <SlidersHorizontal className="size-4 text-pewter" aria-hidden /> Taste preferences
+                    <SlidersHorizontal className="size-4 text-pewter" aria-hidden /> Taste &amp; appearance
+                  </Link>
+                  <Link to="/status" onClick={close} className="flex h-11 items-center gap-3 rounded-md px-2 text-[15px] hover:bg-brushed">
+                    <Database className="size-4 text-pewter" aria-hidden /> Live database
                   </Link>
                   <button type="button" onClick={() => { close(); logout(); navigate('/login') }}
                     className="flex h-11 items-center gap-3 rounded-md px-2 text-left text-[15px] hover:bg-brushed">

@@ -1,4 +1,4 @@
-import { MessageSquareText, Store } from 'lucide-react'
+import { MessageSquareText, Plus, Store } from 'lucide-react'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { Link, useLocation, useParams } from 'react-router-dom'
 import { AmbientField } from '../components/common/AmbientField'
@@ -102,6 +102,9 @@ export function RestaurantPage() {
               <div className="relative z-[2] flex flex-col gap-8">
                 {categories.map((c, i) => <MenuSection key={c} name={c} first={i === 0} dishes={shown.filter((d) => d.category === c)} highlightId={highlightId} />)}
                 {categories.length === 0 && <p className="px-3 text-ink-2">No vegetarian dishes here. Turn off “Veg only” to see the full menu.</p>}
+                <Link to={`/add-dish?restaurant=${r.slug}`} className="mx-3 flex items-center justify-center gap-2 rounded-card border border-dashed border-seam-strong py-4 text-[15px] font-medium text-ink-2 transition-colors hover:border-haldi hover:bg-haldi-wash hover:text-ink">
+                  <Plus className="size-4" aria-hidden /> Know a dish that’s missing? Add it
+                </Link>
               </div>
             </div>
           </div>
