@@ -7,3 +7,4 @@ frontend/test-results/
 *.mp4
 *.MP4
 *.mov
+backend/uploads/

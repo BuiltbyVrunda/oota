@@ -1,11 +1,11 @@
 import { Router } from 'express'
 import { pool } from '../../db/pg.ts'
 import { col, mdb } from '../../db/mongo.ts'
-import { requireUser } from '../../middleware/auth.ts'
+import { requireAdmin, requireUser } from '../../middleware/auth.ts'
 import { recentEvents, sseHandler } from '../../services/realtime.ts'
 import { syncAll } from '../../services/reviewSync.ts'
 
-export const PG_TABLES = ['users', 'cuisines', 'restaurants', 'restaurant_cuisines', 'menu_categories', 'dishes', 'favourite_restaurants', 'orders', 'order_items'] as const
+export const PG_TABLES = ['users', 'restaurant_owners', 'admins', 'cuisines', 'restaurants', 'restaurant_cuisines', 'menu_categories', 'dishes', 'favourite_restaurants', 'orders', 'order_items'] as const
 export const MONGO_COLLECTIONS = ['user_preferences', 'reviews', 'search_history', 'restaurant_views'] as const
 
 export const systemRouter = Router()
@@ -43,7 +43,7 @@ systemRouter.get('/system/status', async (_req, res) => {
 systemRouter.get('/events', sseHandler)
 
 /** Re-run the idempotent review sync (repair path for the cross-database cache). */
-systemRouter.post('/system/resync', requireUser, async (_req, res) => { res.json(await syncAll()) })
+systemRouter.post('/system/resync', requireAdmin, async (_req, res) => { res.json(await syncAll()) })
 
 /** Aggregation pipeline #2: a user's favourite review tags ($unwind → $group → $sort). */
 systemRouter.get('/me/insights', requireUser, async (req, res) => {

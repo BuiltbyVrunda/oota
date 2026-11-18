@@ -16,7 +16,7 @@ const tiny = (url: string) => url.replace(/w=\d+&h=\d+/, 'w=40&h=28').replace(/q
 export function AmbientField({ photo, className }: { photo?: string; className?: string }) {
   return (
     <div aria-hidden className={cn('pointer-events-none fixed inset-0 -z-10 bg-ground', className)}>
-      {photo && <img src={tiny(photo)} alt="" className="absolute inset-0 size-full object-cover opacity-35 saturate-150" />}
+      {photo && <img src={tiny(photo)} alt="" className={cn('absolute inset-0 size-full object-cover opacity-35 saturate-150', !photo.includes('images.unsplash.com') && 'scale-110 blur-3xl')} />}
       <div className="absolute inset-0" style={{ backgroundImage: FIELD }} />
       <div className="absolute inset-0" style={{ background: 'var(--amb-pattern)' }} />
       <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, transparent 0%, color-mix(in srgb, var(--ground) calc(var(--amb-fade) * 100%), transparent) 100%)' }} />

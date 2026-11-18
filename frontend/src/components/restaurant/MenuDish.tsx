@@ -1,4 +1,5 @@
 import { Flame } from 'lucide-react'
+import type { ReactNode } from 'react'
 import { flavourLabel } from '../../data/flavours'
 import type { Dish } from '../../types'
 import { cn } from '../../utils/cn'
@@ -7,7 +8,8 @@ import { SmartImage } from '../common/SmartImage'
 import { DietMark } from '../ui/DietMark'
 import { StarRating } from '../ui/StarRating'
 
-export function MenuDish({ d, highlighted, eager }: { d: Dish; highlighted?: boolean; eager?: boolean }) {
+/** `action` (e.g. the ADD stepper) sits on the photo, the way delivery menus do. */
+export function MenuDish({ d, highlighted, eager, action }: { d: Dish; highlighted?: boolean; eager?: boolean; action?: ReactNode }) {
   return (
     <article id={`dish-${d.id}`} aria-labelledby={`dish-${d.id}-name`}
       className={cn('flex gap-4 rounded-card p-3 transition-[background-color,box-shadow] duration-500 sm:gap-5', highlighted ? 'bg-haldi-wash shadow-[0_0_0_2px_var(--haldi)]' : 'hover:bg-brushed')}>
@@ -31,7 +33,10 @@ export function MenuDish({ d, highlighted, eager }: { d: Dish; highlighted?: boo
           {d.allergens.length > 0 && <span className="px-1 py-0.5 text-[12px] text-ink-3">Contains {d.allergens.join(', ')}</span>}
         </div>
       </div>
-      <SmartImage src={d.imageUrl} alt={d.name} width={320} height={320} eager={eager} className="size-24 shrink-0 rounded-[14px] shadow-e2 sm:size-32" />
+      <div className={cn('relative shrink-0', action && 'mb-4')}>
+        <SmartImage src={d.imageUrl} alt={d.name} width={320} height={320} eager={eager} className="size-24 rounded-[14px] shadow-e2 sm:size-32" />
+        {action}
+      </div>
     </article>
   )
 }

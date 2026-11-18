@@ -7,6 +7,9 @@ export default defineConfig({
   server: {
     port: 5173,
     // API + live event stream go to the Express backend
-    proxy: { '/api': { target: 'http://localhost:4000', changeOrigin: false } },
+    proxy: {
+      '/api': { target: 'http://localhost:4000', changeOrigin: false },
+      '/uploads': { target: 'http://localhost:4000', changeOrigin: false },
+    },
   },
 })

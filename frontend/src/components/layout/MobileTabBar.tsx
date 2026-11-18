@@ -1,12 +1,11 @@
 import { motion } from 'framer-motion'
-import { SlidersHorizontal } from 'lucide-react'
 import { useRef } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
 import { useIndicator } from '../../hooks/useIndicator'
 import { cn } from '../../utils/cn'
 import { NAV, isActive } from './nav'
 
-const TABS = [...NAV, { to: '/preferences', label: 'Taste', icon: SlidersHorizontal }] as const
+const TABS = NAV // For you · Discover · Saved · Orders (taste settings live in the avatar menu)
 
 export function MobileTabBar() {
   const { pathname } = useLocation()

@@ -23,9 +23,10 @@ export const DISH_SELECT = `
 export const getCuisines = () =>
   q<Cuisine>(`SELECT cuisine_id AS id, slug, name, COALESCE(image_url, '') AS "imageUrl" FROM cuisines ORDER BY cuisine_id`)
 
-export const getRestaurants = () => q<Restaurant>(`${RESTAURANT_SELECT} GROUP BY r.restaurant_id ORDER BY r.restaurant_id`)
+/** Diners only ever see approved restaurants (pending partner sign-ups are hidden). */
+export const getRestaurants = () => q<Restaurant>(`${RESTAURANT_SELECT} WHERE r.status = 'approved' GROUP BY r.restaurant_id ORDER BY r.restaurant_id`)
 
-export const getDishes = () => q<Dish>(`${DISH_SELECT} WHERE d.is_available ORDER BY d.restaurant_id, mc.sort_order, d.dish_id`)
+export const getDishes = () => q<Dish>(`${DISH_SELECT} JOIN restaurants rs ON rs.restaurant_id = d.restaurant_id AND rs.status = 'approved' WHERE d.is_available ORDER BY d.restaurant_id, mc.sort_order, d.dish_id`)
 
 export async function getCatalog() {
   const [cuisines, restaurants, dishes] = await Promise.all([getCuisines(), getRestaurants(), getDishes()])

@@ -35,7 +35,7 @@ const setSeq = (table: string, colName: string) => `SELECT setval(pg_get_serial_
 
 console.log('PostgreSQL')
 await tx(async (c) => {
-  await c.query('TRUNCATE order_items, orders, favourite_restaurants, dishes, menu_categories, restaurant_cuisines, restaurants, cuisines, users RESTART IDENTITY CASCADE')
+  await c.query('TRUNCATE order_items, orders, favourite_restaurants, dishes, menu_categories, restaurant_cuisines, restaurant_owners, restaurants, cuisines, admins, users RESTART IDENTITY CASCADE')
 
   for (const u of users) await c.query('INSERT INTO users (user_id, full_name, email, password_hash) VALUES ($1, $2, $3, $4)', [u.id, u.fullName, u.email, hash])
   await c.query(setSeq('users', 'user_id'))
@@ -52,6 +52,13 @@ await tx(async (c) => {
     for (const cid of r.cuisineIds) await c.query('INSERT INTO restaurant_cuisines (restaurant_id, cuisine_id) VALUES ($1, $2)', [r.id, cid])
   }
   await c.query(setSeq('restaurants', 'restaurant_id'))
+
+  // one partner login per restaurant (<slug>@partner.oota.demo) and one admin — all demo1234
+  for (const r of restaurants) {
+    await c.query('INSERT INTO restaurant_owners (restaurant_id, full_name, email, password_hash) VALUES ($1, $2, $3, $4)',
+      [r.id, `${r.name} team`, `${r.slug}@partner.oota.demo`, hash])
+  }
+  await c.query("INSERT INTO admins (full_name, email, password_hash) VALUES ('Oota Admin', 'admin@oota.demo', $1)", [hash])
 
   // menu categories in order of first appearance, then dishes
   const catId = new Map<string, number>()
@@ -92,7 +99,7 @@ await tx(async (c) => {
   }
 })
 
-for (const t of ['users', 'cuisines', 'restaurants', 'restaurant_cuisines', 'menu_categories', 'dishes', 'favourite_restaurants', 'orders', 'order_items']) {
+for (const t of ['users', 'restaurant_owners', 'admins', 'cuisines', 'restaurants', 'restaurant_cuisines', 'menu_categories', 'dishes', 'favourite_restaurants', 'orders', 'order_items']) {
   const { rows } = await pool.query<{ n: number }>(`SELECT COUNT(*)::int AS n FROM ${t}`)
   console.log(`  ${t.padEnd(22)} ${rows[0].n}`)
 }

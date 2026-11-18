@@ -20,6 +20,8 @@ export const ordersRouter = Router()
 ordersRouter.post('/orders', requireUser, body(orderSchema), async (req, res) => {
   const { restaurantId, items } = req.body as z.infer<typeof orderSchema>
   const order = await tx(async (c) => {
+    const { rows: [rest] } = await c.query("SELECT 1 FROM restaurants WHERE restaurant_id = $1 AND status = 'approved'", [restaurantId])
+    if (!rest) throw new HttpError(404, 'NOT_FOUND', 'This restaurant isn’t taking orders.')
     const { rows: [o] } = await c.query<{ id: number }>(
       'INSERT INTO orders (user_id, restaurant_id) VALUES ($1, $2) RETURNING order_id AS id', [req.user!.id, restaurantId])
     for (const it of items) {
@@ -40,7 +42,8 @@ ordersRouter.post('/orders', requireUser, body(orderSchema), async (req, res) =>
 
 ordersRouter.get('/me/orders', requireUser, async (req, res) => {
   const rows = await q(
-    `SELECT o.order_id AS id, o.restaurant_id AS "restaurantId", r.name AS "restaurantName", o.status,
+    `SELECT o.order_id AS id, o.restaurant_id AS "restaurantId", r.name AS "restaurantName", r.slug AS "restaurantSlug",
+            r.cover_url AS "coverUrl", o.status,
             o.total_amount::float AS total, o.placed_at AS "placedAt",
             json_agg(json_build_object('dishId', oi.dish_id, 'name', d.name, 'quantity', oi.quantity, 'unitPrice', oi.unit_price::float)
                      ORDER BY d.name) AS items
@@ -49,8 +52,15 @@ ordersRouter.get('/me/orders', requireUser, async (req, res) => {
        JOIN order_items oi ON oi.order_id = o.order_id
        JOIN dishes d       ON d.dish_id = oi.dish_id
       WHERE o.user_id = $1
-      GROUP BY o.order_id, r.name
+      GROUP BY o.order_id, r.restaurant_id   -- grouping by r's PK makes all r.* columns valid (functional dependency)
       ORDER BY o.placed_at DESC
-      LIMIT 20`, [req.user!.id])
+      LIMIT 30`, [req.user!.id])
   res.json(rows)
+})
+
+/** A diner can cancel only while the kitchen hasn't started (status still PLACED) — enforced in the WHERE clause. */
+ordersRouter.patch('/me/orders/:id/cancel', requireUser, async (req, res) => {
+  const rows = await q("UPDATE orders SET status = 'CANCELLED' WHERE order_id = $1 AND user_id = $2 AND status = 'PLACED' RETURNING order_id", [Number(req.params.id), req.user!.id])
+  if (!rows.length) throw new HttpError(409, 'TOO_LATE', 'This order can’t be cancelled any more — the kitchen has started it.')
+  res.json({ ok: true })
 })

@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { useEffect } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
 import { AmbientField } from '../common/AmbientField'
+import { TiffinBar } from '../order/TiffinBar'
 import { Footer } from './Footer'
 import { MobileTabBar } from './MobileTabBar'
 import { TopBar } from './TopBar'
@@ -19,6 +20,7 @@ export function AppShell() {
         <Outlet />
       </motion.main>
       <Footer />
+      {pathname !== '/orders' && <TiffinBar />}
       <MobileTabBar />
     </div>
   )

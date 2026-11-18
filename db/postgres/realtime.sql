@@ -17,8 +17,8 @@ END $$ LANGUAGE plpgsql;
 DO $$
 DECLARE t TEXT;
 BEGIN
-    FOREACH t IN ARRAY ARRAY['users','cuisines','restaurants','restaurant_cuisines','menu_categories',
-                             'dishes','favourite_restaurants','orders','order_items']
+    FOREACH t IN ARRAY ARRAY['users','admins','cuisines','restaurants','restaurant_owners','restaurant_cuisines',
+                             'menu_categories','dishes','favourite_restaurants','orders','order_items']
     LOOP
         IF to_regclass(t) IS NOT NULL THEN
             EXECUTE format('DROP TRIGGER IF EXISTS trg_notify_%1$s ON %1$I', t);

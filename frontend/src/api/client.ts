@@ -37,6 +37,7 @@ export const api = {
   post: <T>(p: string, b?: unknown) => request<T>('POST', p, b ?? {}),
   put: <T>(p: string, b?: unknown) => request<T>('PUT', p, b ?? {}),
   del: <T>(p: string) => request<T>('DELETE', p),
+  req: <T>(method: string, p: string, b?: unknown) => request<T>(method, p, b),
 }
 
 export const errorMessage = (e: unknown): string => (e instanceof Error ? e.message : 'Something went wrong.')

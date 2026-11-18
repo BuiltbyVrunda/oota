@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from 'framer-motion'
-import { useLocation } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
+import { ShieldCheck, Store } from 'lucide-react'
 import { AuthForm } from '../components/auth/AuthForm'
 import { AuthSwitcher } from '../components/auth/AuthSwitcher'
 
@@ -25,6 +26,10 @@ export function AuthPage() {
       </div>
       <AuthSwitcher mode={mode} />
       <AuthForm mode={mode} />
+      <div className="flex flex-wrap items-center justify-between gap-2 border-t border-seam pt-4 text-[14px]">
+        <Link to="/partner/login" className="inline-flex items-center gap-1.5 font-medium text-ink-2 hover:text-ink"><Store className="size-4" aria-hidden /> Restaurant partner? Log in or list your place</Link>
+        <Link to="/admin/login" className="inline-flex items-center gap-1.5 text-ink-3 hover:text-ink"><ShieldCheck className="size-4" aria-hidden /> Admin</Link>
+      </div>
     </motion.section>
   )
 }

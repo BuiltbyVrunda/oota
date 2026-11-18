@@ -2,7 +2,8 @@ import type { Cuisine, DashboardData, Dish, Filters, Preferences, Recommendation
 import { api } from './client'
 
 export interface Catalog { cuisines: Cuisine[]; restaurants: Restaurant[]; dishes: Dish[] }
-export interface Order { id: number; restaurantId: number; restaurantName?: string; status: string; total: number; placedAt: string; items?: { dishId: number; name: string; quantity: number; unitPrice: number }[] }
+export type OrderStatus = 'PLACED' | 'PREPARING' | 'DELIVERED' | 'CANCELLED'
+export interface Order { id: number; restaurantId: number; restaurantName?: string; restaurantSlug?: string; coverUrl?: string; status: OrderStatus; total: number; placedAt: string; items?: { dishId: number; name: string; quantity: number; unitPrice: number }[] }
 export interface SystemStatus {
   postgres: string; mongo: string
   tables: { name: string; rows: number; missing: boolean }[]
@@ -60,8 +61,7 @@ export const endpoints = {
 
   placeOrder: (restaurantId: number, items: { dishId: number; quantity: number }[]) => api.post<Order>('/orders', { restaurantId, items }),
   myOrders: () => api.get<Order[]>('/me/orders'),
-
-  addDish: (d: NewDish) => api.post<Dish>('/dishes', d),
+  cancelOrder: (id: number) => api.req<{ ok: true }>('PATCH', `/me/orders/${id}/cancel`),
 
   status: () => api.get<SystemStatus>('/system/status'),
 }

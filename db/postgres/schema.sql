@@ -9,8 +9,8 @@
 
 DROP VIEW  IF EXISTS v_restaurant_summary, v_popular_dishes CASCADE;
 DROP TABLE IF EXISTS order_items, orders, favourite_restaurants, dishes,
-                     menu_categories, restaurant_cuisines, restaurants,
-                     cuisines, users CASCADE;
+                     menu_categories, restaurant_cuisines, restaurant_owners,
+                     restaurants, cuisines, admins, users CASCADE;
 DROP FUNCTION IF EXISTS fn_recalc_order_total() CASCADE;
 DROP FUNCTION IF EXISTS fn_dish_search_vector() CASCADE;
 
@@ -24,6 +24,16 @@ CREATE TABLE users (
     city           VARCHAR(60)  NOT NULL DEFAULT 'Bengaluru',
     created_at     TIMESTAMPTZ  NOT NULL DEFAULT now(),
     CONSTRAINT chk_email CHECK (email ~* '^[^@\s]+@[^@\s]+\.[^@\s]+$')
+);
+
+-- [extension] Platform administrators — separate login, manage everything.
+CREATE TABLE admins (
+    admin_id       SERIAL PRIMARY KEY,
+    full_name      VARCHAR(100) NOT NULL,
+    email          VARCHAR(150) NOT NULL UNIQUE,
+    password_hash  VARCHAR(100) NOT NULL,
+    created_at     TIMESTAMPTZ  NOT NULL DEFAULT now(),
+    CONSTRAINT chk_admin_email CHECK (email ~* '^[^@\s]+@[^@\s]+\.[^@\s]+$')
 );
 
 -- ------------------------------------------------------------- cuisines
@@ -56,10 +66,25 @@ CREATE TABLE restaurants (
     review_count   INTEGER      NOT NULL DEFAULT 0 CHECK (review_count >= 0),
     -- [extension] popularity 0-100 for the "Trending in Bengaluru" tier (the UI's Restaurant.trendingScore)
     trending_score SMALLINT     NOT NULL DEFAULT 50 CHECK (trending_score BETWEEN 0 AND 100),
+    -- [extension] partner self sign-up: new restaurants are 'pending' (hidden from diners) until an admin approves
+    status         VARCHAR(10)  NOT NULL DEFAULT 'approved' CHECK (status IN ('pending', 'approved', 'rejected')),
     created_at     TIMESTAMPTZ  NOT NULL DEFAULT now()
 );
 CREATE INDEX idx_restaurants_city_area ON restaurants (city, area);
 CREATE INDEX idx_restaurants_rating    ON restaurants (avg_rating DESC);
+CREATE INDEX idx_restaurants_status    ON restaurants (status) WHERE status <> 'approved';  -- partial index: the admin queue
+
+-- [extension] Restaurant partner accounts — the only accounts that can list food.
+-- 1:1 with restaurants (UNIQUE restaurant_id); deleting a restaurant deletes its login.
+CREATE TABLE restaurant_owners (
+    owner_id       SERIAL PRIMARY KEY,
+    restaurant_id  INTEGER      NOT NULL UNIQUE REFERENCES restaurants(restaurant_id) ON DELETE CASCADE,
+    full_name      VARCHAR(100) NOT NULL,
+    email          VARCHAR(150) NOT NULL UNIQUE,
+    password_hash  VARCHAR(100) NOT NULL,
+    created_at     TIMESTAMPTZ  NOT NULL DEFAULT now(),
+    CONSTRAINT chk_owner_email CHECK (email ~* '^[^@\s]+@[^@\s]+\.[^@\s]+$')
+);
 
 -- M:N restaurants <-> cuisines
 CREATE TABLE restaurant_cuisines (
@@ -92,9 +117,7 @@ CREATE TABLE dishes (
     allergens     TEXT[]       NOT NULL DEFAULT '{}',      -- nuts, dairy, gluten, egg, shellfish, soy
     image_url     TEXT,
     is_available  BOOLEAN      NOT NULL DEFAULT TRUE,
-    -- [extension] who added the dish from the in-app "Add a dish" form (NULL = seeded)
-    added_by      INTEGER      REFERENCES users(user_id) ON DELETE SET NULL,
-    created_at    TIMESTAMPTZ  NOT NULL DEFAULT now(),
+    created_at    TIMESTAMPTZ  NOT NULL DEFAULT now(),          -- [extension] when it was listed
     avg_rating    NUMERIC(2,1) NOT NULL DEFAULT 0 CHECK (avg_rating BETWEEN 0 AND 5),
     review_count  INTEGER      NOT NULL DEFAULT 0 CHECK (review_count >= 0),
     search_vector TSVECTOR

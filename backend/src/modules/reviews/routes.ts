@@ -20,7 +20,7 @@ type ReviewBody = z.infer<typeof reviewSchema>
 export const reviewsRouter = Router()
 
 async function restaurantOr404(id: number) {
-  const [r] = await q<{ id: number; name: string }>('SELECT restaurant_id AS id, name FROM restaurants WHERE restaurant_id = $1', [id])
+  const [r] = await q<{ id: number; name: string }>("SELECT restaurant_id AS id, name FROM restaurants WHERE restaurant_id = $1 AND status = 'approved'", [id])
   if (!r) throw new HttpError(404, 'NOT_FOUND', 'This restaurant isn’t on Oota.')
   return r
 }

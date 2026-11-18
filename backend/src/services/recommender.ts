@@ -16,7 +16,8 @@ const DIETS_FOR = { any: ['veg', 'egg', 'nonveg', 'vegan'], veg: ['veg', 'vegan'
 export async function allowedDishIds(diet: keyof typeof DIETS_FOR, allergens: string[]): Promise<Set<number>> {
   const rows = await q<{ id: number }>(
     `SELECT dish_id AS id FROM dishes
-      WHERE is_available AND diet = ANY($1::text[]) AND NOT (allergens && $2::text[])`,
+      WHERE is_available AND diet = ANY($1::text[]) AND NOT (allergens && $2::text[])
+        AND restaurant_id IN (SELECT restaurant_id FROM restaurants WHERE status = 'approved')`,
     [DIETS_FOR[diet], allergens])
   return new Set(rows.map((r) => r.id))
 }

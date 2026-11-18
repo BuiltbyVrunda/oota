@@ -53,6 +53,7 @@ export async function filterRestaurantIds(f: DiscoverQuery): Promise<number[]> {
   if (f.flavour.length) {
     w.add((p) => `EXISTS (SELECT 1 FROM dishes d WHERE d.restaurant_id = r.restaurant_id AND d.flavour_tags @> ${p(f.flavour)}::text[])`)
   }
+  w.add(() => "r.status = 'approved'")
   const rows = await q<{ id: number }>(`SELECT r.restaurant_id AS id FROM restaurants r ${w.sql}`, w.params)
   return rows.map((r) => r.id)
 }
@@ -60,7 +61,7 @@ export async function filterRestaurantIds(f: DiscoverQuery): Promise<number[]> {
 /** SQL filters for the Dishes tab — full-text search (websearch + prefix) with an ILIKE fallback. */
 export async function filterDishIds(f: DiscoverQuery): Promise<{ id: number; rank: number }[]> {
   const w = new Where()
-  w.add(() => 'd.is_available')
+  w.add(() => "d.is_available AND r.status = 'approved'")
   let rank = '0'
   if (f.q) {
     const ts = prefixTsQuery(f.q)

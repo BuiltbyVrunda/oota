@@ -28,6 +28,7 @@ export const errorHandler: ErrorRequestHandler = (err, _req, res, _next) => {
   void _next
   let e: HttpError
   if (err instanceof HttpError) e = err
+  else if (err?.type === 'entity.too.large') e = new HttpError(413, 'TOO_LARGE', 'That file is too big (max 6 MB).')
   else if (err instanceof ZodError) {
     const fields: Record<string, string> = {}
     for (const i of err.issues) fields[i.path.join('.') || '_'] = i.message

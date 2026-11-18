@@ -5,6 +5,7 @@ import { Splash } from './components/splash/Splash'
 import { Toaster } from './components/ui/Toast'
 import { ActivityProvider } from './context/ActivityContext'
 import { AuthProvider } from './context/AuthContext'
+import { CartProvider } from './context/CartContext'
 import { CatalogProvider } from './context/CatalogContext'
 import { FavouritesProvider } from './context/FavouritesContext'
 import { PreferencesProvider } from './context/PreferencesContext'
@@ -41,7 +42,9 @@ export default function App() {
               <FavouritesProvider>
                 <ReviewsProvider>
                   <CatalogProvider>
+                    <CartProvider>
                     <RouterProvider router={router} />
+                    </CartProvider>
                     <Toaster />
                   </CatalogProvider>
                 </ReviewsProvider>
