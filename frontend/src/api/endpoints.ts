@@ -11,6 +11,10 @@ export interface SystemStatus {
   events: { source: 'postgres' | 'mongo'; table: string; op: string; at: string }[]
 }
 export type ReviewBody = Pick<Review, 'rating' | 'text' | 'tags' | 'dishRatings'>
+export interface NewDish {
+  restaurantId: number; category: string; name: string; description: string; price: number
+  diet: Dish['diet']; spiceLevel: Dish['spiceLevel']; flavourTags: Dish['flavourTags']; allergens: string[]; imageUrl?: string
+}
 
 const qs = (q: string, f: Filters) => {
   const p = new URLSearchParams()
@@ -56,6 +60,8 @@ export const endpoints = {
 
   placeOrder: (restaurantId: number, items: { dishId: number; quantity: number }[]) => api.post<Order>('/orders', { restaurantId, items }),
   myOrders: () => api.get<Order[]>('/me/orders'),
+
+  addDish: (d: NewDish) => api.post<Dish>('/dishes', d),
 
   status: () => api.get<SystemStatus>('/system/status'),
 }

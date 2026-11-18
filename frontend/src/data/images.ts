@@ -83,3 +83,8 @@ export function photo(code: string, w = 640, h = 480): string {
   if (!id) throw new Error(`Unknown photo code ${code}`)
   return img(id, w, h)
 }
+
+/** Food photos only (interiors p46–p55 are for covers), as { code, label } for photo pickers. */
+export const FOOD_PHOTOS = Object.keys(PHOTO)
+  .filter((k) => { const n = Number(k.slice(1, 3)); return n < 46 || n > 55 })
+  .map((k) => ({ code: k.slice(0, 3), label: k.slice(4).replace(/_/g, ' ') }))

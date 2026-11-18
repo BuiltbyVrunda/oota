@@ -1,7 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { endpoints } from '../api/endpoints'
 import { useAuth } from '../context/AuthContext'
-import { useFavourites } from '../context/FavouritesContext'
 import type { DashboardData } from '../types'
 import { useResource } from './useResource'
 import { useSignals } from './useSignals'
@@ -12,8 +11,7 @@ export function useRecommendations(): { data: DashboardData | null; status: 'loa
   const r = useResource(user ? `dash:${user.id}` : null, endpoints.recommendations)
   // re-rank whenever a signal changes locally (prefs, a search, a review, a view, a save)
   const sig = useSignals()
-  const { ids } = useFavourites()
-  const signature = JSON.stringify([sig.prefs, sig.searches.length && sig.searches[0]?.at, sig.reviews.map((x) => x.id + x.rating), sig.views[0]?.restaurantId, ids.length])
+  const signature = JSON.stringify([sig.prefs, sig.searches.length && sig.searches[0]?.at, sig.reviews.map((x) => x.id + x.rating), sig.views[0]?.restaurantId])
   const first = useRef(true)
   const { refresh } = r
   useEffect(() => {

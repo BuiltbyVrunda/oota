@@ -3,7 +3,6 @@ import { Heart } from 'lucide-react'
 import { useCallback, useEffect, useRef, useState, type MouseEvent } from 'react'
 import { useFavourites } from '../../context/FavouritesContext'
 import { LIKE_EVENT, useLikeBurst, type LikeEventDetail } from '../../context/LikeBurstContext'
-import { useToast } from '../../context/ToastContext'
 import { cn } from '../../utils/cn'
 
 /**
@@ -12,12 +11,13 @@ import { cn } from '../../utils/cn'
  */
 export function SaveButton({ restaurantId, name, className, withLabel }: { restaurantId: number; name: string; className?: string; withLabel?: boolean }) {
   const { isSaved, toggle } = useFavourites()
-  const { push } = useToast()
   const burst = useLikeBurst()
   const ref = useRef<HTMLButtonElement>(null)
   const saved = isSaved(restaurantId)
   const [inFlight, setInFlight] = useState(false)
   const [landed, setLanded] = useState(0)
+  const mounted = useRef(true)
+  useEffect(() => { mounted.current = true; return () => { mounted.current = false } }, [])
   const filled = saved && !inFlight
 
   const like = useCallback((from?: { x: number; y: number }) => {
@@ -34,9 +34,15 @@ export function SaveButton({ restaurantId, name, className, withLabel }: { resta
     }
     toggle(restaurantId)
     setInFlight(true)
-    burst(start, to, () => { setInFlight(false); setLanded((n) => n + 1) })
-    push({ tone: 'success', title: `Saved ${name}`, action: { label: 'Undo', onClick: () => toggle(restaurantId) } })
-  }, [burst, name, push, restaurantId, toggle])
+    // live target: re-measured every frame of the flight
+    const target = () => {
+      const el = ref.current
+      if (!el || !el.isConnected) return null
+      const r = el.getBoundingClientRect()
+      return { x: r.left + r.width / 2, y: r.top + r.height / 2 }
+    }
+    burst(start, target, () => { if (mounted.current) { setInFlight(false); setLanded((n) => n + 1) } })
+  }, [burst, restaurantId, toggle])
 
   // double-tap surfaces ask the matching button to like
   useEffect(() => {
@@ -52,8 +58,7 @@ export function SaveButton({ restaurantId, name, className, withLabel }: { resta
     e.preventDefault()
     e.stopPropagation()
     if (!saved) { like(); return }
-    toggle(restaurantId)
-    push({ tone: 'info', title: `Removed ${name}`, action: { label: 'Undo', onClick: () => toggle(restaurantId) } })
+    toggle(restaurantId) // un-save: the heart just empties — no toast (errors still toast from FavouritesContext)
   }
 
   return (

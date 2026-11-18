@@ -1,39 +1,37 @@
-import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
-import { createContext, useCallback, useContext, useState, type ReactNode } from 'react'
+import { animate, motion, useMotionValue, useReducedMotion } from 'framer-motion'
+import { createContext, useCallback, useContext, useEffect, useRef, useState, type ReactNode } from 'react'
 import { createPortal } from 'react-dom'
 
 interface Point { x: number; y: number }
-interface Burst { id: number; from: Point; to: Point; onArrive: () => void }
-type BurstFn = (from: Point, to: Point, onArrive: () => void) => void
+/** `target` is read every frame, so the heart lands on the button even if the page scrolls or shifts mid-flight. */
+type BurstFn = (from: Point, target: () => Point | null, onArrive: () => void) => void
+interface Burst { id: number; from: Point; target: () => Point | null; onArrive: () => void }
 
 const Ctx = createContext<BurstFn | null>(null)
 let seq = 1
 const SIZE = 104 // px, the heart at full size
 
 /**
- * The "like" animation (modelled on the double-tap heart from the reference recording):
- * a big hot-pink heart pops in at the tap point tilted left, overshoots, settles, floats up a touch,
- * then shrinks while arcing into the heart button — which fills only when it lands.
+ * The "like" animation (modelled on the double-tap heart in the reference recording):
+ *  1. pop   — the heart springs up from nothing at the tap point, tilted left, overshoots and settles (~0.3s)
+ *  2. float — it drifts up a little (~0.12s)
+ *  3. fly   — one continuous quadratic-Bézier arc into the heart button while shrinking and straightening (~0.45s)
+ * Everything runs on GPU transforms (translate/scale/rotate) driven by motion values — no layout work per frame.
  */
 export function LikeBurstProvider({ children }: { children: ReactNode }) {
   const [bursts, setBursts] = useState<Burst[]>([])
   const reduce = useReducedMotion()
-  const burst = useCallback<BurstFn>((from, to, onArrive) => {
+  const burst = useCallback<BurstFn>((from, target, onArrive) => {
     if (reduce) { onArrive(); return }
-    setBursts((b) => [...b, { id: seq++, from, to, onArrive }])
+    setBursts((b) => [...b, { id: seq++, from, target, onArrive }])
   }, [reduce])
-  const done = (b: Burst) => {
-    b.onArrive()
-    setBursts((list) => list.filter((x) => x.id !== b.id))
-  }
+  const done = useCallback((id: number) => setBursts((list) => list.filter((x) => x.id !== id)), [])
   return (
     <Ctx.Provider value={burst}>
       {children}
       {createPortal(
-        <div aria-hidden className="pointer-events-none fixed inset-0 z-[70]">
-          <AnimatePresence>
-            {bursts.map((b) => <FlyingHeart key={b.id} b={b} onDone={() => done(b)} />)}
-          </AnimatePresence>
+        <div aria-hidden className="pointer-events-none fixed inset-0 z-[70] overflow-hidden">
+          {bursts.map((b) => <FlyingHeart key={b.id} b={b} onDone={done} />)}
         </div>,
         document.body,
       )}
@@ -41,33 +39,54 @@ export function LikeBurstProvider({ children }: { children: ReactNode }) {
   )
 }
 
-function FlyingHeart({ b, onDone }: { b: Burst; onDone: () => void }) {
-  const dx = b.to.x - b.from.x
-  const dy = b.to.y - b.from.y
-  const T = 0.74
-  const times = [0, 0.18, 0.3, 0.52, 0.96, 1]
+const ease = [0.45, 0, 0.2, 1] as const // gentle start, decisive landing
+
+function FlyingHeart({ b, onDone }: { b: Burst; onDone: (id: number) => void }) {
+  const x = useMotionValue(b.from.x)
+  const y = useMotionValue(b.from.y)
+  const scale = useMotionValue(0)
+  const rotate = useMotionValue(-18)
+  const opacity = useMotionValue(1)
+  const started = useRef(false)
+
+  useEffect(() => {
+    if (started.current) return // StrictMode double-invoke guard
+    started.current = true
+    const controls: { stop: () => void }[] = []
+    const run = async () => {
+      // 1. pop: overshoot then settle
+      controls.push(animate(rotate, -9, { duration: 0.32, ease: 'easeOut' }))
+      await animate(scale, [0, 1.22, 0.95, 1], { duration: 0.32, times: [0, 0.5, 0.78, 1], ease: 'easeOut' })
+      // 2. float up a touch
+      await animate(y, b.from.y - 16, { duration: 0.12, ease: 'easeOut' })
+      // 3. fly along an arc to the live target
+      const start = { x: x.get(), y: y.get() }
+      await animate(0, 1, {
+        duration: 0.46,
+        ease,
+        onUpdate: (t) => {
+          const to = b.target() ?? start
+          // control point: a little past the start toward the target, lifted above both → a soft arc
+          const c = { x: start.x + (to.x - start.x) * 0.3, y: Math.min(start.y, to.y) - 60 }
+          const u = 1 - t
+          x.set(u * u * start.x + 2 * u * t * c.x + t * t * to.x)
+          y.set(u * u * start.y + 2 * u * t * c.y + t * t * to.y)
+          scale.set(1 - 0.8 * t)
+          rotate.set(-9 * u)
+        },
+      })
+      b.onArrive()
+      await animate(opacity, 0, { duration: 0.08 })
+      onDone(b.id)
+    }
+    void run()
+    return () => controls.forEach((c) => c.stop())
+  }, [b, onDone, opacity, rotate, scale, x, y])
+
   return (
     <motion.div
-      className="absolute"
-      style={{ left: b.from.x - SIZE / 2, top: b.from.y - SIZE / 2, width: SIZE, height: SIZE }}
-      initial={{ scale: 0, rotate: -18, x: 0, y: 0, opacity: 1 }}
-      animate={{
-        scale: [0, 1.22, 1, 1, 0.22, 0.22],
-        rotate: [-18, -8, -13, -9, 0, 0],
-        x: [0, 0, 0, 0, dx, dx],
-        y: [0, 0, 0, -18, dy, dy],
-        opacity: [1, 1, 1, 1, 1, 0],
-      }}
-      transition={{
-        duration: T,
-        scale: { duration: T, times, ease: ['backOut', 'easeOut', 'linear', 'easeIn', 'linear'] },
-        rotate: { duration: T, times },
-        // x eases in while y eases out → the heart travels on an arc, not a straight line
-        x: { duration: T, times, ease: ['linear', 'linear', 'linear', [0.55, 0, 0.9, 0.45], 'linear'] },
-        y: { duration: T, times, ease: ['linear', 'linear', 'easeOut', [0.15, 0.6, 0.35, 1], 'linear'] },
-        opacity: { duration: T, times },
-      }}
-      onAnimationComplete={onDone}
+      className="absolute left-0 top-0 will-change-transform"
+      style={{ x, y, scale, rotate, opacity, width: SIZE, height: SIZE, marginLeft: -SIZE / 2, marginTop: -SIZE / 2 }}
     >
       <svg viewBox="0 0 100 92" className="size-full drop-shadow-[0_10px_24px_rgb(255_45_111/0.45)]">
         <defs>
