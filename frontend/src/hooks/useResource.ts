@@ -6,7 +6,7 @@ export type Status = 'loading' | 'ready' | 'error'
 
 /**
  * Fetches `fetcher()` whenever `key` changes or the live database version bumps.
- * Keeps showing the previous data while refetching (no flashes), exposes the last error.
+ * Keeps showing the previous data while refetching (no flashes); on failure clears it and exposes the error.
  * Pass key = null to skip (e.g. logged out).
  */
 export function useResource<T>(key: string | null, fetcher: () => Promise<T>) {
@@ -23,7 +23,8 @@ export function useResource<T>(key: string | null, fetcher: () => Promise<T>) {
     let alive = true
     fetchRef.current().then(
       (data) => { if (alive) setState({ key, data, status: 'ready', error: null }) },
-      (e) => { if (alive) setState((s) => ({ ...s, key, status: 'error', error: errorMessage(e) })) },
+      // on failure drop the old data: if a table was dropped in the terminal, the UI must say so, not show stale rows
+      (e) => { if (alive) setState({ key, data: null, status: 'error', error: errorMessage(e) }) },
     )
     return () => { alive = false }
   }, [key, version, nonce])

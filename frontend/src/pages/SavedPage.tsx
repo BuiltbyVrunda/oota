@@ -1,4 +1,4 @@
-import { Heart } from 'lucide-react'
+import { Heart, TriangleAlert } from 'lucide-react'
 import { useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { EmptyState } from '../components/common/EmptyState'
@@ -12,7 +12,7 @@ import { buildCtx, scoreRestaurant } from '../utils/recommend'
 import { plural } from '../utils/format'
 
 export function SavedPage() {
-  const { ids } = useFavourites()
+  const { ids, status, error } = useFavourites()
   const cat = useCatalog()
   const sig = useSignals()
   const [now] = useState(() => Date.now())
@@ -24,7 +24,15 @@ export function SavedPage() {
     <PageContainer className="pt-6 sm:pt-10">
       <h1 className="text-[34px] sm:text-[48px]">Saved</h1>
       <p className="mt-1 text-[16px] text-ink-2">{recs.length ? `${plural(recs.length, 'place')} you want to try or go back to.` : 'Places you heart show up here.'}</p>
-      {recs.length === 0 ? (
+      {status === 'error' ? (
+        <div className="liquid mt-8 rounded-tier">
+          <div className="relative z-[2]">
+            <EmptyState icon={<TriangleAlert className="size-6" />} title="Saved places are unavailable">
+              <span role="alert">{error}</span>
+            </EmptyState>
+          </div>
+        </div>
+      ) : recs.length === 0 ? (
         <div className="liquid mt-8 rounded-tier">
           <div className="relative z-[2]">
             <EmptyState icon={<Heart className="size-6" />} title="Nothing saved yet" actions={<Link to="/discover"><Button variant="accent">Find somewhere good</Button></Link>}>
