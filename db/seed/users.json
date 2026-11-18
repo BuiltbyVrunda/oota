@@ -1,0 +1,117 @@
+[
+  {
+    "id": 1,
+    "fullName": "Ananya Rao",
+    "email": "ananya@oota.demo"
+  },
+  {
+    "id": 2,
+    "fullName": "Rohan Mehta",
+    "email": "rohan@oota.demo"
+  },
+  {
+    "id": 3,
+    "fullName": "Meera Iyer",
+    "email": "meera@oota.demo"
+  },
+  {
+    "id": 4,
+    "fullName": "Karthik Rao",
+    "email": "karthik.rao@oota.demo"
+  },
+  {
+    "id": 5,
+    "fullName": "Priya Hegde",
+    "email": "priya.hegde@oota.demo"
+  },
+  {
+    "id": 6,
+    "fullName": "Sameer Khan",
+    "email": "sameer.khan@oota.demo"
+  },
+  {
+    "id": 7,
+    "fullName": "Deepa Gowda",
+    "email": "deepa.gowda@oota.demo"
+  },
+  {
+    "id": 8,
+    "fullName": "Arjun Menon",
+    "email": "arjun.menon@oota.demo"
+  },
+  {
+    "id": 9,
+    "fullName": "Nisha Shetty",
+    "email": "nisha.shetty@oota.demo"
+  },
+  {
+    "id": 10,
+    "fullName": "Vikram Iyer",
+    "email": "vikram.iyer@oota.demo"
+  },
+  {
+    "id": 11,
+    "fullName": "Farah Siddiqui",
+    "email": "farah.siddiqui@oota.demo"
+  },
+  {
+    "id": 12,
+    "fullName": "Rahul Nair",
+    "email": "rahul.nair@oota.demo"
+  },
+  {
+    "id": 13,
+    "fullName": "Shruti Kulkarni",
+    "email": "shruti.kulkarni@oota.demo"
+  },
+  {
+    "id": 14,
+    "fullName": "Imran Pasha",
+    "email": "imran.pasha@oota.demo"
+  },
+  {
+    "id": 15,
+    "fullName": "Lakshmi Prasad",
+    "email": "lakshmi.prasad@oota.demo"
+  },
+  {
+    "id": 16,
+    "fullName": "Aditya Bhat",
+    "email": "aditya.bhat@oota.demo"
+  },
+  {
+    "id": 17,
+    "fullName": "Kavya Reddy",
+    "email": "kavya.reddy@oota.demo"
+  },
+  {
+    "id": 18,
+    "fullName": "Joel D'Souza",
+    "email": "joel.d.souza@oota.demo"
+  },
+  {
+    "id": 19,
+    "fullName": "Tanvi Joshi",
+    "email": "tanvi.joshi@oota.demo"
+  },
+  {
+    "id": 20,
+    "fullName": "Manoj Kumar",
+    "email": "manoj.kumar@oota.demo"
+  },
+  {
+    "id": 21,
+    "fullName": "Sneha Rao",
+    "email": "sneha.rao@oota.demo"
+  },
+  {
+    "id": 22,
+    "fullName": "Zoya Baig",
+    "email": "zoya.baig@oota.demo"
+  },
+  {
+    "id": 23,
+    "fullName": "Harsha Murthy",
+    "email": "harsha.murthy@oota.demo"
+  }
+]

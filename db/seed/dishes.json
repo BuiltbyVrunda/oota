@@ -1,0 +1,4562 @@
+[
+  {
+    "id": 1,
+    "restaurantId": 1,
+    "category": "Dosas",
+    "cuisineId": 1,
+    "name": "Ghee Roast Dosa",
+    "description": "Paper-thin dosa roasted in a generous spoon of ghee until it shatters. Coconut, tomato and pudina chutneys.",
+    "price": 160,
+    "diet": "veg",
+    "spiceLevel": 1,
+    "flavourTags": [
+      "crispy",
+      "rich"
+    ],
+    "allergens": [
+      "dairy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1668236543090-82eba5ee5976?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4.5,
+    "reviewCount": 2
+  },
+  {
+    "id": 2,
+    "restaurantId": 1,
+    "category": "Dosas",
+    "cuisineId": 1,
+    "name": "Benne Masala Dosa",
+    "description": "Davanagere-style thick-edged dosa with white butter and a soft potato palya.",
+    "price": 150,
+    "diet": "veg",
+    "spiceLevel": 1,
+    "flavourTags": [
+      "crispy",
+      "rich",
+      "comforting"
+    ],
+    "allergens": [
+      "dairy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1694849789325-914b71ab4075?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 1
+  },
+  {
+    "id": 3,
+    "restaurantId": 1,
+    "category": "Dosas",
+    "cuisineId": 1,
+    "name": "Mysore Masala Dosa",
+    "description": "Smeared with a fiery red garlic chutney before the potato goes in.",
+    "price": 140,
+    "diet": "veg",
+    "spiceLevel": 2,
+    "flavourTags": [
+      "spicy",
+      "crispy"
+    ],
+    "allergens": [
+      "dairy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1787024231387-edccb8c44700?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 5,
+    "reviewCount": 1
+  },
+  {
+    "id": 4,
+    "restaurantId": 1,
+    "category": "Idli & Vada",
+    "cuisineId": 1,
+    "name": "Podi Idli",
+    "description": "Mini idlis tossed in gunpowder podi and hot ghee.",
+    "price": 90,
+    "diet": "veg",
+    "spiceLevel": 2,
+    "flavourTags": [
+      "spicy",
+      "rich"
+    ],
+    "allergens": [
+      "dairy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1680359871322-aabe6b33eff5?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 5,
+    "reviewCount": 1
+  },
+  {
+    "id": 5,
+    "restaurantId": 1,
+    "category": "Idli & Vada",
+    "cuisineId": 1,
+    "name": "Thatte Idli",
+    "description": "Plate-sized Bidadi idli, cloud soft, with sambar.",
+    "price": 70,
+    "diet": "vegan",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "mild",
+      "comforting"
+    ],
+    "allergens": [],
+    "imageUrl": "https://images.unsplash.com/photo-1683533678059-63c6a0e9e3ef?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 5,
+    "reviewCount": 1
+  },
+  {
+    "id": 6,
+    "restaurantId": 1,
+    "category": "Idli & Vada",
+    "cuisineId": 1,
+    "name": "Medu Vada",
+    "description": "Two crisp urad vadas with a hole you could put a finger through.",
+    "price": 60,
+    "diet": "vegan",
+    "spiceLevel": 1,
+    "flavourTags": [
+      "crispy"
+    ],
+    "allergens": [],
+    "imageUrl": "https://images.unsplash.com/photo-1683533678033-f5d60f0a3437?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 2
+  },
+  {
+    "id": 7,
+    "restaurantId": 1,
+    "category": "Rice",
+    "cuisineId": 1,
+    "name": "Pongal",
+    "description": "Rice and moong cooked soft with pepper, cumin, cashew and ghee.",
+    "price": 110,
+    "diet": "veg",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "comforting",
+      "creamy",
+      "mild"
+    ],
+    "allergens": [
+      "dairy",
+      "nuts"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1633383718081-22ac93e3db65?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 3,
+    "reviewCount": 1
+  },
+  {
+    "id": 8,
+    "restaurantId": 1,
+    "category": "Rice",
+    "cuisineId": 1,
+    "name": "Bisi Bele Bath",
+    "description": "Hot lentil-rice with tamarind and a spice blend roasted in-house, topped with boondi.",
+    "price": 120,
+    "diet": "veg",
+    "spiceLevel": 2,
+    "flavourTags": [
+      "spicy",
+      "tangy",
+      "comforting"
+    ],
+    "allergens": [
+      "dairy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 2,
+    "reviewCount": 1
+  },
+  {
+    "id": 9,
+    "restaurantId": 1,
+    "category": "Drinks",
+    "cuisineId": 1,
+    "name": "Filter Coffee",
+    "description": "Chicory-blend decoction, frothy milk, poured tall.",
+    "price": 45,
+    "diet": "veg",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "rich"
+    ],
+    "allergens": [
+      "dairy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1668236482744-b48b28650f12?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 2
+  },
+  {
+    "id": 10,
+    "restaurantId": 2,
+    "category": "Breakfast",
+    "cuisineId": 2,
+    "name": "Rava Idli",
+    "description": "Semolina idli with cashew and coriander, a dab of ghee and sagu.",
+    "price": 70,
+    "diet": "veg",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "mild",
+      "comforting"
+    ],
+    "allergens": [
+      "dairy",
+      "nuts"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1680359871322-aabe6b33eff5?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4.5,
+    "reviewCount": 2
+  },
+  {
+    "id": 11,
+    "restaurantId": 2,
+    "category": "Breakfast",
+    "cuisineId": 2,
+    "name": "Khara Bath",
+    "description": "Savoury upma with vegetables, served with a spoon of coconut chutney.",
+    "price": 60,
+    "diet": "veg",
+    "spiceLevel": 1,
+    "flavourTags": [
+      "spicy",
+      "comforting"
+    ],
+    "allergens": [
+      "dairy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1633383718081-22ac93e3db65?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 5,
+    "reviewCount": 1
+  },
+  {
+    "id": 12,
+    "restaurantId": 2,
+    "category": "Breakfast",
+    "cuisineId": 18,
+    "name": "Kesari Bath",
+    "description": "Saffron semolina halwa with pineapple, ghee and raisins.",
+    "price": 55,
+    "diet": "veg",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "sweet",
+      "rich"
+    ],
+    "allergens": [
+      "dairy",
+      "nuts"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1763683943943-c2ac7a370251?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4.5,
+    "reviewCount": 2
+  },
+  {
+    "id": 13,
+    "restaurantId": 2,
+    "category": "Dosas",
+    "cuisineId": 2,
+    "name": "Set Dosa",
+    "description": "Three spongy dosas with vegetable sagu.",
+    "price": 80,
+    "diet": "veg",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "mild",
+      "comforting"
+    ],
+    "allergens": [
+      "dairy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1694849789325-914b71ab4075?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 1
+  },
+  {
+    "id": 14,
+    "restaurantId": 2,
+    "category": "Dosas",
+    "cuisineId": 2,
+    "name": "Masala Dosa",
+    "description": "The darshini classic, crisp shell, golden potato.",
+    "price": 85,
+    "diet": "veg",
+    "spiceLevel": 1,
+    "flavourTags": [
+      "crispy",
+      "comforting"
+    ],
+    "allergens": [
+      "dairy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1668236543090-82eba5ee5976?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 3,
+    "reviewCount": 1
+  },
+  {
+    "id": 15,
+    "restaurantId": 2,
+    "category": "Dosas",
+    "cuisineId": 2,
+    "name": "Neer Dosa",
+    "description": "Lace-thin rice crêpes with coconut chutney.",
+    "price": 75,
+    "diet": "vegan",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "mild",
+      "fresh"
+    ],
+    "allergens": [],
+    "imageUrl": "https://images.unsplash.com/photo-1787024231387-edccb8c44700?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 1
+  },
+  {
+    "id": 16,
+    "restaurantId": 2,
+    "category": "Snacks",
+    "cuisineId": 2,
+    "name": "Maddur Vada",
+    "description": "Flat, crisp onion-semolina vada from the Mysore highway.",
+    "price": 50,
+    "diet": "vegan",
+    "spiceLevel": 1,
+    "flavourTags": [
+      "crispy"
+    ],
+    "allergens": [
+      "gluten"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1683533678059-63c6a0e9e3ef?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 1
+  },
+  {
+    "id": 17,
+    "restaurantId": 2,
+    "category": "Snacks",
+    "cuisineId": 2,
+    "name": "Mangalore Buns",
+    "description": "Banana-sweetened puris, puffed and soft.",
+    "price": 55,
+    "diet": "veg",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "sweet"
+    ],
+    "allergens": [
+      "gluten"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1683533678033-f5d60f0a3437?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 5,
+    "reviewCount": 1
+  },
+  {
+    "id": 18,
+    "restaurantId": 2,
+    "category": "Drinks",
+    "cuisineId": 2,
+    "name": "Badam Milk",
+    "description": "Warm almond milk with saffron and cardamom.",
+    "price": 60,
+    "diet": "veg",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "sweet",
+      "creamy"
+    ],
+    "allergens": [
+      "dairy",
+      "nuts"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1668236482744-b48b28650f12?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 3,
+    "reviewCount": 1
+  },
+  {
+    "id": 19,
+    "restaurantId": 3,
+    "category": "Meals",
+    "cuisineId": 3,
+    "name": "Bale Ele Oota",
+    "description": "Unlimited banana-leaf meal: kosambari, two palyas, saaru, huli, rice, payasa and holige.",
+    "price": 280,
+    "diet": "veg",
+    "spiceLevel": 1,
+    "flavourTags": [
+      "comforting",
+      "rich"
+    ],
+    "allergens": [
+      "dairy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1625398407796-82650a8c135f?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4.5,
+    "reviewCount": 2
+  },
+  {
+    "id": 20,
+    "restaurantId": 3,
+    "category": "Meals",
+    "cuisineId": 3,
+    "name": "Mini Thali",
+    "description": "A smaller plate for weekday lunches: chapati, palya, saaru, curd rice.",
+    "price": 180,
+    "diet": "veg",
+    "spiceLevel": 1,
+    "flavourTags": [
+      "comforting"
+    ],
+    "allergens": [
+      "dairy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1786227905994-235e1799292e?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 1
+  },
+  {
+    "id": 21,
+    "restaurantId": 3,
+    "category": "Sides",
+    "cuisineId": 3,
+    "name": "Mysore Saaru",
+    "description": "Thin, peppery tomato rasam with a toasted coconut-spice paste.",
+    "price": 70,
+    "diet": "vegan",
+    "spiceLevel": 2,
+    "flavourTags": [
+      "tangy",
+      "spicy"
+    ],
+    "allergens": [],
+    "imageUrl": "https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 5,
+    "reviewCount": 1
+  },
+  {
+    "id": 22,
+    "restaurantId": 3,
+    "category": "Sides",
+    "cuisineId": 3,
+    "name": "Majjige Huli",
+    "description": "Ash gourd in spiced buttermilk-coconut gravy.",
+    "price": 90,
+    "diet": "veg",
+    "spiceLevel": 1,
+    "flavourTags": [
+      "tangy",
+      "creamy"
+    ],
+    "allergens": [
+      "dairy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1633383718081-22ac93e3db65?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 3,
+    "reviewCount": 1
+  },
+  {
+    "id": 23,
+    "restaurantId": 3,
+    "category": "Rottis",
+    "cuisineId": 3,
+    "name": "Akki Rotti",
+    "description": "Rice-flour flatbread with dill, onion and green chilli, patted on a banana leaf.",
+    "price": 110,
+    "diet": "vegan",
+    "spiceLevel": 1,
+    "flavourTags": [
+      "crispy",
+      "fresh"
+    ],
+    "allergens": [],
+    "imageUrl": "https://images.unsplash.com/photo-1787024231387-edccb8c44700?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 5,
+    "reviewCount": 1
+  },
+  {
+    "id": 24,
+    "restaurantId": 3,
+    "category": "Rottis",
+    "cuisineId": 3,
+    "name": "Ragi Mudde & Soppu Saaru",
+    "description": "Finger-millet ball with a greens-and-lentil saaru. Swallow, don't chew.",
+    "price": 140,
+    "diet": "vegan",
+    "spiceLevel": 2,
+    "flavourTags": [
+      "comforting",
+      "spicy"
+    ],
+    "allergens": [],
+    "imageUrl": "https://images.unsplash.com/photo-1767114915989-c6ab3c8fc42e?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 3,
+    "reviewCount": 1
+  },
+  {
+    "id": 25,
+    "restaurantId": 3,
+    "category": "Sides",
+    "cuisineId": 3,
+    "name": "Chitranna",
+    "description": "Lemon rice with peanuts and curry leaves.",
+    "price": 100,
+    "diet": "vegan",
+    "spiceLevel": 1,
+    "flavourTags": [
+      "tangy",
+      "fresh"
+    ],
+    "allergens": [
+      "nuts"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1633383718081-22ac93e3db65?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 1
+  },
+  {
+    "id": 26,
+    "restaurantId": 3,
+    "category": "Sweets",
+    "cuisineId": 18,
+    "name": "Obbattu (Holige)",
+    "description": "Jaggery-chana dal stuffed flatbread with a pour of ghee.",
+    "price": 60,
+    "diet": "veg",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "sweet",
+      "rich"
+    ],
+    "allergens": [
+      "dairy",
+      "gluten"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1763683943943-c2ac7a370251?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 5,
+    "reviewCount": 1
+  },
+  {
+    "id": 27,
+    "restaurantId": 3,
+    "category": "Sweets",
+    "cuisineId": 18,
+    "name": "Paal Payasa",
+    "description": "Slow-reduced rice kheer with cardamom.",
+    "price": 70,
+    "diet": "veg",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "sweet",
+      "creamy"
+    ],
+    "allergens": [
+      "dairy",
+      "nuts"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1668236482744-b48b28650f12?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 5,
+    "reviewCount": 1
+  },
+  {
+    "id": 28,
+    "restaurantId": 4,
+    "category": "Biryani",
+    "cuisineId": 6,
+    "name": "Chicken Donne Biryani",
+    "description": "Seeraga samba rice with a green masala of mint, coriander and chilli, in a palm-leaf donne.",
+    "price": 280,
+    "diet": "nonveg",
+    "spiceLevel": 2,
+    "flavourTags": [
+      "spicy",
+      "rich"
+    ],
+    "allergens": [],
+    "imageUrl": "https://images.unsplash.com/photo-1631515243349-e0cb75fb8d3a?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4.7,
+    "reviewCount": 3
+  },
+  {
+    "id": 29,
+    "restaurantId": 4,
+    "category": "Biryani",
+    "cuisineId": 6,
+    "name": "Mutton Donne Biryani",
+    "description": "Tender goat on the bone, cooked dum in copper.",
+    "price": 360,
+    "diet": "nonveg",
+    "spiceLevel": 2,
+    "flavourTags": [
+      "spicy",
+      "rich",
+      "smoky"
+    ],
+    "allergens": [],
+    "imageUrl": "https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 5,
+    "reviewCount": 2
+  },
+  {
+    "id": 30,
+    "restaurantId": 4,
+    "category": "Biryani",
+    "cuisineId": 6,
+    "name": "Egg Biryani",
+    "description": "Two masala-fried eggs buried in fragrant rice.",
+    "price": 200,
+    "diet": "egg",
+    "spiceLevel": 2,
+    "flavourTags": [
+      "spicy",
+      "comforting"
+    ],
+    "allergens": [
+      "egg"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1767114915989-c6ab3c8fc42e?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 1
+  },
+  {
+    "id": 31,
+    "restaurantId": 4,
+    "category": "Biryani",
+    "cuisineId": 6,
+    "name": "Veg Donne Biryani",
+    "description": "Beans, carrot, peas and potato in the same green masala.",
+    "price": 190,
+    "diet": "veg",
+    "spiceLevel": 1,
+    "flavourTags": [
+      "spicy",
+      "fresh"
+    ],
+    "allergens": [],
+    "imageUrl": "https://images.unsplash.com/photo-1567529854338-fc097b962123?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 2,
+    "reviewCount": 1
+  },
+  {
+    "id": 32,
+    "restaurantId": 4,
+    "category": "Starters",
+    "cuisineId": 8,
+    "name": "Chicken Kebab",
+    "description": "Bengaluru-style bright red fried chicken with curry leaves.",
+    "price": 220,
+    "diet": "nonveg",
+    "spiceLevel": 3,
+    "flavourTags": [
+      "spicy",
+      "crispy"
+    ],
+    "allergens": [],
+    "imageUrl": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 2
+  },
+  {
+    "id": 33,
+    "restaurantId": 4,
+    "category": "Starters",
+    "cuisineId": 6,
+    "name": "Mutton Pepper Fry",
+    "description": "Dry, black-pepper roasted mutton.",
+    "price": 320,
+    "diet": "nonveg",
+    "spiceLevel": 3,
+    "flavourTags": [
+      "spicy",
+      "rich"
+    ],
+    "allergens": [],
+    "imageUrl": "https://images.unsplash.com/photo-1742599361539-f096753d1100?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 3,
+    "reviewCount": 1
+  },
+  {
+    "id": 34,
+    "restaurantId": 4,
+    "category": "Starters",
+    "cuisineId": 6,
+    "name": "Gobi 65",
+    "description": "Cauliflower in a crisp chilli batter.",
+    "price": 160,
+    "diet": "vegan",
+    "spiceLevel": 2,
+    "flavourTags": [
+      "spicy",
+      "crispy"
+    ],
+    "allergens": [],
+    "imageUrl": "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 1
+  },
+  {
+    "id": 35,
+    "restaurantId": 4,
+    "category": "Sides",
+    "cuisineId": 6,
+    "name": "Brinjal Gravy",
+    "description": "Ennegai-style stuffed brinjal in sesame-peanut gravy.",
+    "price": 60,
+    "diet": "vegan",
+    "spiceLevel": 2,
+    "flavourTags": [
+      "tangy",
+      "spicy"
+    ],
+    "allergens": [
+      "nuts"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 5,
+    "reviewCount": 1
+  },
+  {
+    "id": 36,
+    "restaurantId": 4,
+    "category": "Sides",
+    "cuisineId": 18,
+    "name": "Phirni",
+    "description": "Ground-rice pudding set in a clay cup.",
+    "price": 90,
+    "diet": "veg",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "sweet",
+      "creamy"
+    ],
+    "allergens": [
+      "dairy",
+      "nuts"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1763683943943-c2ac7a370251?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 1
+  },
+  {
+    "id": 37,
+    "restaurantId": 5,
+    "category": "Meals",
+    "cuisineId": 4,
+    "name": "Andhra Veg Meals",
+    "description": "Pappu, two curries, rasam, gunpowder, ghee, gongura, curd and appalam.",
+    "price": 260,
+    "diet": "veg",
+    "spiceLevel": 3,
+    "flavourTags": [
+      "spicy",
+      "tangy",
+      "comforting"
+    ],
+    "allergens": [
+      "dairy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1786227905994-235e1799292e?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4.5,
+    "reviewCount": 2
+  },
+  {
+    "id": 38,
+    "restaurantId": 5,
+    "category": "Meals",
+    "cuisineId": 4,
+    "name": "Andhra Chicken Meals",
+    "description": "The veg meal plus a Guntur chicken curry.",
+    "price": 340,
+    "diet": "nonveg",
+    "spiceLevel": 3,
+    "flavourTags": [
+      "spicy",
+      "rich"
+    ],
+    "allergens": [
+      "dairy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1767114915989-c6ab3c8fc42e?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 1
+  },
+  {
+    "id": 39,
+    "restaurantId": 5,
+    "category": "Curries",
+    "cuisineId": 4,
+    "name": "Gongura Mutton",
+    "description": "Mutton slow-cooked with sour sorrel leaves.",
+    "price": 380,
+    "diet": "nonveg",
+    "spiceLevel": 3,
+    "flavourTags": [
+      "tangy",
+      "spicy",
+      "rich"
+    ],
+    "allergens": [],
+    "imageUrl": "https://images.unsplash.com/photo-1742599361539-f096753d1100?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 5,
+    "reviewCount": 1
+  },
+  {
+    "id": 40,
+    "restaurantId": 5,
+    "category": "Curries",
+    "cuisineId": 4,
+    "name": "Kodi Kura",
+    "description": "Village-style chicken curry, very red, very hot.",
+    "price": 320,
+    "diet": "nonveg",
+    "spiceLevel": 3,
+    "flavourTags": [
+      "spicy",
+      "rich"
+    ],
+    "allergens": [],
+    "imageUrl": "https://images.unsplash.com/photo-1567529854338-fc097b962123?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 1
+  },
+  {
+    "id": 41,
+    "restaurantId": 5,
+    "category": "Curries",
+    "cuisineId": 4,
+    "name": "Gutti Vankaya",
+    "description": "Baby brinjals stuffed with a peanut-sesame masala.",
+    "price": 220,
+    "diet": "vegan",
+    "spiceLevel": 2,
+    "flavourTags": [
+      "spicy",
+      "tangy"
+    ],
+    "allergens": [
+      "nuts"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 3,
+    "reviewCount": 1
+  },
+  {
+    "id": 42,
+    "restaurantId": 5,
+    "category": "Rice & Tiffin",
+    "cuisineId": 1,
+    "name": "Pesarattu Upma",
+    "description": "Green moong dosa with ginger, filled with upma.",
+    "price": 140,
+    "diet": "vegan",
+    "spiceLevel": 2,
+    "flavourTags": [
+      "crispy",
+      "fresh",
+      "spicy"
+    ],
+    "allergens": [],
+    "imageUrl": "https://images.unsplash.com/photo-1694849789325-914b71ab4075?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 5,
+    "reviewCount": 1
+  },
+  {
+    "id": 43,
+    "restaurantId": 5,
+    "category": "Rice & Tiffin",
+    "cuisineId": 4,
+    "name": "Chilli Paneer Pulao",
+    "description": "Paneer roasted with Guntur chilli, tossed with pulao.",
+    "price": 240,
+    "diet": "veg",
+    "spiceLevel": 3,
+    "flavourTags": [
+      "spicy",
+      "smoky"
+    ],
+    "allergens": [
+      "dairy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1631515243349-e0cb75fb8d3a?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 2,
+    "reviewCount": 1
+  },
+  {
+    "id": 44,
+    "restaurantId": 5,
+    "category": "Rice & Tiffin",
+    "cuisineId": 4,
+    "name": "Gunpowder Ghee Rice",
+    "description": "Hot rice, kandi podi and a pour of ghee. Nothing else needed.",
+    "price": 160,
+    "diet": "veg",
+    "spiceLevel": 3,
+    "flavourTags": [
+      "spicy",
+      "rich"
+    ],
+    "allergens": [
+      "dairy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1633383718081-22ac93e3db65?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 5,
+    "reviewCount": 1
+  },
+  {
+    "id": 45,
+    "restaurantId": 5,
+    "category": "Sweets",
+    "cuisineId": 18,
+    "name": "Pootharekulu",
+    "description": "Paper-sweet from Atreyapuram with jaggery and ghee.",
+    "price": 120,
+    "diet": "veg",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "sweet",
+      "rich"
+    ],
+    "allergens": [
+      "dairy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1763683943943-c2ac7a370251?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 1
+  },
+  {
+    "id": 46,
+    "restaurantId": 6,
+    "category": "Coffee",
+    "cuisineId": 10,
+    "name": "Degree Coffee",
+    "description": "Strong first-decoction coffee with full-cream milk, in a brass dabarah.",
+    "price": 60,
+    "diet": "veg",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "rich"
+    ],
+    "allergens": [
+      "dairy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1668236482744-b48b28650f12?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 5,
+    "reviewCount": 2
+  },
+  {
+    "id": 47,
+    "restaurantId": 6,
+    "category": "Coffee",
+    "cuisineId": 10,
+    "name": "Iced Filter Coffee Tonic",
+    "description": "Decoction over tonic water and ice with an orange peel.",
+    "price": 140,
+    "diet": "vegan",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "fresh"
+    ],
+    "allergens": [],
+    "imageUrl": "https://images.unsplash.com/photo-1592663527359-cf6642f54cff?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 2
+  },
+  {
+    "id": 48,
+    "restaurantId": 6,
+    "category": "Coffee",
+    "cuisineId": 10,
+    "name": "Cappuccino",
+    "description": "Double shot of a Chikmagalur estate blend.",
+    "price": 150,
+    "diet": "veg",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "creamy"
+    ],
+    "allergens": [
+      "dairy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1507133750040-4a8f57021571?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 3,
+    "reviewCount": 1
+  },
+  {
+    "id": 49,
+    "restaurantId": 6,
+    "category": "Breakfast",
+    "cuisineId": 1,
+    "name": "Ghee Podi Dosa",
+    "description": "Crisp dosa painted with podi and ghee, folded into a cone.",
+    "price": 150,
+    "diet": "veg",
+    "spiceLevel": 2,
+    "flavourTags": [
+      "spicy",
+      "crispy",
+      "rich"
+    ],
+    "allergens": [
+      "dairy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1668236543090-82eba5ee5976?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 5,
+    "reviewCount": 1
+  },
+  {
+    "id": 50,
+    "restaurantId": 6,
+    "category": "Breakfast",
+    "cuisineId": 1,
+    "name": "Idli Sambar Bowl",
+    "description": "Three idlis drowned in drumstick sambar.",
+    "price": 110,
+    "diet": "vegan",
+    "spiceLevel": 1,
+    "flavourTags": [
+      "comforting",
+      "mild"
+    ],
+    "allergens": [],
+    "imageUrl": "https://images.unsplash.com/photo-1680359871322-aabe6b33eff5?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 1
+  },
+  {
+    "id": 51,
+    "restaurantId": 6,
+    "category": "Breakfast",
+    "cuisineId": 10,
+    "name": "Masala Vada Pav",
+    "description": "Chana-dal masala vada in a soft pav with mint chutney.",
+    "price": 120,
+    "diet": "vegan",
+    "spiceLevel": 2,
+    "flavourTags": [
+      "spicy",
+      "crispy"
+    ],
+    "allergens": [
+      "gluten"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1683533678033-f5d60f0a3437?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 2,
+    "reviewCount": 1
+  },
+  {
+    "id": 52,
+    "restaurantId": 6,
+    "category": "Bakes",
+    "cuisineId": 11,
+    "name": "Banana Bread",
+    "description": "Elakki banana loaf with walnuts.",
+    "price": 130,
+    "diet": "egg",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "sweet",
+      "comforting"
+    ],
+    "allergens": [
+      "gluten",
+      "egg",
+      "nuts"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1777544575746-96654957db13?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 3,
+    "reviewCount": 1
+  },
+  {
+    "id": 53,
+    "restaurantId": 6,
+    "category": "Bakes",
+    "cuisineId": 11,
+    "name": "Coconut Cookie",
+    "description": "Crunchy desiccated-coconut cookie, eggless and dairy-free.",
+    "price": 60,
+    "diet": "vegan",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "sweet",
+      "crispy"
+    ],
+    "allergens": [
+      "gluten"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1763683943943-c2ac7a370251?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 1
+  },
+  {
+    "id": 54,
+    "restaurantId": 6,
+    "category": "Bakes",
+    "cuisineId": 18,
+    "name": "Rava Kesari Cheesecake",
+    "description": "Kesari bath on a biscuit base with a baked cheesecake layer.",
+    "price": 190,
+    "diet": "veg",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "sweet",
+      "creamy"
+    ],
+    "allergens": [
+      "dairy",
+      "gluten"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1525351484163-7529414344d8?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 5,
+    "reviewCount": 1
+  },
+  {
+    "id": 55,
+    "restaurantId": 7,
+    "category": "Curries",
+    "cuisineId": 7,
+    "name": "Butter Chicken",
+    "description": "Tandoori chicken in a velvety tomato-butter makhani.",
+    "price": 480,
+    "diet": "nonveg",
+    "spiceLevel": 1,
+    "flavourTags": [
+      "creamy",
+      "rich",
+      "mild"
+    ],
+    "allergens": [
+      "dairy",
+      "nuts"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1606471191009-63994c53433b?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 2
+  },
+  {
+    "id": 56,
+    "restaurantId": 7,
+    "category": "Curries",
+    "cuisineId": 7,
+    "name": "Dal Makhani",
+    "description": "Black urad simmered overnight on the tandoor's dying coals.",
+    "price": 340,
+    "diet": "veg",
+    "spiceLevel": 1,
+    "flavourTags": [
+      "creamy",
+      "rich",
+      "comforting"
+    ],
+    "allergens": [
+      "dairy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1772730065344-4cf131b39951?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4.5,
+    "reviewCount": 2
+  },
+  {
+    "id": 57,
+    "restaurantId": 7,
+    "category": "Curries",
+    "cuisineId": 7,
+    "name": "Paneer Lababdar",
+    "description": "Paneer cubes in an onion-tomato-cashew gravy.",
+    "price": 380,
+    "diet": "veg",
+    "spiceLevel": 1,
+    "flavourTags": [
+      "creamy",
+      "rich"
+    ],
+    "allergens": [
+      "dairy",
+      "nuts"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 3,
+    "reviewCount": 1
+  },
+  {
+    "id": 58,
+    "restaurantId": 7,
+    "category": "Curries",
+    "cuisineId": 8,
+    "name": "Rogan Josh",
+    "description": "Kashmiri chilli-red mutton with fennel and ginger.",
+    "price": 520,
+    "diet": "nonveg",
+    "spiceLevel": 2,
+    "flavourTags": [
+      "rich",
+      "spicy"
+    ],
+    "allergens": [
+      "dairy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1742599361539-f096753d1100?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 1
+  },
+  {
+    "id": 59,
+    "restaurantId": 7,
+    "category": "Tandoor",
+    "cuisineId": 7,
+    "name": "Tandoori Chicken",
+    "description": "Half bird in a yoghurt-chilli marinade, charred in clay.",
+    "price": 450,
+    "diet": "nonveg",
+    "spiceLevel": 2,
+    "flavourTags": [
+      "smoky",
+      "spicy"
+    ],
+    "allergens": [
+      "dairy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 3,
+    "reviewCount": 1
+  },
+  {
+    "id": 60,
+    "restaurantId": 7,
+    "category": "Tandoor",
+    "cuisineId": 7,
+    "name": "Malai Broccoli",
+    "description": "Broccoli in a cream-cheese marinade with charred edges.",
+    "price": 360,
+    "diet": "veg",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "smoky",
+      "creamy"
+    ],
+    "allergens": [
+      "dairy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1596797038530-2c107229654b?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 5,
+    "reviewCount": 1
+  },
+  {
+    "id": 61,
+    "restaurantId": 7,
+    "category": "Breads",
+    "cuisineId": 7,
+    "name": "Garlic Butter Naan",
+    "description": "Blistered naan with garlic butter and coriander.",
+    "price": 90,
+    "diet": "veg",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "rich"
+    ],
+    "allergens": [
+      "dairy",
+      "gluten"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1772730064970-a7b2735c93b9?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 5,
+    "reviewCount": 1
+  },
+  {
+    "id": 62,
+    "restaurantId": 7,
+    "category": "Breads",
+    "cuisineId": 7,
+    "name": "Laccha Paratha",
+    "description": "Flaky, layered whole-wheat paratha.",
+    "price": 80,
+    "diet": "veg",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "crispy",
+      "rich"
+    ],
+    "allergens": [
+      "dairy",
+      "gluten"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1772730064951-89b427965dbc?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 5,
+    "reviewCount": 1
+  },
+  {
+    "id": 63,
+    "restaurantId": 7,
+    "category": "Desserts",
+    "cuisineId": 18,
+    "name": "Shahi Tukda",
+    "description": "Fried bread soaked in saffron rabri.",
+    "price": 220,
+    "diet": "veg",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "sweet",
+      "rich"
+    ],
+    "allergens": [
+      "dairy",
+      "nuts",
+      "gluten"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1763683943943-c2ac7a370251?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 5,
+    "reviewCount": 1
+  },
+  {
+    "id": 64,
+    "restaurantId": 8,
+    "category": "Curries",
+    "cuisineId": 7,
+    "name": "Kadai Paneer",
+    "description": "Paneer and peppers with fresh-pounded kadai masala in an iron wok.",
+    "price": 300,
+    "diet": "veg",
+    "spiceLevel": 2,
+    "flavourTags": [
+      "spicy",
+      "smoky"
+    ],
+    "allergens": [
+      "dairy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 1
+  },
+  {
+    "id": 65,
+    "restaurantId": 8,
+    "category": "Curries",
+    "cuisineId": 7,
+    "name": "Chole",
+    "description": "Pindi-style dark chickpeas with amchur and tea leaves.",
+    "price": 220,
+    "diet": "vegan",
+    "spiceLevel": 2,
+    "flavourTags": [
+      "spicy",
+      "tangy",
+      "comforting"
+    ],
+    "allergens": [],
+    "imageUrl": "https://images.unsplash.com/photo-1772730065344-4cf131b39951?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 1
+  },
+  {
+    "id": 66,
+    "restaurantId": 8,
+    "category": "Curries",
+    "cuisineId": 7,
+    "name": "Dhaba Chicken Curry",
+    "description": "Bone-in chicken in a rustic onion-tomato gravy.",
+    "price": 340,
+    "diet": "nonveg",
+    "spiceLevel": 2,
+    "flavourTags": [
+      "spicy",
+      "rich"
+    ],
+    "allergens": [],
+    "imageUrl": "https://images.unsplash.com/photo-1567529854338-fc097b962123?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 2
+  },
+  {
+    "id": 67,
+    "restaurantId": 8,
+    "category": "Curries",
+    "cuisineId": 7,
+    "name": "Sarson Ka Saag",
+    "description": "Mustard greens with makki di roti and white butter.",
+    "price": 260,
+    "diet": "veg",
+    "spiceLevel": 1,
+    "flavourTags": [
+      "comforting",
+      "fresh"
+    ],
+    "allergens": [
+      "dairy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1596797038530-2c107229654b?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 5,
+    "reviewCount": 1
+  },
+  {
+    "id": 68,
+    "restaurantId": 8,
+    "category": "Breads",
+    "cuisineId": 7,
+    "name": "Amritsari Kulcha",
+    "description": "Potato-stuffed kulcha from the tandoor with chole.",
+    "price": 160,
+    "diet": "veg",
+    "spiceLevel": 1,
+    "flavourTags": [
+      "crispy",
+      "rich"
+    ],
+    "allergens": [
+      "dairy",
+      "gluten"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1772730064970-a7b2735c93b9?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 2,
+    "reviewCount": 1
+  },
+  {
+    "id": 69,
+    "restaurantId": 8,
+    "category": "Breads",
+    "cuisineId": 7,
+    "name": "Tandoori Roti",
+    "description": "Whole-wheat roti, charred and puffed.",
+    "price": 30,
+    "diet": "vegan",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "mild"
+    ],
+    "allergens": [
+      "gluten"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1772730064951-89b427965dbc?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 1
+  },
+  {
+    "id": 70,
+    "restaurantId": 8,
+    "category": "Snacks",
+    "cuisineId": 7,
+    "name": "Egg Bhurji Pav",
+    "description": "Highway-style scrambled eggs with onion, chilli and butter pav.",
+    "price": 150,
+    "diet": "egg",
+    "spiceLevel": 2,
+    "flavourTags": [
+      "spicy",
+      "comforting"
+    ],
+    "allergens": [
+      "egg",
+      "gluten"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1525351484163-7529414344d8?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 3,
+    "reviewCount": 1
+  },
+  {
+    "id": 71,
+    "restaurantId": 8,
+    "category": "Snacks",
+    "cuisineId": 7,
+    "name": "Paneer Tikka",
+    "description": "Char-grilled paneer with peppers and onion.",
+    "price": 280,
+    "diet": "veg",
+    "spiceLevel": 2,
+    "flavourTags": [
+      "smoky",
+      "spicy"
+    ],
+    "allergens": [
+      "dairy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 2
+  },
+  {
+    "id": 72,
+    "restaurantId": 8,
+    "category": "Drinks",
+    "cuisineId": 7,
+    "name": "Sweet Lassi",
+    "description": "Thick churned lassi with malai on top, in a steel glass.",
+    "price": 90,
+    "diet": "veg",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "sweet",
+      "creamy",
+      "fresh"
+    ],
+    "allergens": [
+      "dairy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1668236482744-b48b28650f12?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 5,
+    "reviewCount": 1
+  },
+  {
+    "id": 73,
+    "restaurantId": 9,
+    "category": "Kebabs",
+    "cuisineId": 8,
+    "name": "Mutton Seekh Kebab",
+    "description": "Hand-minced mutton on skewers over charcoal.",
+    "price": 380,
+    "diet": "nonveg",
+    "spiceLevel": 2,
+    "flavourTags": [
+      "smoky",
+      "spicy",
+      "rich"
+    ],
+    "allergens": [],
+    "imageUrl": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 5,
+    "reviewCount": 2
+  },
+  {
+    "id": 74,
+    "restaurantId": 9,
+    "category": "Kebabs",
+    "cuisineId": 8,
+    "name": "Smoked Chicken Tikka",
+    "description": "Boneless chicken in a hung-curd marinade, finished with a charcoal dhungar.",
+    "price": 340,
+    "diet": "nonveg",
+    "spiceLevel": 2,
+    "flavourTags": [
+      "smoky",
+      "spicy"
+    ],
+    "allergens": [
+      "dairy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4.5,
+    "reviewCount": 2
+  },
+  {
+    "id": 75,
+    "restaurantId": 9,
+    "category": "Kebabs",
+    "cuisineId": 8,
+    "name": "Boti Kebab",
+    "description": "Papaya-tenderised mutton cubes, crusted and juicy.",
+    "price": 420,
+    "diet": "nonveg",
+    "spiceLevel": 2,
+    "flavourTags": [
+      "smoky",
+      "rich"
+    ],
+    "allergens": [
+      "dairy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1616252980327-ec70572e5df9?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4.5,
+    "reviewCount": 2
+  },
+  {
+    "id": 76,
+    "restaurantId": 9,
+    "category": "Kebabs",
+    "cuisineId": 8,
+    "name": "Galouti Kebab",
+    "description": "Melt-in-the-mouth minced mutton on a small ulte tawe ka paratha.",
+    "price": 440,
+    "diet": "nonveg",
+    "spiceLevel": 1,
+    "flavourTags": [
+      "rich",
+      "creamy"
+    ],
+    "allergens": [
+      "gluten"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1742599361539-f096753d1100?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 5,
+    "reviewCount": 1
+  },
+  {
+    "id": 77,
+    "restaurantId": 9,
+    "category": "Kebabs",
+    "cuisineId": 8,
+    "name": "Hara Bhara Kebab",
+    "description": "Spinach, peas and potato patties, shallow fried.",
+    "price": 260,
+    "diet": "vegan",
+    "spiceLevel": 1,
+    "flavourTags": [
+      "fresh",
+      "crispy"
+    ],
+    "allergens": [],
+    "imageUrl": "https://images.unsplash.com/photo-1596797038530-2c107229654b?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 2,
+    "reviewCount": 1
+  },
+  {
+    "id": 78,
+    "restaurantId": 9,
+    "category": "Mains",
+    "cuisineId": 6,
+    "name": "Chicken Biryani (Dum)",
+    "description": "Long-grain basmati, saffron, fried onions, dum-sealed.",
+    "price": 360,
+    "diet": "nonveg",
+    "spiceLevel": 2,
+    "flavourTags": [
+      "rich",
+      "spicy"
+    ],
+    "allergens": [
+      "dairy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 3,
+    "reviewCount": 1
+  },
+  {
+    "id": 79,
+    "restaurantId": 9,
+    "category": "Mains",
+    "cuisineId": 8,
+    "name": "Nihari",
+    "description": "Slow-cooked shank stew, Friday nights only.",
+    "price": 460,
+    "diet": "nonveg",
+    "spiceLevel": 2,
+    "flavourTags": [
+      "rich",
+      "spicy",
+      "comforting"
+    ],
+    "allergens": [
+      "gluten"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1606471191009-63994c53433b?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 5,
+    "reviewCount": 2
+  },
+  {
+    "id": 80,
+    "restaurantId": 9,
+    "category": "Mains",
+    "cuisineId": 8,
+    "name": "Sheermal",
+    "description": "Saffron-milk flatbread to mop the nihari.",
+    "price": 70,
+    "diet": "veg",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "sweet",
+      "rich"
+    ],
+    "allergens": [
+      "dairy",
+      "gluten"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1772730064970-a7b2735c93b9?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 1
+  },
+  {
+    "id": 81,
+    "restaurantId": 9,
+    "category": "Sweets",
+    "cuisineId": 18,
+    "name": "Kaddu Ki Kheer",
+    "description": "Bottle gourd kheer with pistachio.",
+    "price": 140,
+    "diet": "veg",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "sweet",
+      "creamy"
+    ],
+    "allergens": [
+      "dairy",
+      "nuts"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1763683943943-c2ac7a370251?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 1
+  },
+  {
+    "id": 82,
+    "restaurantId": 10,
+    "category": "Mains",
+    "cuisineId": 5,
+    "name": "Kori Rotti",
+    "description": "Mangalorean chicken curry poured over crisp rice wafers.",
+    "price": 420,
+    "diet": "nonveg",
+    "spiceLevel": 2,
+    "flavourTags": [
+      "spicy",
+      "rich"
+    ],
+    "allergens": [],
+    "imageUrl": "https://images.unsplash.com/photo-1786222084052-fb6f27bfb135?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 5,
+    "reviewCount": 1
+  },
+  {
+    "id": 83,
+    "restaurantId": 10,
+    "category": "Mains",
+    "cuisineId": 5,
+    "name": "Fish Gassi & Neer Dosa",
+    "description": "Seer fish in a kudampuli-coconut gravy with soft neer dosas.",
+    "price": 480,
+    "diet": "nonveg",
+    "spiceLevel": 2,
+    "flavourTags": [
+      "tangy",
+      "spicy",
+      "creamy"
+    ],
+    "allergens": [],
+    "imageUrl": "https://images.unsplash.com/photo-1742599361539-f096753d1100?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 5,
+    "reviewCount": 1
+  },
+  {
+    "id": 84,
+    "restaurantId": 10,
+    "category": "Mains",
+    "cuisineId": 5,
+    "name": "Prawn Ghee Roast",
+    "description": "Tiger prawns in a byadgi-chilli ghee roast masala.",
+    "price": 560,
+    "diet": "nonveg",
+    "spiceLevel": 3,
+    "flavourTags": [
+      "spicy",
+      "rich",
+      "tangy"
+    ],
+    "allergens": [
+      "shellfish",
+      "dairy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1767114915989-c6ab3c8fc42e?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 2
+  },
+  {
+    "id": 85,
+    "restaurantId": 10,
+    "category": "Fry",
+    "cuisineId": 5,
+    "name": "Rava Fried Pomfret",
+    "description": "Whole pomfret, semolina-crusted, tawa fried.",
+    "price": 520,
+    "diet": "nonveg",
+    "spiceLevel": 2,
+    "flavourTags": [
+      "crispy",
+      "spicy"
+    ],
+    "allergens": [],
+    "imageUrl": "https://images.unsplash.com/photo-1567529854338-fc097b962123?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 3,
+    "reviewCount": 1
+  },
+  {
+    "id": 86,
+    "restaurantId": 10,
+    "category": "Fry",
+    "cuisineId": 5,
+    "name": "Squid Sukka",
+    "description": "Squid rings with roasted coconut and kudampuli.",
+    "price": 440,
+    "diet": "nonveg",
+    "spiceLevel": 2,
+    "flavourTags": [
+      "spicy",
+      "fresh"
+    ],
+    "allergens": [
+      "shellfish"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 5,
+    "reviewCount": 1
+  },
+  {
+    "id": 87,
+    "restaurantId": 10,
+    "category": "Veg",
+    "cuisineId": 5,
+    "name": "Mushroom Ghee Roast",
+    "description": "The ghee roast masala, for the vegetarians at the table.",
+    "price": 340,
+    "diet": "veg",
+    "spiceLevel": 3,
+    "flavourTags": [
+      "spicy",
+      "rich"
+    ],
+    "allergens": [
+      "dairy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1596797038530-2c107229654b?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 1
+  },
+  {
+    "id": 88,
+    "restaurantId": 10,
+    "category": "Veg",
+    "cuisineId": 5,
+    "name": "Kadle Manoli",
+    "description": "Ivy gourd and chickpeas with coconut.",
+    "price": 260,
+    "diet": "vegan",
+    "spiceLevel": 1,
+    "flavourTags": [
+      "tangy",
+      "comforting"
+    ],
+    "allergens": [],
+    "imageUrl": "https://images.unsplash.com/photo-1633383718081-22ac93e3db65?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 1
+  },
+  {
+    "id": 89,
+    "restaurantId": 10,
+    "category": "Coolers & Sweets",
+    "cuisineId": 5,
+    "name": "Sol Kadhi",
+    "description": "Kokum and coconut milk cooler.",
+    "price": 120,
+    "diet": "vegan",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "tangy",
+      "fresh"
+    ],
+    "allergens": [],
+    "imageUrl": "https://images.unsplash.com/photo-1668236482744-b48b28650f12?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 5,
+    "reviewCount": 1
+  },
+  {
+    "id": 90,
+    "restaurantId": 10,
+    "category": "Coolers & Sweets",
+    "cuisineId": 18,
+    "name": "Elaneer Payasam",
+    "description": "Tender coconut pudding, chilled.",
+    "price": 180,
+    "diet": "veg",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "sweet",
+      "creamy",
+      "fresh"
+    ],
+    "allergens": [
+      "dairy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1763683943943-c2ac7a370251?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 5,
+    "reviewCount": 1
+  },
+  {
+    "id": 91,
+    "restaurantId": 11,
+    "category": "Pizza",
+    "cuisineId": 12,
+    "name": "Margherita DOP",
+    "description": "San Marzano tomato, fior di latte, basil, 90 seconds in the wood oven.",
+    "price": 520,
+    "diet": "veg",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "fresh",
+      "creamy"
+    ],
+    "allergens": [
+      "dairy",
+      "gluten"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1598023696416-0193a0bcd302?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 2
+  },
+  {
+    "id": 92,
+    "restaurantId": 11,
+    "category": "Pizza",
+    "cuisineId": 12,
+    "name": "Vegan Margherita",
+    "description": "Cashew mozzarella that actually melts, tomato, basil, olive oil.",
+    "price": 540,
+    "diet": "vegan",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "fresh",
+      "creamy"
+    ],
+    "allergens": [
+      "gluten",
+      "nuts"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 5,
+    "reviewCount": 1
+  },
+  {
+    "id": 93,
+    "restaurantId": 11,
+    "category": "Pizza",
+    "cuisineId": 12,
+    "name": "Diavola",
+    "description": "Spicy salami, chilli honey and smoked mozzarella.",
+    "price": 620,
+    "diet": "nonveg",
+    "spiceLevel": 2,
+    "flavourTags": [
+      "spicy",
+      "smoky"
+    ],
+    "allergens": [
+      "dairy",
+      "gluten"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1777333033656-0b8e6a37b2fa?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 2
+  },
+  {
+    "id": 94,
+    "restaurantId": 11,
+    "category": "Pizza",
+    "cuisineId": 12,
+    "name": "Funghi e Tartufo",
+    "description": "White pizza with roasted mushrooms and truffle oil.",
+    "price": 640,
+    "diet": "veg",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "rich",
+      "creamy"
+    ],
+    "allergens": [
+      "dairy",
+      "gluten"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1598023696416-0193a0bcd302?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 5,
+    "reviewCount": 1
+  },
+  {
+    "id": 95,
+    "restaurantId": 11,
+    "category": "Pasta",
+    "cuisineId": 12,
+    "name": "Cacio e Pepe",
+    "description": "Hand-rolled tonnarelli, pecorino, toasted black pepper.",
+    "price": 480,
+    "diet": "veg",
+    "spiceLevel": 1,
+    "flavourTags": [
+      "creamy",
+      "rich"
+    ],
+    "allergens": [
+      "dairy",
+      "gluten"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1498579150354-977475b7ea0b?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4.5,
+    "reviewCount": 2
+  },
+  {
+    "id": 96,
+    "restaurantId": 11,
+    "category": "Pasta",
+    "cuisineId": 12,
+    "name": "Pesto Genovese (Vegan)",
+    "description": "Trofie with basil-almond pesto, green beans and potato.",
+    "price": 500,
+    "diet": "vegan",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "fresh"
+    ],
+    "allergens": [
+      "gluten",
+      "nuts"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1516100882582-96c3a05fe590?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 5,
+    "reviewCount": 1
+  },
+  {
+    "id": 97,
+    "restaurantId": 11,
+    "category": "Antipasti",
+    "cuisineId": 12,
+    "name": "Burrata & Heirloom Tomato",
+    "description": "Burrata from Ooty with tomatoes, basil oil and sourdough.",
+    "price": 560,
+    "diet": "veg",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "fresh",
+      "creamy"
+    ],
+    "allergens": [
+      "dairy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1498579150354-977475b7ea0b?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 1
+  },
+  {
+    "id": 98,
+    "restaurantId": 11,
+    "category": "Antipasti",
+    "cuisineId": 12,
+    "name": "Arancini",
+    "description": "Saffron risotto balls with a mozzarella heart.",
+    "price": 380,
+    "diet": "veg",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "crispy",
+      "creamy"
+    ],
+    "allergens": [
+      "dairy",
+      "gluten"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 2,
+    "reviewCount": 1
+  },
+  {
+    "id": 99,
+    "restaurantId": 11,
+    "category": "Dolci",
+    "cuisineId": 18,
+    "name": "Vegan Tiramisu",
+    "description": "Espresso-soaked sponge, cashew mascarpone, cocoa.",
+    "price": 360,
+    "diet": "vegan",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "sweet",
+      "creamy"
+    ],
+    "allergens": [
+      "gluten",
+      "nuts",
+      "soy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1763683943943-c2ac7a370251?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 5,
+    "reviewCount": 1
+  },
+  {
+    "id": 100,
+    "restaurantId": 12,
+    "category": "Pasta",
+    "cuisineId": 12,
+    "name": "Spaghetti Pomodoro",
+    "description": "Fresh spaghetti, slow tomato, basil, good olive oil.",
+    "price": 460,
+    "diet": "vegan",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "fresh",
+      "tangy"
+    ],
+    "allergens": [
+      "gluten"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1516100882582-96c3a05fe590?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 1
+  },
+  {
+    "id": 101,
+    "restaurantId": 12,
+    "category": "Pasta",
+    "cuisineId": 12,
+    "name": "Carbonara",
+    "description": "Guanciale, egg yolk, pecorino. No cream, ever.",
+    "price": 560,
+    "diet": "nonveg",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "rich",
+      "creamy"
+    ],
+    "allergens": [
+      "dairy",
+      "egg",
+      "gluten"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1498579150354-977475b7ea0b?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 2
+  },
+  {
+    "id": 102,
+    "restaurantId": 12,
+    "category": "Pasta",
+    "cuisineId": 12,
+    "name": "Pumpkin Ravioli",
+    "description": "Roast pumpkin and amaretti filling with sage brown butter.",
+    "price": 540,
+    "diet": "veg",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "sweet",
+      "creamy"
+    ],
+    "allergens": [
+      "dairy",
+      "gluten",
+      "nuts"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1777333033656-0b8e6a37b2fa?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 5,
+    "reviewCount": 1
+  },
+  {
+    "id": 103,
+    "restaurantId": 12,
+    "category": "Pasta",
+    "cuisineId": 12,
+    "name": "Lasagne al Forno",
+    "description": "Seven layers, slow beef ragù, béchamel.",
+    "price": 580,
+    "diet": "nonveg",
+    "spiceLevel": 1,
+    "flavourTags": [
+      "rich",
+      "comforting"
+    ],
+    "allergens": [
+      "dairy",
+      "gluten"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1516100882582-96c3a05fe590?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 1
+  },
+  {
+    "id": 104,
+    "restaurantId": 12,
+    "category": "Pizza",
+    "cuisineId": 12,
+    "name": "Quattro Formaggi",
+    "description": "Mozzarella, gorgonzola, parmesan, fontina.",
+    "price": 620,
+    "diet": "veg",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "rich",
+      "creamy"
+    ],
+    "allergens": [
+      "dairy",
+      "gluten"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 1
+  },
+  {
+    "id": 105,
+    "restaurantId": 12,
+    "category": "Antipasti",
+    "cuisineId": 12,
+    "name": "Bruschetta Trio",
+    "description": "Tomato-basil, olive tapenade, roasted pepper.",
+    "price": 340,
+    "diet": "vegan",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "fresh",
+      "crispy"
+    ],
+    "allergens": [
+      "gluten"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1598023696416-0193a0bcd302?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 3,
+    "reviewCount": 1
+  },
+  {
+    "id": 106,
+    "restaurantId": 12,
+    "category": "Antipasti",
+    "cuisineId": 12,
+    "name": "Minestrone",
+    "description": "Vegetable and bean soup with ditalini.",
+    "price": 320,
+    "diet": "vegan",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "comforting",
+      "fresh",
+      "mild"
+    ],
+    "allergens": [
+      "gluten"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1498579150354-977475b7ea0b?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 2,
+    "reviewCount": 1
+  },
+  {
+    "id": 107,
+    "restaurantId": 12,
+    "category": "Dolci",
+    "cuisineId": 18,
+    "name": "Tiramisu della Casa",
+    "description": "The owner's mother's recipe: mascarpone, savoiardi, strong coffee.",
+    "price": 380,
+    "diet": "egg",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "sweet",
+      "creamy",
+      "rich"
+    ],
+    "allergens": [
+      "dairy",
+      "egg",
+      "gluten"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1763683943943-c2ac7a370251?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 5,
+    "reviewCount": 2
+  },
+  {
+    "id": 108,
+    "restaurantId": 12,
+    "category": "Dolci",
+    "cuisineId": 18,
+    "name": "Panna Cotta",
+    "description": "Vanilla panna cotta with a jamun compote.",
+    "price": 340,
+    "diet": "veg",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "sweet",
+      "creamy"
+    ],
+    "allergens": [
+      "dairy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1763683943943-c2ac7a370251?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 1
+  },
+  {
+    "id": 109,
+    "restaurantId": 13,
+    "category": "Bakery",
+    "cuisineId": 11,
+    "name": "Butter Croissant",
+    "description": "Laminated over three days with French butter.",
+    "price": 160,
+    "diet": "egg",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "rich",
+      "crispy"
+    ],
+    "allergens": [
+      "dairy",
+      "egg",
+      "gluten"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1777544575746-96654957db13?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4.5,
+    "reviewCount": 2
+  },
+  {
+    "id": 110,
+    "restaurantId": 13,
+    "category": "Bakery",
+    "cuisineId": 11,
+    "name": "Cardamom Bun",
+    "description": "Swedish-style knot with Coorg cardamom sugar.",
+    "price": 140,
+    "diet": "egg",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "sweet",
+      "comforting"
+    ],
+    "allergens": [
+      "dairy",
+      "egg",
+      "gluten"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1525351484163-7529414344d8?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 5,
+    "reviewCount": 1
+  },
+  {
+    "id": 111,
+    "restaurantId": 13,
+    "category": "Bakery",
+    "cuisineId": 11,
+    "name": "Almond Croissant",
+    "description": "Twice-baked with frangipane and toasted almonds.",
+    "price": 210,
+    "diet": "egg",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "sweet",
+      "rich"
+    ],
+    "allergens": [
+      "dairy",
+      "egg",
+      "gluten",
+      "nuts"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1777544575746-96654957db13?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 3,
+    "reviewCount": 1
+  },
+  {
+    "id": 112,
+    "restaurantId": 13,
+    "category": "Coffee",
+    "cuisineId": 10,
+    "name": "Pour-over (Chikmagalur)",
+    "description": "Single estate, light roast, notes of orange and jaggery.",
+    "price": 220,
+    "diet": "vegan",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "fresh"
+    ],
+    "allergens": [],
+    "imageUrl": "https://images.unsplash.com/photo-1507133750040-4a8f57021571?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 5,
+    "reviewCount": 2
+  },
+  {
+    "id": 113,
+    "restaurantId": 13,
+    "category": "Coffee",
+    "cuisineId": 10,
+    "name": "Flat White",
+    "description": "Ristretto with silky micro-foam.",
+    "price": 190,
+    "diet": "veg",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "creamy",
+      "rich"
+    ],
+    "allergens": [
+      "dairy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1507133750040-4a8f57021571?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 1
+  },
+  {
+    "id": 114,
+    "restaurantId": 13,
+    "category": "Coffee",
+    "cuisineId": 10,
+    "name": "Iced Mocha",
+    "description": "Espresso, dark chocolate, cold milk, ice.",
+    "price": 230,
+    "diet": "veg",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "sweet",
+      "creamy"
+    ],
+    "allergens": [
+      "dairy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1592663527359-cf6642f54cff?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 2,
+    "reviewCount": 1
+  },
+  {
+    "id": 115,
+    "restaurantId": 13,
+    "category": "Brunch",
+    "cuisineId": 10,
+    "name": "Eggs on Sourdough",
+    "description": "Soft scrambled eggs, chives, brown butter, house sourdough.",
+    "price": 320,
+    "diet": "egg",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "comforting",
+      "rich"
+    ],
+    "allergens": [
+      "egg",
+      "gluten",
+      "dairy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1525351484163-7529414344d8?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 5,
+    "reviewCount": 1
+  },
+  {
+    "id": 116,
+    "restaurantId": 13,
+    "category": "Brunch",
+    "cuisineId": 10,
+    "name": "Mushroom Toast",
+    "description": "Garlicky wild mushrooms on toast with ricotta.",
+    "price": 300,
+    "diet": "veg",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "rich",
+      "comforting"
+    ],
+    "allergens": [
+      "dairy",
+      "gluten"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1759216279330-c5a83a0a1ebe?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 1
+  },
+  {
+    "id": 117,
+    "restaurantId": 13,
+    "category": "Bakery",
+    "cuisineId": 18,
+    "name": "Lemon Tart",
+    "description": "Sharp lemon curd in a crisp pastry shell.",
+    "price": 220,
+    "diet": "egg",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "tangy",
+      "sweet"
+    ],
+    "allergens": [
+      "dairy",
+      "egg",
+      "gluten"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1763683943943-c2ac7a370251?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 5,
+    "reviewCount": 1
+  },
+  {
+    "id": 118,
+    "restaurantId": 14,
+    "category": "Brunch",
+    "cuisineId": 10,
+    "name": "Big Brunch Plate",
+    "description": "Eggs your way, hash brown, beans, mushrooms, toast.",
+    "price": 480,
+    "diet": "egg",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "comforting",
+      "rich"
+    ],
+    "allergens": [
+      "egg",
+      "gluten",
+      "dairy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1759216279330-c5a83a0a1ebe?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 5,
+    "reviewCount": 1
+  },
+  {
+    "id": 119,
+    "restaurantId": 14,
+    "category": "Brunch",
+    "cuisineId": 10,
+    "name": "Avocado Toast",
+    "description": "Smashed avocado, chilli flakes, lime, seeds, sourdough.",
+    "price": 380,
+    "diet": "vegan",
+    "spiceLevel": 1,
+    "flavourTags": [
+      "fresh",
+      "creamy"
+    ],
+    "allergens": [
+      "gluten"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1525351484163-7529414344d8?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 3,
+    "reviewCount": 1
+  },
+  {
+    "id": 120,
+    "restaurantId": 14,
+    "category": "Brunch",
+    "cuisineId": 17,
+    "name": "Shakshuka",
+    "description": "Eggs poached in a spiced pepper-tomato sauce, with pita.",
+    "price": 360,
+    "diet": "egg",
+    "spiceLevel": 2,
+    "flavourTags": [
+      "spicy",
+      "tangy",
+      "comforting"
+    ],
+    "allergens": [
+      "egg",
+      "gluten"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 1
+  },
+  {
+    "id": 121,
+    "restaurantId": 14,
+    "category": "Brunch",
+    "cuisineId": 10,
+    "name": "Açaí Smoothie Bowl",
+    "description": "Açaí, banana, granola, berries, coconut flakes.",
+    "price": 340,
+    "diet": "vegan",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "fresh",
+      "sweet"
+    ],
+    "allergens": [
+      "nuts"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1763683943943-c2ac7a370251?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 1
+  },
+  {
+    "id": 122,
+    "restaurantId": 14,
+    "category": "Mains",
+    "cuisineId": 17,
+    "name": "Chicken Pesto Sandwich",
+    "description": "Grilled chicken, pesto, sun-dried tomato on ciabatta.",
+    "price": 360,
+    "diet": "nonveg",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "fresh",
+      "rich"
+    ],
+    "allergens": [
+      "dairy",
+      "gluten",
+      "nuts"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1616252980327-ec70572e5df9?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 2,
+    "reviewCount": 1
+  },
+  {
+    "id": 123,
+    "restaurantId": 14,
+    "category": "Mains",
+    "cuisineId": 17,
+    "name": "Grilled Veg Pasta",
+    "description": "Penne in a light cream sauce with grilled zucchini and peppers.",
+    "price": 380,
+    "diet": "veg",
+    "spiceLevel": 1,
+    "flavourTags": [
+      "creamy",
+      "fresh"
+    ],
+    "allergens": [
+      "dairy",
+      "gluten"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1498579150354-977475b7ea0b?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 1
+  },
+  {
+    "id": 124,
+    "restaurantId": 14,
+    "category": "Coffee",
+    "cuisineId": 10,
+    "name": "Iced Filter Coffee",
+    "description": "Filter decoction shaken with milk and ice.",
+    "price": 170,
+    "diet": "veg",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "rich",
+      "sweet"
+    ],
+    "allergens": [
+      "dairy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1592663527359-cf6642f54cff?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4.5,
+    "reviewCount": 2
+  },
+  {
+    "id": 125,
+    "restaurantId": 14,
+    "category": "Coffee",
+    "cuisineId": 10,
+    "name": "Cold Brew Tonic",
+    "description": "Sixteen-hour cold brew over tonic and lime.",
+    "price": 210,
+    "diet": "vegan",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "fresh",
+      "tangy"
+    ],
+    "allergens": [],
+    "imageUrl": "https://images.unsplash.com/photo-1507133750040-4a8f57021571?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 5,
+    "reviewCount": 1
+  },
+  {
+    "id": 126,
+    "restaurantId": 14,
+    "category": "Sweets",
+    "cuisineId": 18,
+    "name": "Banoffee Jar",
+    "description": "Banana, toffee and cream layered in a jar.",
+    "price": 240,
+    "diet": "veg",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "sweet",
+      "creamy"
+    ],
+    "allergens": [
+      "dairy",
+      "gluten"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1777544575746-96654957db13?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 5,
+    "reviewCount": 1
+  },
+  {
+    "id": 127,
+    "restaurantId": 15,
+    "category": "Momos",
+    "cuisineId": 15,
+    "name": "Chicken Steamed Momos",
+    "description": "Ten juicy chicken dumplings from the bamboo steamer.",
+    "price": 180,
+    "diet": "nonveg",
+    "spiceLevel": 1,
+    "flavourTags": [
+      "mild",
+      "comforting"
+    ],
+    "allergens": [
+      "gluten"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1664138218128-2dcf791a9d27?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 3,
+    "reviewCount": 2
+  },
+  {
+    "id": 128,
+    "restaurantId": 15,
+    "category": "Momos",
+    "cuisineId": 15,
+    "name": "Veg Steamed Momos",
+    "description": "Cabbage, carrot, onion and ginger.",
+    "price": 150,
+    "diet": "vegan",
+    "spiceLevel": 1,
+    "flavourTags": [
+      "mild",
+      "fresh"
+    ],
+    "allergens": [
+      "gluten",
+      "soy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1647999019630-dabe1a837693?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 1
+  },
+  {
+    "id": 129,
+    "restaurantId": 15,
+    "category": "Momos",
+    "cuisineId": 15,
+    "name": "Jhol Momos",
+    "description": "Chicken momos swimming in a tomato-sesame jhol.",
+    "price": 210,
+    "diet": "nonveg",
+    "spiceLevel": 2,
+    "flavourTags": [
+      "spicy",
+      "tangy"
+    ],
+    "allergens": [
+      "gluten"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1694923450868-b432a8ee52aa?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 5,
+    "reviewCount": 2
+  },
+  {
+    "id": 130,
+    "restaurantId": 15,
+    "category": "Momos",
+    "cuisineId": 15,
+    "name": "Pan-Fried Paneer Momos",
+    "description": "Paneer and spring onion, crisp-bottomed.",
+    "price": 190,
+    "diet": "veg",
+    "spiceLevel": 1,
+    "flavourTags": [
+      "crispy",
+      "creamy"
+    ],
+    "allergens": [
+      "gluten",
+      "dairy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 5,
+    "reviewCount": 1
+  },
+  {
+    "id": 131,
+    "restaurantId": 15,
+    "category": "Soups",
+    "cuisineId": 15,
+    "name": "Chicken Thukpa",
+    "description": "Hand-pulled noodle soup with greens.",
+    "price": 220,
+    "diet": "nonveg",
+    "spiceLevel": 1,
+    "flavourTags": [
+      "comforting",
+      "fresh"
+    ],
+    "allergens": [
+      "gluten"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1612927601601-6638404737ce?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 5,
+    "reviewCount": 1
+  },
+  {
+    "id": 132,
+    "restaurantId": 15,
+    "category": "Soups",
+    "cuisineId": 15,
+    "name": "Veg Thenthuk",
+    "description": "Hand-torn noodle soup with radish and spinach.",
+    "price": 190,
+    "diet": "vegan",
+    "spiceLevel": 1,
+    "flavourTags": [
+      "comforting"
+    ],
+    "allergens": [
+      "gluten",
+      "soy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 1
+  },
+  {
+    "id": 133,
+    "restaurantId": 15,
+    "category": "Snacks",
+    "cuisineId": 15,
+    "name": "Shapale",
+    "description": "Fried Tibetan bread pockets stuffed with spiced mince.",
+    "price": 200,
+    "diet": "nonveg",
+    "spiceLevel": 1,
+    "flavourTags": [
+      "crispy",
+      "rich"
+    ],
+    "allergens": [
+      "gluten"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 5,
+    "reviewCount": 1
+  },
+  {
+    "id": 134,
+    "restaurantId": 15,
+    "category": "Snacks",
+    "cuisineId": 15,
+    "name": "Chilli Potato",
+    "description": "Crisp potato fingers in a sticky sepen sauce.",
+    "price": 160,
+    "diet": "vegan",
+    "spiceLevel": 3,
+    "flavourTags": [
+      "spicy",
+      "crispy"
+    ],
+    "allergens": [
+      "soy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 5,
+    "reviewCount": 1
+  },
+  {
+    "id": 135,
+    "restaurantId": 15,
+    "category": "Snacks",
+    "cuisineId": 15,
+    "name": "Butter Tea",
+    "description": "Salty, buttery po cha.",
+    "price": 80,
+    "diet": "veg",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "rich",
+      "comforting"
+    ],
+    "allergens": [
+      "dairy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1668236482744-b48b28650f12?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 1
+  },
+  {
+    "id": 136,
+    "restaurantId": 16,
+    "category": "Ramen",
+    "cuisineId": 13,
+    "name": "Tonkotsu Ramen",
+    "description": "Eighteen-hour pork broth, chashu, ajitama egg, nori.",
+    "price": 620,
+    "diet": "nonveg",
+    "spiceLevel": 1,
+    "flavourTags": [
+      "rich",
+      "creamy",
+      "comforting"
+    ],
+    "allergens": [
+      "gluten",
+      "egg",
+      "soy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1638866281450-3933540af86a?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4.5,
+    "reviewCount": 2
+  },
+  {
+    "id": 137,
+    "restaurantId": 16,
+    "category": "Ramen",
+    "cuisineId": 13,
+    "name": "Shoyu Chicken Ramen",
+    "description": "Clear chicken-soy broth with chicken chashu.",
+    "price": 560,
+    "diet": "nonveg",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "comforting"
+    ],
+    "allergens": [
+      "gluten",
+      "egg",
+      "soy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 2,
+    "reviewCount": 1
+  },
+  {
+    "id": 138,
+    "restaurantId": 16,
+    "category": "Ramen",
+    "cuisineId": 13,
+    "name": "White Miso Vegan Ramen",
+    "description": "Soy-milk and white miso broth, roasted corn, tofu, greens.",
+    "price": 520,
+    "diet": "vegan",
+    "spiceLevel": 1,
+    "flavourTags": [
+      "creamy",
+      "comforting"
+    ],
+    "allergens": [
+      "gluten",
+      "soy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1612927601601-6638404737ce?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 1
+  },
+  {
+    "id": 139,
+    "restaurantId": 16,
+    "category": "Ramen",
+    "cuisineId": 13,
+    "name": "Tantanmen",
+    "description": "Sesame-chilli broth with spicy minced pork.",
+    "price": 600,
+    "diet": "nonveg",
+    "spiceLevel": 3,
+    "flavourTags": [
+      "spicy",
+      "rich",
+      "creamy"
+    ],
+    "allergens": [
+      "gluten",
+      "soy",
+      "nuts"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1638866281450-3933540af86a?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 5,
+    "reviewCount": 1
+  },
+  {
+    "id": 140,
+    "restaurantId": 16,
+    "category": "Small Plates",
+    "cuisineId": 13,
+    "name": "Gyoza (Chicken)",
+    "description": "Crisp-bottom dumplings with a ponzu dip.",
+    "price": 340,
+    "diet": "nonveg",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "crispy"
+    ],
+    "allergens": [
+      "gluten",
+      "soy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 1
+  },
+  {
+    "id": 141,
+    "restaurantId": 16,
+    "category": "Small Plates",
+    "cuisineId": 13,
+    "name": "Vegetable Gyoza",
+    "description": "Cabbage, shiitake and chive.",
+    "price": 300,
+    "diet": "vegan",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "crispy",
+      "fresh"
+    ],
+    "allergens": [
+      "gluten",
+      "soy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1647999019630-dabe1a837693?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 1
+  },
+  {
+    "id": 142,
+    "restaurantId": 16,
+    "category": "Small Plates",
+    "cuisineId": 13,
+    "name": "Karaage",
+    "description": "Japanese fried chicken with kewpie and lemon.",
+    "price": 380,
+    "diet": "nonveg",
+    "spiceLevel": 1,
+    "flavourTags": [
+      "crispy"
+    ],
+    "allergens": [
+      "gluten",
+      "soy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1616252980327-ec70572e5df9?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 3,
+    "reviewCount": 1
+  },
+  {
+    "id": 143,
+    "restaurantId": 16,
+    "category": "Small Plates",
+    "cuisineId": 13,
+    "name": "Agedashi Tofu",
+    "description": "Silken tofu in a light dashi with grated radish.",
+    "price": 320,
+    "diet": "vegan",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "mild",
+      "comforting"
+    ],
+    "allergens": [
+      "soy",
+      "gluten"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1612927601601-6638404737ce?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 5,
+    "reviewCount": 1
+  },
+  {
+    "id": 144,
+    "restaurantId": 16,
+    "category": "Sweets",
+    "cuisineId": 18,
+    "name": "Matcha Mochi",
+    "description": "Matcha-dusted mochi with red bean.",
+    "price": 260,
+    "diet": "vegan",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "sweet"
+    ],
+    "allergens": [
+      "soy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1763683943943-c2ac7a370251?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 1
+  },
+  {
+    "id": 145,
+    "restaurantId": 17,
+    "category": "Bao",
+    "cuisineId": 14,
+    "name": "Pork Belly Bao",
+    "description": "Braised pork belly, pickled cucumber, peanut crumb.",
+    "price": 380,
+    "diet": "nonveg",
+    "spiceLevel": 1,
+    "flavourTags": [
+      "rich",
+      "sweet"
+    ],
+    "allergens": [
+      "gluten",
+      "soy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1647999019630-dabe1a837693?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 5,
+    "reviewCount": 1
+  },
+  {
+    "id": 146,
+    "restaurantId": 17,
+    "category": "Bao",
+    "cuisineId": 14,
+    "name": "Crispy Tofu Bao",
+    "description": "Tempura tofu, sriracha mayo (vegan), slaw.",
+    "price": 320,
+    "diet": "vegan",
+    "spiceLevel": 1,
+    "flavourTags": [
+      "crispy",
+      "fresh"
+    ],
+    "allergens": [
+      "gluten",
+      "soy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 1
+  },
+  {
+    "id": 147,
+    "restaurantId": 17,
+    "category": "Bowls",
+    "cuisineId": 14,
+    "name": "Thai Green Curry (Veg)",
+    "description": "Coconut green curry with Thai basil and jasmine rice.",
+    "price": 420,
+    "diet": "vegan",
+    "spiceLevel": 2,
+    "flavourTags": [
+      "creamy",
+      "spicy",
+      "fresh"
+    ],
+    "allergens": [
+      "soy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4.5,
+    "reviewCount": 2
+  },
+  {
+    "id": 148,
+    "restaurantId": 17,
+    "category": "Bowls",
+    "cuisineId": 14,
+    "name": "Thai Red Curry (Chicken)",
+    "description": "Red curry with bamboo shoot and makrut lime.",
+    "price": 460,
+    "diet": "nonveg",
+    "spiceLevel": 2,
+    "flavourTags": [
+      "creamy",
+      "spicy"
+    ],
+    "allergens": [],
+    "imageUrl": "https://images.unsplash.com/photo-1742599361539-f096753d1100?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 3,
+    "reviewCount": 1
+  },
+  {
+    "id": 149,
+    "restaurantId": 17,
+    "category": "Wok",
+    "cuisineId": 14,
+    "name": "Kung Pao Chicken",
+    "description": "Sichuan pepper, dried chilli, peanuts.",
+    "price": 440,
+    "diet": "nonveg",
+    "spiceLevel": 3,
+    "flavourTags": [
+      "spicy",
+      "smoky"
+    ],
+    "allergens": [
+      "nuts",
+      "soy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1567529854338-fc097b962123?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 1
+  },
+  {
+    "id": 150,
+    "restaurantId": 17,
+    "category": "Wok",
+    "cuisineId": 14,
+    "name": "Basil Fried Rice",
+    "description": "Holy basil, garlic, chilli, wok-fried.",
+    "price": 340,
+    "diet": "vegan",
+    "spiceLevel": 2,
+    "flavourTags": [
+      "spicy",
+      "fresh"
+    ],
+    "allergens": [
+      "soy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1612927601601-6638404737ce?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 1
+  },
+  {
+    "id": 151,
+    "restaurantId": 17,
+    "category": "Wok",
+    "cuisineId": 14,
+    "name": "Dan Dan Noodles",
+    "description": "Chilli oil, sesame paste, minced chicken.",
+    "price": 400,
+    "diet": "nonveg",
+    "spiceLevel": 3,
+    "flavourTags": [
+      "spicy",
+      "rich"
+    ],
+    "allergens": [
+      "gluten",
+      "nuts",
+      "soy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1638866281450-3933540af86a?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 2,
+    "reviewCount": 1
+  },
+  {
+    "id": 152,
+    "restaurantId": 17,
+    "category": "Bowls",
+    "cuisineId": 13,
+    "name": "Sushi Bowl (Veg)",
+    "description": "Sushi rice, avocado, cucumber, pickled ginger, sesame.",
+    "price": 420,
+    "diet": "vegan",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "fresh",
+      "mild"
+    ],
+    "allergens": [
+      "soy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 3,
+    "reviewCount": 1
+  },
+  {
+    "id": 153,
+    "restaurantId": 17,
+    "category": "Drinks",
+    "cuisineId": 14,
+    "name": "Lychee Iced Tea",
+    "description": "Jasmine tea, lychee, lime.",
+    "price": 180,
+    "diet": "vegan",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "sweet",
+      "fresh"
+    ],
+    "allergens": [],
+    "imageUrl": "https://images.unsplash.com/photo-1592663527359-cf6642f54cff?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 1
+  },
+  {
+    "id": 154,
+    "restaurantId": 18,
+    "category": "Burgers",
+    "cuisineId": 16,
+    "name": "Double Smash Burger",
+    "description": "Two lace-edged beef patties, American cheese, pickles, yard sauce.",
+    "price": 420,
+    "diet": "nonveg",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "rich",
+      "smoky"
+    ],
+    "allergens": [
+      "dairy",
+      "gluten"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1561758033-d89a9ad46330?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4.5,
+    "reviewCount": 2
+  },
+  {
+    "id": 155,
+    "restaurantId": 18,
+    "category": "Burgers",
+    "cuisineId": 16,
+    "name": "Smoky BBQ Bacon Burger",
+    "description": "Smash patty, crispy bacon, bourbon BBQ, onion rings.",
+    "price": 480,
+    "diet": "nonveg",
+    "spiceLevel": 1,
+    "flavourTags": [
+      "smoky",
+      "rich"
+    ],
+    "allergens": [
+      "dairy",
+      "gluten"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1550547660-d9450f859349?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 5,
+    "reviewCount": 1
+  },
+  {
+    "id": 156,
+    "restaurantId": 18,
+    "category": "Burgers",
+    "cuisineId": 16,
+    "name": "Nashville Hot Chicken",
+    "description": "Fried chicken thigh dunked in cayenne oil, slaw, pickles.",
+    "price": 440,
+    "diet": "nonveg",
+    "spiceLevel": 3,
+    "flavourTags": [
+      "spicy",
+      "crispy"
+    ],
+    "allergens": [
+      "dairy",
+      "gluten",
+      "egg"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 5,
+    "reviewCount": 1
+  },
+  {
+    "id": 157,
+    "restaurantId": 18,
+    "category": "Burgers",
+    "cuisineId": 16,
+    "name": "Crispy Paneer Burger",
+    "description": "Panko paneer slab with peri-peri mayo.",
+    "price": 340,
+    "diet": "veg",
+    "spiceLevel": 1,
+    "flavourTags": [
+      "crispy",
+      "creamy"
+    ],
+    "allergens": [
+      "dairy",
+      "gluten"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1561758033-d89a9ad46330?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 1
+  },
+  {
+    "id": 158,
+    "restaurantId": 18,
+    "category": "Burgers",
+    "cuisineId": 16,
+    "name": "Beyond Smash (Vegan)",
+    "description": "Plant patty, vegan cheese, pickles, on a vegan bun.",
+    "price": 460,
+    "diet": "vegan",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "smoky",
+      "rich"
+    ],
+    "allergens": [
+      "gluten",
+      "soy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1550547660-d9450f859349?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 1
+  },
+  {
+    "id": 159,
+    "restaurantId": 18,
+    "category": "Sides",
+    "cuisineId": 16,
+    "name": "Double-Fried Fries",
+    "description": "Hand-cut, blanched, fried twice.",
+    "price": 180,
+    "diet": "vegan",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "crispy"
+    ],
+    "allergens": [],
+    "imageUrl": "https://images.unsplash.com/photo-1561758033-d89a9ad46330?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4.7,
+    "reviewCount": 3
+  },
+  {
+    "id": 160,
+    "restaurantId": 18,
+    "category": "Sides",
+    "cuisineId": 16,
+    "name": "Loaded Cheese Fries",
+    "description": "Cheese sauce, jalapeño, bacon bits.",
+    "price": 260,
+    "diet": "nonveg",
+    "spiceLevel": 1,
+    "flavourTags": [
+      "rich",
+      "crispy"
+    ],
+    "allergens": [
+      "dairy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 1
+  },
+  {
+    "id": 161,
+    "restaurantId": 18,
+    "category": "Sides",
+    "cuisineId": 16,
+    "name": "Buffalo Wings",
+    "description": "Six wings, buffalo sauce, blue-cheese dip.",
+    "price": 380,
+    "diet": "nonveg",
+    "spiceLevel": 2,
+    "flavourTags": [
+      "spicy",
+      "smoky",
+      "tangy"
+    ],
+    "allergens": [
+      "dairy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1616252980327-ec70572e5df9?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 1
+  },
+  {
+    "id": 162,
+    "restaurantId": 18,
+    "category": "Shakes",
+    "cuisineId": 16,
+    "name": "Salted Caramel Shake",
+    "description": "Thick shake with house salted caramel.",
+    "price": 260,
+    "diet": "veg",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "sweet",
+      "creamy",
+      "rich"
+    ],
+    "allergens": [
+      "dairy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1592663527359-cf6642f54cff?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 3,
+    "reviewCount": 1
+  },
+  {
+    "id": 163,
+    "restaurantId": 19,
+    "category": "Burgers",
+    "cuisineId": 16,
+    "name": "Gongura Chicken Burger",
+    "description": "Fried chicken, gongura mayo, onion.",
+    "price": 360,
+    "diet": "nonveg",
+    "spiceLevel": 2,
+    "flavourTags": [
+      "tangy",
+      "spicy"
+    ],
+    "allergens": [
+      "gluten",
+      "egg"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 5,
+    "reviewCount": 1
+  },
+  {
+    "id": 164,
+    "restaurantId": 19,
+    "category": "Burgers",
+    "cuisineId": 16,
+    "name": "Paneer Tikka Burger",
+    "description": "Tandoori paneer patty, mint mayo, pickled onion.",
+    "price": 320,
+    "diet": "veg",
+    "spiceLevel": 2,
+    "flavourTags": [
+      "smoky",
+      "spicy"
+    ],
+    "allergens": [
+      "dairy",
+      "gluten"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1561758033-d89a9ad46330?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 2
+  },
+  {
+    "id": 165,
+    "restaurantId": 19,
+    "category": "Burgers",
+    "cuisineId": 16,
+    "name": "Classic Cheeseburger",
+    "description": "Beef patty, cheddar, lettuce, tomato.",
+    "price": 340,
+    "diet": "nonveg",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "rich"
+    ],
+    "allergens": [
+      "dairy",
+      "gluten"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1550547660-d9450f859349?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 2,
+    "reviewCount": 1
+  },
+  {
+    "id": 166,
+    "restaurantId": 19,
+    "category": "Burgers",
+    "cuisineId": 16,
+    "name": "Aloo Tikki Burger",
+    "description": "Spiced potato patty, tamarind chutney, vegan mayo.",
+    "price": 220,
+    "diet": "vegan",
+    "spiceLevel": 1,
+    "flavourTags": [
+      "crispy",
+      "comforting"
+    ],
+    "allergens": [
+      "gluten"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 1
+  },
+  {
+    "id": 167,
+    "restaurantId": 19,
+    "category": "Sides",
+    "cuisineId": 16,
+    "name": "Mango Thokku Fries",
+    "description": "Fries tossed in a sweet-hot raw mango relish.",
+    "price": 200,
+    "diet": "vegan",
+    "spiceLevel": 2,
+    "flavourTags": [
+      "tangy",
+      "spicy",
+      "crispy"
+    ],
+    "allergens": [],
+    "imageUrl": "https://images.unsplash.com/photo-1561758033-d89a9ad46330?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 1
+  },
+  {
+    "id": 168,
+    "restaurantId": 19,
+    "category": "Sides",
+    "cuisineId": 16,
+    "name": "Masala Onion Rings",
+    "description": "Besan-battered onion rings with chaat masala.",
+    "price": 180,
+    "diet": "vegan",
+    "spiceLevel": 1,
+    "flavourTags": [
+      "crispy"
+    ],
+    "allergens": [
+      "gluten"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1550547660-d9450f859349?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 1
+  },
+  {
+    "id": 169,
+    "restaurantId": 19,
+    "category": "Sides",
+    "cuisineId": 16,
+    "name": "Chicken Popcorn",
+    "description": "Bite-size fried chicken with a gunpowder dip.",
+    "price": 260,
+    "diet": "nonveg",
+    "spiceLevel": 1,
+    "flavourTags": [
+      "crispy"
+    ],
+    "allergens": [
+      "gluten",
+      "egg"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1616252980327-ec70572e5df9?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 2,
+    "reviewCount": 1
+  },
+  {
+    "id": 170,
+    "restaurantId": 19,
+    "category": "Shakes",
+    "cuisineId": 16,
+    "name": "Rose Falooda Shake",
+    "description": "Rose syrup, sabja, vermicelli, ice cream.",
+    "price": 220,
+    "diet": "veg",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "sweet",
+      "creamy"
+    ],
+    "allergens": [
+      "dairy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1592663527359-cf6642f54cff?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 1
+  },
+  {
+    "id": 171,
+    "restaurantId": 19,
+    "category": "Shakes",
+    "cuisineId": 16,
+    "name": "Filter Coffee Shake",
+    "description": "Degree decoction blended with vanilla ice cream.",
+    "price": 220,
+    "diet": "veg",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "sweet",
+      "rich"
+    ],
+    "allergens": [
+      "dairy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1507133750040-4a8f57021571?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 5,
+    "reviewCount": 1
+  },
+  {
+    "id": 172,
+    "restaurantId": 20,
+    "category": "Chaat",
+    "cuisineId": 9,
+    "name": "Masala Puri",
+    "description": "Crushed puris drowned in hot green-peas gravy with onion and sev. Bengaluru's own.",
+    "price": 60,
+    "diet": "vegan",
+    "spiceLevel": 2,
+    "flavourTags": [
+      "spicy",
+      "tangy"
+    ],
+    "allergens": [
+      "gluten"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4.5,
+    "reviewCount": 2
+  },
+  {
+    "id": 173,
+    "restaurantId": 20,
+    "category": "Chaat",
+    "cuisineId": 9,
+    "name": "Pani Puri",
+    "description": "Six crisp puris, spicy mint water, sweet date water.",
+    "price": 50,
+    "diet": "vegan",
+    "spiceLevel": 2,
+    "flavourTags": [
+      "tangy",
+      "spicy",
+      "fresh"
+    ],
+    "allergens": [
+      "gluten"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1657196118354-f25f29fe636d?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 1
+  },
+  {
+    "id": 174,
+    "restaurantId": 20,
+    "category": "Chaat",
+    "cuisineId": 9,
+    "name": "Dahi Puri",
+    "description": "Puris filled with potato, curd and chutneys.",
+    "price": 70,
+    "diet": "veg",
+    "spiceLevel": 1,
+    "flavourTags": [
+      "tangy",
+      "sweet",
+      "creamy"
+    ],
+    "allergens": [
+      "dairy",
+      "gluten"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1683533678059-63c6a0e9e3ef?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 5,
+    "reviewCount": 1
+  },
+  {
+    "id": 175,
+    "restaurantId": 20,
+    "category": "Chaat",
+    "cuisineId": 9,
+    "name": "Bhel Puri",
+    "description": "Puffed rice, raw mango, peanuts, coriander.",
+    "price": 55,
+    "diet": "vegan",
+    "spiceLevel": 1,
+    "flavourTags": [
+      "tangy",
+      "crispy",
+      "fresh"
+    ],
+    "allergens": [
+      "nuts"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1683533678033-f5d60f0a3437?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 1
+  },
+  {
+    "id": 176,
+    "restaurantId": 20,
+    "category": "Chaat",
+    "cuisineId": 9,
+    "name": "Samosa Chaat",
+    "description": "Crushed samosa under chole, curd and three chutneys.",
+    "price": 80,
+    "diet": "veg",
+    "spiceLevel": 2,
+    "flavourTags": [
+      "spicy",
+      "tangy"
+    ],
+    "allergens": [
+      "dairy",
+      "gluten"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 1
+  },
+  {
+    "id": 177,
+    "restaurantId": 20,
+    "category": "Fried",
+    "cuisineId": 9,
+    "name": "Punjabi Samosa",
+    "description": "Fried to order. Pea and potato filling.",
+    "price": 30,
+    "diet": "vegan",
+    "spiceLevel": 1,
+    "flavourTags": [
+      "crispy",
+      "comforting"
+    ],
+    "allergens": [
+      "gluten"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1657196118354-f25f29fe636d?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 1
+  },
+  {
+    "id": 178,
+    "restaurantId": 20,
+    "category": "Fried",
+    "cuisineId": 9,
+    "name": "Mirchi Bajji",
+    "description": "Long green chillies in besan batter, slit and stuffed with onion.",
+    "price": 40,
+    "diet": "vegan",
+    "spiceLevel": 2,
+    "flavourTags": [
+      "spicy",
+      "crispy"
+    ],
+    "allergens": [],
+    "imageUrl": "https://images.unsplash.com/photo-1683533678059-63c6a0e9e3ef?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 5,
+    "reviewCount": 1
+  },
+  {
+    "id": 179,
+    "restaurantId": 20,
+    "category": "Pav & Kulfi",
+    "cuisineId": 9,
+    "name": "Pav Bhaji",
+    "description": "Butter-laden bhaji with two toasted pavs.",
+    "price": 110,
+    "diet": "veg",
+    "spiceLevel": 2,
+    "flavourTags": [
+      "spicy",
+      "rich",
+      "comforting"
+    ],
+    "allergens": [
+      "dairy",
+      "gluten"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 3,
+    "reviewCount": 1
+  },
+  {
+    "id": 180,
+    "restaurantId": 20,
+    "category": "Pav & Kulfi",
+    "cuisineId": 18,
+    "name": "Kulfi Falooda",
+    "description": "Malai kulfi over falooda and rose syrup.",
+    "price": 90,
+    "diet": "veg",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "sweet",
+      "creamy"
+    ],
+    "allergens": [
+      "dairy",
+      "nuts"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1763683943943-c2ac7a370251?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 1
+  },
+  {
+    "id": 181,
+    "restaurantId": 21,
+    "category": "Paddu",
+    "cuisineId": 1,
+    "name": "Plain Paddu",
+    "description": "Eight dosa-batter dumplings, crisp outside, soft inside.",
+    "price": 60,
+    "diet": "vegan",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "crispy",
+      "mild"
+    ],
+    "allergens": [],
+    "imageUrl": "https://images.unsplash.com/photo-1657196118354-f25f29fe636d?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 3.5,
+    "reviewCount": 2
+  },
+  {
+    "id": 182,
+    "restaurantId": 21,
+    "category": "Paddu",
+    "cuisineId": 1,
+    "name": "Ragi Paddu",
+    "description": "Finger-millet appe with ginger and onion.",
+    "price": 70,
+    "diet": "vegan",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "crispy",
+      "comforting"
+    ],
+    "allergens": [],
+    "imageUrl": "https://images.unsplash.com/photo-1683533678033-f5d60f0a3437?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 5,
+    "reviewCount": 1
+  },
+  {
+    "id": 183,
+    "restaurantId": 21,
+    "category": "Paddu",
+    "cuisineId": 1,
+    "name": "Cheese Chilli Paddu",
+    "description": "Molten cheese and green chilli centres.",
+    "price": 100,
+    "diet": "veg",
+    "spiceLevel": 2,
+    "flavourTags": [
+      "crispy",
+      "creamy",
+      "spicy"
+    ],
+    "allergens": [
+      "dairy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1657196118354-f25f29fe636d?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 1
+  },
+  {
+    "id": 184,
+    "restaurantId": 21,
+    "category": "Paddu",
+    "cuisineId": 1,
+    "name": "Masala Paddu",
+    "description": "Onion, chilli, curry leaf, coriander.",
+    "price": 80,
+    "diet": "vegan",
+    "spiceLevel": 2,
+    "flavourTags": [
+      "spicy",
+      "crispy"
+    ],
+    "allergens": [],
+    "imageUrl": "https://images.unsplash.com/photo-1683533678059-63c6a0e9e3ef?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 3,
+    "reviewCount": 1
+  },
+  {
+    "id": 185,
+    "restaurantId": 21,
+    "category": "Paddu",
+    "cuisineId": 18,
+    "name": "Sweet Banana Appe",
+    "description": "Elakki banana and jaggery appe with ghee.",
+    "price": 80,
+    "diet": "veg",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "sweet",
+      "comforting"
+    ],
+    "allergens": [
+      "dairy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1683533678033-f5d60f0a3437?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 5,
+    "reviewCount": 1
+  },
+  {
+    "id": 186,
+    "restaurantId": 21,
+    "category": "Tiffin",
+    "cuisineId": 1,
+    "name": "Idli Vada Combo",
+    "description": "Two idlis, one vada, sambar and chutney.",
+    "price": 70,
+    "diet": "vegan",
+    "spiceLevel": 1,
+    "flavourTags": [
+      "comforting"
+    ],
+    "allergens": [],
+    "imageUrl": "https://images.unsplash.com/photo-1680359871322-aabe6b33eff5?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 3,
+    "reviewCount": 1
+  },
+  {
+    "id": 187,
+    "restaurantId": 21,
+    "category": "Tiffin",
+    "cuisineId": 1,
+    "name": "Open Butter Masala Dosa",
+    "description": "Open-faced dosa with butter and potato smash.",
+    "price": 110,
+    "diet": "veg",
+    "spiceLevel": 1,
+    "flavourTags": [
+      "rich",
+      "crispy"
+    ],
+    "allergens": [
+      "dairy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1668236543090-82eba5ee5976?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 1
+  },
+  {
+    "id": 188,
+    "restaurantId": 21,
+    "category": "Tiffin",
+    "cuisineId": 1,
+    "name": "Lemon Sevai",
+    "description": "Rice noodles with lemon, peanuts and curry leaves.",
+    "price": 80,
+    "diet": "vegan",
+    "spiceLevel": 1,
+    "flavourTags": [
+      "tangy",
+      "fresh"
+    ],
+    "allergens": [
+      "nuts"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1633383718081-22ac93e3db65?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 2,
+    "reviewCount": 1
+  },
+  {
+    "id": 189,
+    "restaurantId": 21,
+    "category": "Take Home",
+    "cuisineId": 1,
+    "name": "Green Chutney Jar",
+    "description": "The famous coriander-coconut chutney, 250 g to take home.",
+    "price": 120,
+    "diet": "vegan",
+    "spiceLevel": 2,
+    "flavourTags": [
+      "fresh",
+      "spicy"
+    ],
+    "allergens": [],
+    "imageUrl": "https://images.unsplash.com/photo-1787024231387-edccb8c44700?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 5,
+    "reviewCount": 1
+  },
+  {
+    "id": 190,
+    "restaurantId": 22,
+    "category": "Thalis",
+    "cuisineId": 3,
+    "name": "Saaru Oota Thali",
+    "description": "Three saarus, palya, kosambari, rice, chapati, curd, sweet.",
+    "price": 240,
+    "diet": "veg",
+    "spiceLevel": 2,
+    "flavourTags": [
+      "comforting",
+      "tangy",
+      "spicy"
+    ],
+    "allergens": [
+      "dairy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1786227905994-235e1799292e?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4.5,
+    "reviewCount": 2
+  },
+  {
+    "id": 191,
+    "restaurantId": 22,
+    "category": "Thalis",
+    "cuisineId": 4,
+    "name": "Andhra Thali",
+    "description": "Pappu, gongura, pulusu, gunpowder, ghee.",
+    "price": 280,
+    "diet": "veg",
+    "spiceLevel": 3,
+    "flavourTags": [
+      "spicy",
+      "tangy"
+    ],
+    "allergens": [
+      "dairy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1625398407796-82650a8c135f?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 1
+  },
+  {
+    "id": 192,
+    "restaurantId": 22,
+    "category": "Specials",
+    "cuisineId": 3,
+    "name": "Naati Koli Saaru",
+    "description": "Country-chicken curry with ragi mudde. Sundays.",
+    "price": 360,
+    "diet": "nonveg",
+    "spiceLevel": 3,
+    "flavourTags": [
+      "spicy",
+      "rich",
+      "comforting"
+    ],
+    "allergens": [],
+    "imageUrl": "https://images.unsplash.com/photo-1767114915989-c6ab3c8fc42e?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 5,
+    "reviewCount": 1
+  },
+  {
+    "id": 193,
+    "restaurantId": 22,
+    "category": "Specials",
+    "cuisineId": 4,
+    "name": "Mutton Chops",
+    "description": "Bone-in mutton roasted dry with pepper.",
+    "price": 380,
+    "diet": "nonveg",
+    "spiceLevel": 2,
+    "flavourTags": [
+      "spicy",
+      "rich"
+    ],
+    "allergens": [],
+    "imageUrl": "https://images.unsplash.com/photo-1742599361539-f096753d1100?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 2,
+    "reviewCount": 1
+  },
+  {
+    "id": 194,
+    "restaurantId": 22,
+    "category": "Saaru",
+    "cuisineId": 3,
+    "name": "Pepper Rasam",
+    "description": "Cracked black pepper and tamarind, sip from the glass.",
+    "price": 80,
+    "diet": "vegan",
+    "spiceLevel": 2,
+    "flavourTags": [
+      "spicy",
+      "tangy",
+      "comforting"
+    ],
+    "allergens": [],
+    "imageUrl": "https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4.5,
+    "reviewCount": 2
+  },
+  {
+    "id": 195,
+    "restaurantId": 22,
+    "category": "Saaru",
+    "cuisineId": 3,
+    "name": "Bassaru",
+    "description": "Lentil-and-greens broth with its own palya.",
+    "price": 110,
+    "diet": "vegan",
+    "spiceLevel": 2,
+    "flavourTags": [
+      "spicy",
+      "comforting"
+    ],
+    "allergens": [],
+    "imageUrl": "https://images.unsplash.com/photo-1567529854338-fc097b962123?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 1
+  },
+  {
+    "id": 196,
+    "restaurantId": 22,
+    "category": "Saaru",
+    "cuisineId": 4,
+    "name": "Ulavacharu",
+    "description": "Horse-gram rasam from Andhra with a smoky depth.",
+    "price": 130,
+    "diet": "vegan",
+    "spiceLevel": 2,
+    "flavourTags": [
+      "smoky",
+      "tangy"
+    ],
+    "allergens": [],
+    "imageUrl": "https://images.unsplash.com/photo-1767114915989-c6ab3c8fc42e?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 5,
+    "reviewCount": 1
+  },
+  {
+    "id": 197,
+    "restaurantId": 22,
+    "category": "Rice & Sweet",
+    "cuisineId": 3,
+    "name": "Curd Rice",
+    "description": "Thick curd rice with pomegranate and a mustard tempering.",
+    "price": 90,
+    "diet": "veg",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "mild",
+      "comforting",
+      "creamy"
+    ],
+    "allergens": [
+      "dairy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1633383718081-22ac93e3db65?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 1
+  },
+  {
+    "id": 198,
+    "restaurantId": 22,
+    "category": "Rice & Sweet",
+    "cuisineId": 18,
+    "name": "Kayi Holige",
+    "description": "Coconut-jaggery holige with ghee.",
+    "price": 70,
+    "diet": "veg",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "sweet",
+      "rich"
+    ],
+    "allergens": [
+      "dairy",
+      "gluten"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1763683943943-c2ac7a370251?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 1
+  },
+  {
+    "id": 199,
+    "restaurantId": 23,
+    "category": "Cupcakes",
+    "cuisineId": 18,
+    "name": "Red Velvet Cupcake",
+    "description": "Cream-cheese frosting, buttermilk sponge.",
+    "price": 140,
+    "diet": "egg",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "sweet",
+      "creamy"
+    ],
+    "allergens": [
+      "dairy",
+      "egg",
+      "gluten"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1615557509870-98972c5e1396?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 1
+  },
+  {
+    "id": 200,
+    "restaurantId": 23,
+    "category": "Cupcakes",
+    "cuisineId": 18,
+    "name": "Eggless Chocolate Cupcake",
+    "description": "Dark chocolate ganache on a moist eggless sponge.",
+    "price": 130,
+    "diet": "veg",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "sweet",
+      "rich"
+    ],
+    "allergens": [
+      "dairy",
+      "gluten"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1615557509870-98972c5e1396?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 5,
+    "reviewCount": 1
+  },
+  {
+    "id": 201,
+    "restaurantId": 23,
+    "category": "Cupcakes",
+    "cuisineId": 18,
+    "name": "Vegan Coconut Cupcake",
+    "description": "Coconut-milk sponge, coconut whip.",
+    "price": 150,
+    "diet": "vegan",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "sweet",
+      "creamy"
+    ],
+    "allergens": [
+      "gluten"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1777544575746-96654957db13?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 3,
+    "reviewCount": 1
+  },
+  {
+    "id": 202,
+    "restaurantId": 23,
+    "category": "Cakes",
+    "cuisineId": 18,
+    "name": "Tres Leches",
+    "description": "Three-milk soaked sponge with cinnamon cream.",
+    "price": 260,
+    "diet": "egg",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "sweet",
+      "creamy"
+    ],
+    "allergens": [
+      "dairy",
+      "egg",
+      "gluten"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1763683943943-c2ac7a370251?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4.5,
+    "reviewCount": 2
+  },
+  {
+    "id": 203,
+    "restaurantId": 23,
+    "category": "Cakes",
+    "cuisineId": 18,
+    "name": "Jaggery Coconut Cheesecake",
+    "description": "Baked cheesecake with a jaggery-coconut layer.",
+    "price": 280,
+    "diet": "veg",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "sweet",
+      "rich",
+      "creamy"
+    ],
+    "allergens": [
+      "dairy",
+      "gluten"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1525351484163-7529414344d8?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 5,
+    "reviewCount": 1
+  },
+  {
+    "id": 204,
+    "restaurantId": 23,
+    "category": "Cakes",
+    "cuisineId": 18,
+    "name": "Vegan Chocolate Torte",
+    "description": "Flourless dark chocolate and almond torte.",
+    "price": 290,
+    "diet": "vegan",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "sweet",
+      "rich"
+    ],
+    "allergens": [
+      "nuts"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1763683943943-c2ac7a370251?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 5,
+    "reviewCount": 1
+  },
+  {
+    "id": 205,
+    "restaurantId": 23,
+    "category": "Cups",
+    "cuisineId": 18,
+    "name": "Mango Panna Cotta (Vegan)",
+    "description": "Alphonso mango on coconut panna cotta.",
+    "price": 220,
+    "diet": "vegan",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "sweet",
+      "fresh",
+      "creamy"
+    ],
+    "allergens": [],
+    "imageUrl": "https://images.unsplash.com/photo-1615557509870-98972c5e1396?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 1
+  },
+  {
+    "id": 206,
+    "restaurantId": 23,
+    "category": "Cups",
+    "cuisineId": 18,
+    "name": "Gulab Jamun Cheesecake Jar",
+    "description": "Two jamuns in a no-bake cheesecake jar.",
+    "price": 240,
+    "diet": "veg",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "sweet",
+      "rich"
+    ],
+    "allergens": [
+      "dairy",
+      "gluten"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1777544575746-96654957db13?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 2,
+    "reviewCount": 1
+  },
+  {
+    "id": 207,
+    "restaurantId": 23,
+    "category": "Cups",
+    "cuisineId": 10,
+    "name": "Hot Chocolate",
+    "description": "70% dark chocolate, whole milk.",
+    "price": 180,
+    "diet": "veg",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "sweet",
+      "creamy",
+      "comforting"
+    ],
+    "allergens": [
+      "dairy"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1592663527359-cf6642f54cff?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 1
+  },
+  {
+    "id": 208,
+    "restaurantId": 24,
+    "category": "Brunch",
+    "cuisineId": 10,
+    "name": "Tofu Scramble",
+    "description": "Turmeric tofu, spinach, cherry tomato, sourdough.",
+    "price": 360,
+    "diet": "vegan",
+    "spiceLevel": 1,
+    "flavourTags": [
+      "comforting",
+      "fresh"
+    ],
+    "allergens": [
+      "soy",
+      "gluten"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1525351484163-7529414344d8?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 5,
+    "reviewCount": 1
+  },
+  {
+    "id": 209,
+    "restaurantId": 24,
+    "category": "Mains",
+    "cuisineId": 10,
+    "name": "Buddha Bowl",
+    "description": "Quinoa, roasted sweet potato, chickpeas, tahini, greens.",
+    "price": 420,
+    "diet": "vegan",
+    "spiceLevel": 1,
+    "flavourTags": [
+      "fresh"
+    ],
+    "allergens": [
+      "nuts"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1759216279330-c5a83a0a1ebe?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4.5,
+    "reviewCount": 2
+  },
+  {
+    "id": 210,
+    "restaurantId": 24,
+    "category": "Mains",
+    "cuisineId": 12,
+    "name": "Vegan Mushroom Risotto",
+    "description": "Arborio, porcini, cashew cream.",
+    "price": 480,
+    "diet": "vegan",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "creamy",
+      "rich",
+      "comforting"
+    ],
+    "allergens": [
+      "nuts"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1498579150354-977475b7ea0b?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 5,
+    "reviewCount": 1
+  },
+  {
+    "id": 211,
+    "restaurantId": 24,
+    "category": "Mains",
+    "cuisineId": 12,
+    "name": "Vegan Pesto Pizza",
+    "description": "Thin crust, basil pesto, cashew cheese, rocket.",
+    "price": 520,
+    "diet": "vegan",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "fresh",
+      "creamy"
+    ],
+    "allergens": [
+      "gluten",
+      "nuts"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 2,
+    "reviewCount": 1
+  },
+  {
+    "id": 212,
+    "restaurantId": 24,
+    "category": "Mains",
+    "cuisineId": 10,
+    "name": "Grilled Chicken Salad",
+    "description": "Herb chicken, greens, toasted almonds, citrus dressing.",
+    "price": 440,
+    "diet": "nonveg",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "fresh"
+    ],
+    "allergens": [
+      "nuts"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1616252980327-ec70572e5df9?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 1
+  },
+  {
+    "id": 213,
+    "restaurantId": 24,
+    "category": "Brunch",
+    "cuisineId": 10,
+    "name": "Eggs Benedict",
+    "description": "Poached eggs, spinach, hollandaise on muffin.",
+    "price": 420,
+    "diet": "egg",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "rich",
+      "creamy"
+    ],
+    "allergens": [
+      "dairy",
+      "egg",
+      "gluten"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1525351484163-7529414344d8?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 1
+  },
+  {
+    "id": 214,
+    "restaurantId": 24,
+    "category": "Drinks",
+    "cuisineId": 10,
+    "name": "Cold-Pressed Green Juice",
+    "description": "Cucumber, apple, mint, celery, lime.",
+    "price": 220,
+    "diet": "vegan",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "fresh"
+    ],
+    "allergens": [],
+    "imageUrl": "https://images.unsplash.com/photo-1592663527359-cf6642f54cff?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4.5,
+    "reviewCount": 2
+  },
+  {
+    "id": 215,
+    "restaurantId": 24,
+    "category": "Drinks",
+    "cuisineId": 10,
+    "name": "Oat Milk Latte",
+    "description": "Double espresso with oat milk.",
+    "price": 220,
+    "diet": "vegan",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "creamy"
+    ],
+    "allergens": [],
+    "imageUrl": "https://images.unsplash.com/photo-1507133750040-4a8f57021571?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 4,
+    "reviewCount": 1
+  },
+  {
+    "id": 216,
+    "restaurantId": 24,
+    "category": "Sweets",
+    "cuisineId": 18,
+    "name": "Vegan Berry Cheesecake",
+    "description": "Cashew cheesecake with a berry compote.",
+    "price": 320,
+    "diet": "vegan",
+    "spiceLevel": 0,
+    "flavourTags": [
+      "sweet",
+      "creamy",
+      "fresh"
+    ],
+    "allergens": [
+      "nuts"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1763683943943-c2ac7a370251?w=320&h=320&fit=crop&q=70&auto=format",
+    "avgRating": 5,
+    "reviewCount": 1
+  }
+]

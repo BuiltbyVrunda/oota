@@ -1,0 +1,3132 @@
+[
+  {
+    "id": "seed-1-1",
+    "restaurantId": 1,
+    "userId": 1,
+    "userName": "Ananya Rao",
+    "rating": 5,
+    "text": "The ghee roast dosa is exactly what the name promises: crackling, glossy, and the chutney trio is fresh. Pongal was a little salty but I would come back for the dosa alone.",
+    "tags": [
+      "Authentic",
+      "Quick"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 1,
+        "rating": 5
+      },
+      {
+        "dishId": 7,
+        "rating": 3
+      }
+    ],
+    "createdAt": "2026-11-15T16:49:00.805Z"
+  },
+  {
+    "id": "seed-1-2",
+    "restaurantId": 1,
+    "userId": 4,
+    "userName": "Karthik Rao",
+    "rating": 5,
+    "text": "Best Mysore masala dosa in Jayanagar right now. The red chutney actually has heat. Filter coffee is strong and not too sweet.",
+    "tags": [
+      "Value for money",
+      "Authentic"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 3,
+        "rating": 5
+      },
+      {
+        "dishId": 9,
+        "rating": 5
+      }
+    ],
+    "createdAt": "2026-11-09T16:49:00.805Z"
+  },
+  {
+    "id": "seed-1-3",
+    "restaurantId": 1,
+    "userId": 8,
+    "userName": "Arjun Menon",
+    "rating": 4,
+    "text": "Podi idli is addictive. Benne masala dosa was good but not as buttery as Davanagere. Crowded at 8am on Sundays, expect to stand.",
+    "tags": [
+      "Crowded",
+      "Value for money"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 4,
+        "rating": 5
+      },
+      {
+        "dishId": 2,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-11-04T16:49:00.805Z"
+  },
+  {
+    "id": "seed-1-4",
+    "restaurantId": 1,
+    "userId": 12,
+    "userName": "Rahul Nair",
+    "rating": 5,
+    "text": "Thatte idli is soft as anything, sambar tastes like home. My parents loved it.",
+    "tags": [
+      "Family friendly"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 5,
+        "rating": 5
+      },
+      {
+        "dishId": 6,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-10-28T16:49:00.805Z"
+  },
+  {
+    "id": "seed-1-5",
+    "restaurantId": 1,
+    "userId": 17,
+    "userName": "Kavya Reddy",
+    "rating": 3,
+    "text": "Dosa was great, bisi bele bath was lukewarm and the boondi had gone soft. Service rushed us out.",
+    "tags": [
+      "Crowded"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 8,
+        "rating": 2
+      },
+      {
+        "dishId": 1,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-10-19T16:49:00.805Z"
+  },
+  {
+    "id": "seed-1-6",
+    "restaurantId": 1,
+    "userId": 20,
+    "userName": "Manoj Kumar",
+    "rating": 5,
+    "text": "Medu vada are properly crisp. Coffee could be hotter. Still my go-to before work.",
+    "tags": [
+      "Quick"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 6,
+        "rating": 4
+      },
+      {
+        "dishId": 9,
+        "rating": 3
+      }
+    ],
+    "createdAt": "2026-10-04T16:49:00.805Z"
+  },
+  {
+    "id": "seed-2-1",
+    "restaurantId": 2,
+    "userId": 5,
+    "userName": "Priya Hegde",
+    "rating": 4,
+    "text": "Rava idli with the sagu is a proper Malleshwaram breakfast. Kesari bath ran out by 9:40 though.",
+    "tags": [
+      "Quick",
+      "Value for money"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 10,
+        "rating": 5
+      },
+      {
+        "dishId": 12,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-11-14T16:49:00.805Z"
+  },
+  {
+    "id": "seed-2-2",
+    "restaurantId": 2,
+    "userId": 9,
+    "userName": "Nisha Shetty",
+    "rating": 5,
+    "text": "Khara bath plus kesari bath (chow chow) for 115 rupees. Unbeatable. Neer dosa was surprisingly good for a darshini.",
+    "tags": [
+      "Value for money",
+      "Authentic"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 11,
+        "rating": 5
+      },
+      {
+        "dishId": 15,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-11-07T16:49:00.805Z"
+  },
+  {
+    "id": "seed-2-3",
+    "restaurantId": 2,
+    "userId": 13,
+    "userName": "Shruti Kulkarni",
+    "rating": 3,
+    "text": "Masala dosa was average, the potato palya lacked salt. Maddur vada was crisp and lovely though.",
+    "tags": [
+      "Crowded"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 14,
+        "rating": 3
+      },
+      {
+        "dishId": 16,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-10-30T16:49:00.805Z"
+  },
+  {
+    "id": "seed-2-4",
+    "restaurantId": 2,
+    "userId": 16,
+    "userName": "Aditya Bhat",
+    "rating": 4,
+    "text": "Mangalore buns are the reason I come. Badam milk is too sweet for me.",
+    "tags": [
+      "Quick"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 17,
+        "rating": 5
+      },
+      {
+        "dishId": 18,
+        "rating": 3
+      }
+    ],
+    "createdAt": "2026-10-22T16:49:00.805Z"
+  },
+  {
+    "id": "seed-2-5",
+    "restaurantId": 2,
+    "userId": 22,
+    "userName": "Zoya Baig",
+    "rating": 4,
+    "text": "Set dosa is spongy and soaks up the sagu well. Standing tables only, so not for long chats.",
+    "tags": [
+      "Quick"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 13,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-10-11T16:49:00.805Z"
+  },
+  {
+    "id": "seed-2-6",
+    "restaurantId": 2,
+    "userId": 7,
+    "userName": "Deepa Gowda",
+    "rating": 5,
+    "text": "Kesari bath with pineapple and plenty of ghee. Nothing fancy, everything right.",
+    "tags": [
+      "Authentic"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 12,
+        "rating": 5
+      },
+      {
+        "dishId": 10,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-09-27T16:49:00.805Z"
+  },
+  {
+    "id": "seed-3-1",
+    "restaurantId": 3,
+    "userId": 1,
+    "userName": "Ananya Rao",
+    "rating": 4,
+    "text": "Proper wedding-style oota. The Mysore saaru is the highlight, nice and peppery. Wish the palya had more variety.",
+    "tags": [
+      "Generous portions",
+      "Authentic"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 19,
+        "rating": 4
+      },
+      {
+        "dishId": 21,
+        "rating": 5
+      }
+    ],
+    "createdAt": "2026-11-10T16:49:00.805Z"
+  },
+  {
+    "id": "seed-3-2",
+    "restaurantId": 3,
+    "userId": 6,
+    "userName": "Sameer Khan",
+    "rating": 5,
+    "text": "Unlimited banana leaf meal and they keep coming back with ghee. Obbattu was soft and warm. Go hungry.",
+    "tags": [
+      "Generous portions",
+      "Family friendly"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 19,
+        "rating": 5
+      },
+      {
+        "dishId": 26,
+        "rating": 5
+      }
+    ],
+    "createdAt": "2026-11-06T16:49:00.805Z"
+  },
+  {
+    "id": "seed-3-3",
+    "restaurantId": 3,
+    "userId": 10,
+    "userName": "Vikram Iyer",
+    "rating": 4,
+    "text": "Akki rotti with dill is excellent. Majjige huli was a bit thin.",
+    "tags": [
+      "Authentic"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 23,
+        "rating": 5
+      },
+      {
+        "dishId": 22,
+        "rating": 3
+      }
+    ],
+    "createdAt": "2026-10-29T16:49:00.805Z"
+  },
+  {
+    "id": "seed-3-4",
+    "restaurantId": 3,
+    "userId": 14,
+    "userName": "Imran Pasha",
+    "rating": 3,
+    "text": "Ragi mudde was fine but the soppu saaru was too salty on my visit. Long wait on a Sunday.",
+    "tags": [
+      "Crowded"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 24,
+        "rating": 3
+      }
+    ],
+    "createdAt": "2026-10-16T16:49:00.805Z"
+  },
+  {
+    "id": "seed-3-5",
+    "restaurantId": 3,
+    "userId": 19,
+    "userName": "Tanvi Joshi",
+    "rating": 5,
+    "text": "Paal payasa tastes like my grandmother's. The mini thali is perfect on weekdays.",
+    "tags": [
+      "Value for money"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 27,
+        "rating": 5
+      },
+      {
+        "dishId": 20,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-10-02T16:49:00.805Z"
+  },
+  {
+    "id": "seed-3-6",
+    "restaurantId": 3,
+    "userId": 23,
+    "userName": "Harsha Murthy",
+    "rating": 4,
+    "text": "Chitranna and kosambari are fresh and bright. Good place to take visitors from out of state.",
+    "tags": [
+      "Family friendly"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 25,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-09-19T16:49:00.805Z"
+  },
+  {
+    "id": "seed-4-1",
+    "restaurantId": 4,
+    "userId": 2,
+    "userName": "Rohan Mehta",
+    "rating": 5,
+    "text": "Mutton donne biryani is the best in Koramangala. Meat falls off the bone, the green masala has real chilli kick. Brinjal gravy is a must.",
+    "tags": [
+      "Worth the wait",
+      "Generous portions"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 29,
+        "rating": 5
+      },
+      {
+        "dishId": 35,
+        "rating": 5
+      }
+    ],
+    "createdAt": "2026-11-16T16:49:00.805Z"
+  },
+  {
+    "id": "seed-4-2",
+    "restaurantId": 4,
+    "userId": 4,
+    "userName": "Karthik Rao",
+    "rating": 5,
+    "text": "Chicken donne biryani has that seeraga samba aroma. Chicken kebab is properly red and crisp.",
+    "tags": [
+      "Authentic"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 28,
+        "rating": 5
+      },
+      {
+        "dishId": 32,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-11-11T16:49:00.805Z"
+  },
+  {
+    "id": "seed-4-3",
+    "restaurantId": 4,
+    "userId": 11,
+    "userName": "Farah Siddiqui",
+    "rating": 4,
+    "text": "Biryani is great but the mutton pepper fry was too chewy on my visit. Phirni was a nice finish.",
+    "tags": [
+      "Crowded"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 33,
+        "rating": 3
+      },
+      {
+        "dishId": 36,
+        "rating": 4
+      },
+      {
+        "dishId": 28,
+        "rating": 5
+      }
+    ],
+    "createdAt": "2026-11-03T16:49:00.805Z"
+  },
+  {
+    "id": "seed-4-4",
+    "restaurantId": 4,
+    "userId": 15,
+    "userName": "Lakshmi Prasad",
+    "rating": 4,
+    "text": "Egg biryani is underrated, and good value. Weekend wait was 35 minutes.",
+    "tags": [
+      "Value for money",
+      "Worth the wait"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 30,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-10-25T16:49:00.805Z"
+  },
+  {
+    "id": "seed-4-5",
+    "restaurantId": 4,
+    "userId": 21,
+    "userName": "Sneha Rao",
+    "rating": 3,
+    "text": "Veg biryani is just okay, feels like an afterthought. Gobi 65 was good.",
+    "tags": [],
+    "dishRatings": [
+      {
+        "dishId": 31,
+        "rating": 2
+      },
+      {
+        "dishId": 34,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-10-13T16:49:00.805Z"
+  },
+  {
+    "id": "seed-4-6",
+    "restaurantId": 4,
+    "userId": 18,
+    "userName": "Joel D'Souza",
+    "rating": 5,
+    "text": "Ordered three mutton biryanis for the office. Everyone went silent. Enough said.",
+    "tags": [
+      "Generous portions"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 29,
+        "rating": 5
+      }
+    ],
+    "createdAt": "2026-09-29T16:49:00.805Z"
+  },
+  {
+    "id": "seed-4-7",
+    "restaurantId": 4,
+    "userId": 9,
+    "userName": "Nisha Shetty",
+    "rating": 4,
+    "text": "Consistent and fast. Chicken kebab could use more curry leaves but the biryani never disappoints.",
+    "tags": [
+      "Quick"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 32,
+        "rating": 4
+      },
+      {
+        "dishId": 28,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-09-09T16:49:00.805Z"
+  },
+  {
+    "id": "seed-5-1",
+    "restaurantId": 5,
+    "userId": 1,
+    "userName": "Ananya Rao",
+    "rating": 4,
+    "text": "The Andhra veg meal is fierce in the best way. Gunpowder ghee rice is dangerously good. Gutti vankaya was too oily though.",
+    "tags": [
+      "Authentic",
+      "Too spicy"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 37,
+        "rating": 5
+      },
+      {
+        "dishId": 44,
+        "rating": 5
+      },
+      {
+        "dishId": 41,
+        "rating": 3
+      }
+    ],
+    "createdAt": "2026-11-12T16:49:00.805Z"
+  },
+  {
+    "id": "seed-5-2",
+    "restaurantId": 5,
+    "userId": 5,
+    "userName": "Priya Hegde",
+    "rating": 5,
+    "text": "Gongura mutton is the real thing, sour and fiery. Ask for extra ghee with the podi.",
+    "tags": [
+      "Authentic"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 39,
+        "rating": 5
+      },
+      {
+        "dishId": 38,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-11-08T16:49:00.805Z"
+  },
+  {
+    "id": "seed-5-3",
+    "restaurantId": 5,
+    "userId": 13,
+    "userName": "Shruti Kulkarni",
+    "rating": 4,
+    "text": "Kodi kura made me cry a little. In a good way. Bring a lassi from next door.",
+    "tags": [
+      "Too spicy"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 40,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-10-31T16:49:00.805Z"
+  },
+  {
+    "id": "seed-5-4",
+    "restaurantId": 5,
+    "userId": 17,
+    "userName": "Kavya Reddy",
+    "rating": 5,
+    "text": "Pesarattu upma is a great lunch, light but filling. Pootharekulu to finish is a nice touch.",
+    "tags": [
+      "Value for money"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 42,
+        "rating": 5
+      },
+      {
+        "dishId": 45,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-10-24T16:49:00.805Z"
+  },
+  {
+    "id": "seed-5-5",
+    "restaurantId": 5,
+    "userId": 20,
+    "userName": "Manoj Kumar",
+    "rating": 2,
+    "text": "Way too spicy for me even after asking for mild. Chilli paneer pulao was a chilli bomb. Staff were friendly though.",
+    "tags": [
+      "Too spicy",
+      "Great service"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 43,
+        "rating": 2
+      }
+    ],
+    "createdAt": "2026-10-09T16:49:00.805Z"
+  },
+  {
+    "id": "seed-5-6",
+    "restaurantId": 5,
+    "userId": 8,
+    "userName": "Arjun Menon",
+    "rating": 4,
+    "text": "Meals come fast and they refill rasam without asking. Gongura pickle on the cart is excellent.",
+    "tags": [
+      "Quick",
+      "Generous portions"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 37,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-09-24T16:49:00.805Z"
+  },
+  {
+    "id": "seed-6-1",
+    "restaurantId": 6,
+    "userId": 1,
+    "userName": "Ananya Rao",
+    "rating": 5,
+    "text": "Degree coffee in a brass dabarah, done properly. Ghee podi dosa is a perfect pairing. My favourite morning spot.",
+    "tags": [
+      "Work friendly",
+      "Cosy"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 46,
+        "rating": 5
+      },
+      {
+        "dishId": 49,
+        "rating": 5
+      }
+    ],
+    "createdAt": "2026-11-16T16:49:00.805Z"
+  },
+  {
+    "id": "seed-6-2",
+    "restaurantId": 6,
+    "userId": 6,
+    "userName": "Sameer Khan",
+    "rating": 4,
+    "text": "Iced filter coffee tonic sounds odd but works. Banana bread was a bit dry.",
+    "tags": [
+      "Work friendly"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 47,
+        "rating": 4
+      },
+      {
+        "dishId": 52,
+        "rating": 3
+      }
+    ],
+    "createdAt": "2026-11-09T16:49:00.805Z"
+  },
+  {
+    "id": "seed-6-3",
+    "restaurantId": 6,
+    "userId": 10,
+    "userName": "Vikram Iyer",
+    "rating": 5,
+    "text": "Rava kesari cheesecake is genius. Coffee is the best in Indiranagar.",
+    "tags": [
+      "Cosy"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 54,
+        "rating": 5
+      },
+      {
+        "dishId": 46,
+        "rating": 5
+      }
+    ],
+    "createdAt": "2026-11-02T16:49:00.805Z"
+  },
+  {
+    "id": "seed-6-4",
+    "restaurantId": 6,
+    "userId": 14,
+    "userName": "Imran Pasha",
+    "rating": 4,
+    "text": "Idli sambar bowl is comforting. Laptop crowd takes the back room by noon.",
+    "tags": [
+      "Work friendly",
+      "Crowded"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 50,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-10-23T16:49:00.805Z"
+  },
+  {
+    "id": "seed-6-5",
+    "restaurantId": 6,
+    "userId": 21,
+    "userName": "Sneha Rao",
+    "rating": 3,
+    "text": "Cappuccino was fine but overpriced next to the filter coffee. Vada pav was cold.",
+    "tags": [
+      "Pricey"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 48,
+        "rating": 3
+      },
+      {
+        "dishId": 51,
+        "rating": 2
+      }
+    ],
+    "createdAt": "2026-10-10T16:49:00.805Z"
+  },
+  {
+    "id": "seed-6-6",
+    "restaurantId": 6,
+    "userId": 3,
+    "userName": "Meera Iyer",
+    "rating": 4,
+    "text": "Coconut cookie is vegan and crunchy. Nice that they mark vegan items clearly.",
+    "tags": [
+      "Cosy"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 53,
+        "rating": 4
+      },
+      {
+        "dishId": 47,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-10-01T16:49:00.805Z"
+  },
+  {
+    "id": "seed-7-1",
+    "restaurantId": 7,
+    "userId": 2,
+    "userName": "Rohan Mehta",
+    "rating": 3,
+    "text": "Butter chicken is good but sweet for my taste and the tandoori chicken was a bit dry. Pricey for what it is.",
+    "tags": [
+      "Pricey"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 55,
+        "rating": 3
+      },
+      {
+        "dishId": 59,
+        "rating": 3
+      }
+    ],
+    "createdAt": "2026-11-06T16:49:00.805Z"
+  },
+  {
+    "id": "seed-7-2",
+    "restaurantId": 7,
+    "userId": 7,
+    "userName": "Deepa Gowda",
+    "rating": 5,
+    "text": "Dal makhani is the best I have had in Bengaluru, smoky and deep. Garlic naan arrived blistered and hot.",
+    "tags": [
+      "Date night",
+      "Great service"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 56,
+        "rating": 5
+      },
+      {
+        "dishId": 61,
+        "rating": 5
+      }
+    ],
+    "createdAt": "2026-11-10T16:49:00.805Z"
+  },
+  {
+    "id": "seed-7-3",
+    "restaurantId": 7,
+    "userId": 11,
+    "userName": "Farah Siddiqui",
+    "rating": 4,
+    "text": "Rogan josh is properly rich. Laccha paratha is flaky. Service a bit slow on Friday.",
+    "tags": [
+      "Date night"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 58,
+        "rating": 4
+      },
+      {
+        "dishId": 62,
+        "rating": 5
+      }
+    ],
+    "createdAt": "2026-11-01T16:49:00.805Z"
+  },
+  {
+    "id": "seed-7-4",
+    "restaurantId": 7,
+    "userId": 15,
+    "userName": "Lakshmi Prasad",
+    "rating": 5,
+    "text": "Malai broccoli converted my broccoli-hating husband. Shahi tukda is decadent.",
+    "tags": [
+      "Date night",
+      "Cosy"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 60,
+        "rating": 5
+      },
+      {
+        "dishId": 63,
+        "rating": 5
+      }
+    ],
+    "createdAt": "2026-10-26T16:49:00.805Z"
+  },
+  {
+    "id": "seed-7-5",
+    "restaurantId": 7,
+    "userId": 19,
+    "userName": "Tanvi Joshi",
+    "rating": 4,
+    "text": "Butter chicken is excellent, paneer lababdar a little too sweet.",
+    "tags": [
+      "Family friendly"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 55,
+        "rating": 5
+      },
+      {
+        "dishId": 57,
+        "rating": 3
+      }
+    ],
+    "createdAt": "2026-10-15T16:49:00.805Z"
+  },
+  {
+    "id": "seed-7-6",
+    "restaurantId": 7,
+    "userId": 23,
+    "userName": "Harsha Murthy",
+    "rating": 4,
+    "text": "Great for a big group dinner. Ask for the corner table.",
+    "tags": [
+      "Family friendly",
+      "Pricey"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 56,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-09-18T16:49:00.805Z"
+  },
+  {
+    "id": "seed-8-1",
+    "restaurantId": 8,
+    "userId": 4,
+    "userName": "Karthik Rao",
+    "rating": 4,
+    "text": "Kadai paneer is smoky, with real wok hei. Tandoori roti was perfect. Exactly what Whitefield needed.",
+    "tags": [
+      "Generous portions"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 64,
+        "rating": 4
+      },
+      {
+        "dishId": 69,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-11-13T16:49:00.805Z"
+  },
+  {
+    "id": "seed-8-2",
+    "restaurantId": 8,
+    "userId": 8,
+    "userName": "Arjun Menon",
+    "rating": 3,
+    "text": "Chole was good but the Amritsari kulcha was doughy inside. Lassi is great.",
+    "tags": [
+      "Value for money"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 68,
+        "rating": 2
+      },
+      {
+        "dishId": 65,
+        "rating": 4
+      },
+      {
+        "dishId": 72,
+        "rating": 5
+      }
+    ],
+    "createdAt": "2026-11-05T16:49:00.805Z"
+  },
+  {
+    "id": "seed-8-3",
+    "restaurantId": 8,
+    "userId": 12,
+    "userName": "Rahul Nair",
+    "rating": 4,
+    "text": "Dhaba chicken curry with roti is a solid post-work dinner. Loud, cheerful place.",
+    "tags": [
+      "Loud"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 66,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-10-27T16:49:00.805Z"
+  },
+  {
+    "id": "seed-8-4",
+    "restaurantId": 8,
+    "userId": 16,
+    "userName": "Aditya Bhat",
+    "rating": 4,
+    "text": "Sarson ka saag with white butter is seasonal and worth it. Paneer tikka was nicely charred.",
+    "tags": [
+      "Authentic"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 67,
+        "rating": 5
+      },
+      {
+        "dishId": 71,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-10-18T16:49:00.805Z"
+  },
+  {
+    "id": "seed-8-5",
+    "restaurantId": 8,
+    "userId": 22,
+    "userName": "Zoya Baig",
+    "rating": 3,
+    "text": "Egg bhurji pav was too oily. Service was slow even when it was empty.",
+    "tags": [],
+    "dishRatings": [
+      {
+        "dishId": 70,
+        "rating": 3
+      }
+    ],
+    "createdAt": "2026-10-05T16:49:00.805Z"
+  },
+  {
+    "id": "seed-8-6",
+    "restaurantId": 8,
+    "userId": 2,
+    "userName": "Rohan Mehta",
+    "rating": 4,
+    "text": "Good chicken curry, generous portions. Not fine dining, does not pretend to be.",
+    "tags": [
+      "Generous portions"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 66,
+        "rating": 4
+      },
+      {
+        "dishId": 71,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-09-21T16:49:00.805Z"
+  },
+  {
+    "id": "seed-9-1",
+    "restaurantId": 9,
+    "userId": 2,
+    "userName": "Rohan Mehta",
+    "rating": 5,
+    "text": "Seekh kebab is the best on Mosque Road and that is saying something. Smoked chicken tikka is juicy with real charcoal flavour.",
+    "tags": [
+      "Worth the wait",
+      "Authentic"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 73,
+        "rating": 5
+      },
+      {
+        "dishId": 74,
+        "rating": 5
+      }
+    ],
+    "createdAt": "2026-11-17T04:49:00.805Z"
+  },
+  {
+    "id": "seed-9-2",
+    "restaurantId": 9,
+    "userId": 5,
+    "userName": "Priya Hegde",
+    "rating": 5,
+    "text": "Galouti melts. Sheermal with nihari on a Friday is a religious experience.",
+    "tags": [
+      "Worth the wait"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 76,
+        "rating": 5
+      },
+      {
+        "dishId": 79,
+        "rating": 5
+      },
+      {
+        "dishId": 80,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-11-11T16:49:00.805Z"
+  },
+  {
+    "id": "seed-9-3",
+    "restaurantId": 9,
+    "userId": 9,
+    "userName": "Nisha Shetty",
+    "rating": 5,
+    "text": "Boti kebab was smoky and tender. Biryani is decent, not their strength.",
+    "tags": [
+      "Crowded"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 75,
+        "rating": 5
+      },
+      {
+        "dishId": 78,
+        "rating": 3
+      }
+    ],
+    "createdAt": "2026-11-04T16:49:00.805Z"
+  },
+  {
+    "id": "seed-9-4",
+    "restaurantId": 9,
+    "userId": 11,
+    "userName": "Farah Siddiqui",
+    "rating": 5,
+    "text": "Came during Ramzan, worth the chaos. Kaddu ki kheer is lovely and not too sweet.",
+    "tags": [
+      "Crowded",
+      "Authentic"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 81,
+        "rating": 4
+      },
+      {
+        "dishId": 73,
+        "rating": 5
+      }
+    ],
+    "createdAt": "2026-10-27T16:49:00.805Z"
+  },
+  {
+    "id": "seed-9-5",
+    "restaurantId": 9,
+    "userId": 18,
+    "userName": "Joel D'Souza",
+    "rating": 3,
+    "text": "Hara bhara kebab was bland and the vegetarian options are limited. Meat eaters will love it.",
+    "tags": [],
+    "dishRatings": [
+      {
+        "dishId": 77,
+        "rating": 2
+      }
+    ],
+    "createdAt": "2026-10-14T16:49:00.805Z"
+  },
+  {
+    "id": "seed-9-6",
+    "restaurantId": 9,
+    "userId": 15,
+    "userName": "Lakshmi Prasad",
+    "rating": 5,
+    "text": "Opens only at 4 but worth planning around. Parking is a nightmare.",
+    "tags": [
+      "Crowded"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 74,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-09-30T16:49:00.805Z"
+  },
+  {
+    "id": "seed-9-7",
+    "restaurantId": 9,
+    "userId": 21,
+    "userName": "Sneha Rao",
+    "rating": 5,
+    "text": "Nihari is rich, sticky and slow. Bring friends, order everything.",
+    "tags": [
+      "Generous portions"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 79,
+        "rating": 5
+      },
+      {
+        "dishId": 75,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-09-13T16:49:00.805Z"
+  },
+  {
+    "id": "seed-10-1",
+    "restaurantId": 10,
+    "userId": 6,
+    "userName": "Sameer Khan",
+    "rating": 5,
+    "text": "Kori rotti is exactly like in Mangaluru. Prawn ghee roast is fiery and glossy.",
+    "tags": [
+      "Authentic"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 82,
+        "rating": 5
+      },
+      {
+        "dishId": 84,
+        "rating": 5
+      }
+    ],
+    "createdAt": "2026-11-14T16:49:00.805Z"
+  },
+  {
+    "id": "seed-10-2",
+    "restaurantId": 10,
+    "userId": 10,
+    "userName": "Vikram Iyer",
+    "rating": 4,
+    "text": "Fish gassi with neer dosa is comforting. Pomfret was a little overfried.",
+    "tags": [
+      "Family friendly"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 83,
+        "rating": 5
+      },
+      {
+        "dishId": 85,
+        "rating": 3
+      }
+    ],
+    "createdAt": "2026-11-07T16:49:00.805Z"
+  },
+  {
+    "id": "seed-10-3",
+    "restaurantId": 10,
+    "userId": 14,
+    "userName": "Imran Pasha",
+    "rating": 4,
+    "text": "Mushroom ghee roast for the vegetarians is a smart touch, really good. Sol kadhi is refreshing.",
+    "tags": [
+      "Great service"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 87,
+        "rating": 4
+      },
+      {
+        "dishId": 89,
+        "rating": 5
+      }
+    ],
+    "createdAt": "2026-10-29T16:49:00.805Z"
+  },
+  {
+    "id": "seed-10-4",
+    "restaurantId": 10,
+    "userId": 17,
+    "userName": "Kavya Reddy",
+    "rating": 5,
+    "text": "Squid sukka with kudampuli is perfect. Elaneer payasam to end. Will be back.",
+    "tags": [
+      "Date night"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 86,
+        "rating": 5
+      },
+      {
+        "dishId": 90,
+        "rating": 5
+      }
+    ],
+    "createdAt": "2026-10-20T16:49:00.805Z"
+  },
+  {
+    "id": "seed-10-5",
+    "restaurantId": 10,
+    "userId": 20,
+    "userName": "Manoj Kumar",
+    "rating": 3,
+    "text": "Prices have gone up a lot. Prawn ghee roast portion was small for 560.",
+    "tags": [
+      "Pricey"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 84,
+        "rating": 3
+      }
+    ],
+    "createdAt": "2026-10-07T16:49:00.805Z"
+  },
+  {
+    "id": "seed-10-6",
+    "restaurantId": 10,
+    "userId": 12,
+    "userName": "Rahul Nair",
+    "rating": 4,
+    "text": "Kadle manoli is a nice vegan side. Calm place for a weekday lunch.",
+    "tags": [
+      "Cosy"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 88,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-09-22T16:49:00.805Z"
+  },
+  {
+    "id": "seed-11-1",
+    "restaurantId": 11,
+    "userId": 3,
+    "userName": "Meera Iyer",
+    "rating": 5,
+    "text": "Finally a vegan margherita where the cashew mozzarella actually melts. The vegan tiramisu is creamy and not cloying. Instant favourite.",
+    "tags": [
+      "Date night",
+      "Great service"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 92,
+        "rating": 5
+      },
+      {
+        "dishId": 99,
+        "rating": 5
+      }
+    ],
+    "createdAt": "2026-11-17T12:01:00.805Z"
+  },
+  {
+    "id": "seed-11-2",
+    "restaurantId": 11,
+    "userId": 1,
+    "userName": "Ananya Rao",
+    "rating": 2,
+    "text": "Margherita was fine, but nothing on the menu has any spice and it is expensive for what you get. Not for me.",
+    "tags": [
+      "Pricey"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 91,
+        "rating": 3
+      },
+      {
+        "dishId": 98,
+        "rating": 2
+      }
+    ],
+    "createdAt": "2026-10-31T16:49:00.805Z"
+  },
+  {
+    "id": "seed-11-3",
+    "restaurantId": 11,
+    "userId": 7,
+    "userName": "Deepa Gowda",
+    "rating": 5,
+    "text": "Cacio e pepe is textbook. Dough on the pizza is leopard-spotted and chewy.",
+    "tags": [
+      "Date night"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 95,
+        "rating": 5
+      },
+      {
+        "dishId": 91,
+        "rating": 5
+      }
+    ],
+    "createdAt": "2026-11-12T16:49:00.805Z"
+  },
+  {
+    "id": "seed-11-4",
+    "restaurantId": 11,
+    "userId": 13,
+    "userName": "Shruti Kulkarni",
+    "rating": 4,
+    "text": "Burrata is fresh, diavola had a nice chilli honey kick. Weekend wait was long.",
+    "tags": [
+      "Worth the wait",
+      "Pricey"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 97,
+        "rating": 4
+      },
+      {
+        "dishId": 93,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-11-03T16:49:00.805Z"
+  },
+  {
+    "id": "seed-11-5",
+    "restaurantId": 11,
+    "userId": 16,
+    "userName": "Aditya Bhat",
+    "rating": 5,
+    "text": "Pesto genovese vegan is bright and fresh. Truffle funghi pizza for the non-vegans was a hit too.",
+    "tags": [
+      "Great service"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 96,
+        "rating": 5
+      },
+      {
+        "dishId": 94,
+        "rating": 5
+      }
+    ],
+    "createdAt": "2026-10-21T16:49:00.805Z"
+  },
+  {
+    "id": "seed-11-6",
+    "restaurantId": 11,
+    "userId": 22,
+    "userName": "Zoya Baig",
+    "rating": 4,
+    "text": "Great pizza, small portions of pasta. Ask for the window seat to watch them roll it.",
+    "tags": [
+      "Date night"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 95,
+        "rating": 4
+      },
+      {
+        "dishId": 93,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-10-09T16:49:00.805Z"
+  },
+  {
+    "id": "seed-12-1",
+    "restaurantId": 12,
+    "userId": 5,
+    "userName": "Priya Hegde",
+    "rating": 5,
+    "text": "Tiramisu della casa deserves its reputation. Carbonara is the real thing, no cream.",
+    "tags": [
+      "Date night",
+      "Cosy"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 107,
+        "rating": 5
+      },
+      {
+        "dishId": 101,
+        "rating": 5
+      }
+    ],
+    "createdAt": "2026-11-13T16:49:00.805Z"
+  },
+  {
+    "id": "seed-12-2",
+    "restaurantId": 12,
+    "userId": 9,
+    "userName": "Nisha Shetty",
+    "rating": 4,
+    "text": "Pumpkin ravioli with sage butter is lovely. Bruschetta trio was good, not great.",
+    "tags": [
+      "Cosy"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 102,
+        "rating": 5
+      },
+      {
+        "dishId": 105,
+        "rating": 3
+      }
+    ],
+    "createdAt": "2026-11-05T16:49:00.805Z"
+  },
+  {
+    "id": "seed-12-3",
+    "restaurantId": 12,
+    "userId": 3,
+    "userName": "Meera Iyer",
+    "rating": 3,
+    "text": "Spaghetti pomodoro is vegan and simple, but they had nothing vegan for dessert. Pretty lakeside setting.",
+    "tags": [
+      "Cosy",
+      "Pricey"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 100,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-10-25T16:49:00.805Z"
+  },
+  {
+    "id": "seed-12-4",
+    "restaurantId": 12,
+    "userId": 19,
+    "userName": "Tanvi Joshi",
+    "rating": 4,
+    "text": "Lasagne is rich and generous. Service attentive but slow.",
+    "tags": [
+      "Generous portions"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 103,
+        "rating": 4
+      },
+      {
+        "dishId": 104,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-10-16T16:49:00.805Z"
+  },
+  {
+    "id": "seed-12-5",
+    "restaurantId": 12,
+    "userId": 23,
+    "userName": "Harsha Murthy",
+    "rating": 3,
+    "text": "Minestrone was watery. Panna cotta with jamun compote is a fun twist.",
+    "tags": [
+      "Pricey"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 106,
+        "rating": 2
+      },
+      {
+        "dishId": 108,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-10-03T16:49:00.805Z"
+  },
+  {
+    "id": "seed-12-6",
+    "restaurantId": 12,
+    "userId": 12,
+    "userName": "Rahul Nair",
+    "rating": 4,
+    "text": "Romantic outdoor seating, a good tiramisu, a slightly salty carbonara.",
+    "tags": [
+      "Date night"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 107,
+        "rating": 5
+      },
+      {
+        "dishId": 101,
+        "rating": 3
+      }
+    ],
+    "createdAt": "2026-09-16T16:49:00.805Z"
+  },
+  {
+    "id": "seed-13-1",
+    "restaurantId": 13,
+    "userId": 8,
+    "userName": "Arjun Menon",
+    "rating": 5,
+    "text": "The cardamom bun is worth the queue. Croissant is honeycombed and buttery. Pour-over had a lovely jaggery note.",
+    "tags": [
+      "Worth the wait",
+      "Cosy"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 110,
+        "rating": 5
+      },
+      {
+        "dishId": 109,
+        "rating": 5
+      },
+      {
+        "dishId": 112,
+        "rating": 5
+      }
+    ],
+    "createdAt": "2026-11-15T16:49:00.805Z"
+  },
+  {
+    "id": "seed-13-2",
+    "restaurantId": 13,
+    "userId": 11,
+    "userName": "Farah Siddiqui",
+    "rating": 4,
+    "text": "Flat white is consistent. Almond croissant a bit too sweet for me.",
+    "tags": [
+      "Work friendly"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 113,
+        "rating": 4
+      },
+      {
+        "dishId": 111,
+        "rating": 3
+      }
+    ],
+    "createdAt": "2026-11-09T16:49:00.805Z"
+  },
+  {
+    "id": "seed-13-3",
+    "restaurantId": 13,
+    "userId": 14,
+    "userName": "Imran Pasha",
+    "rating": 5,
+    "text": "Eggs on sourdough are silky. Best brunch in 7th block.",
+    "tags": [
+      "Cosy"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 115,
+        "rating": 5
+      }
+    ],
+    "createdAt": "2026-11-02T16:49:00.805Z"
+  },
+  {
+    "id": "seed-13-4",
+    "restaurantId": 13,
+    "userId": 3,
+    "userName": "Meera Iyer",
+    "rating": 4,
+    "text": "Pour-over is excellent and black coffee is vegan, but almost all the bakes have butter or egg. Wish there were vegan pastries.",
+    "tags": [
+      "Cosy"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 112,
+        "rating": 5
+      }
+    ],
+    "createdAt": "2026-10-27T16:49:00.805Z"
+  },
+  {
+    "id": "seed-13-5",
+    "restaurantId": 13,
+    "userId": 18,
+    "userName": "Joel D'Souza",
+    "rating": 4,
+    "text": "Lemon tart is properly sharp. Mushroom toast is generous.",
+    "tags": [
+      "Generous portions"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 117,
+        "rating": 5
+      },
+      {
+        "dishId": 116,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-10-12T16:49:00.805Z"
+  },
+  {
+    "id": "seed-13-6",
+    "restaurantId": 13,
+    "userId": 21,
+    "userName": "Sneha Rao",
+    "rating": 3,
+    "text": "Iced mocha was too sweet and the place is loud at noon. Bakes are great though.",
+    "tags": [
+      "Loud",
+      "Crowded"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 114,
+        "rating": 2
+      },
+      {
+        "dishId": 109,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-09-27T16:49:00.805Z"
+  },
+  {
+    "id": "seed-14-1",
+    "restaurantId": 14,
+    "userId": 3,
+    "userName": "Meera Iyer",
+    "rating": 3,
+    "text": "Avocado toast was fine but underseasoned. The cold brew tonic was the best thing I had. Lovely plants, slow service.",
+    "tags": [
+      "Cosy",
+      "Work friendly"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 119,
+        "rating": 3
+      },
+      {
+        "dishId": 125,
+        "rating": 5
+      }
+    ],
+    "createdAt": "2026-11-16T16:49:00.805Z"
+  },
+  {
+    "id": "seed-14-2",
+    "restaurantId": 14,
+    "userId": 6,
+    "userName": "Sameer Khan",
+    "rating": 5,
+    "text": "Big brunch plate on a Sunday, perfect hangover cure. Iced filter coffee is a great idea.",
+    "tags": [
+      "Generous portions"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 118,
+        "rating": 5
+      },
+      {
+        "dishId": 124,
+        "rating": 5
+      }
+    ],
+    "createdAt": "2026-11-10T16:49:00.805Z"
+  },
+  {
+    "id": "seed-14-3",
+    "restaurantId": 14,
+    "userId": 15,
+    "userName": "Lakshmi Prasad",
+    "rating": 4,
+    "text": "Shakshuka is well spiced, pita a bit cold. Nice place to work from.",
+    "tags": [
+      "Work friendly"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 120,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-11-04T16:49:00.805Z"
+  },
+  {
+    "id": "seed-14-4",
+    "restaurantId": 14,
+    "userId": 20,
+    "userName": "Manoj Kumar",
+    "rating": 4,
+    "text": "Açaí bowl is fresh and not too sweet. Banoffee jar is dessert heaven.",
+    "tags": [
+      "Cosy"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 121,
+        "rating": 4
+      },
+      {
+        "dishId": 126,
+        "rating": 5
+      }
+    ],
+    "createdAt": "2026-10-22T16:49:00.805Z"
+  },
+  {
+    "id": "seed-14-5",
+    "restaurantId": 14,
+    "userId": 10,
+    "userName": "Vikram Iyer",
+    "rating": 3,
+    "text": "Chicken pesto sandwich was dry. Coffee saves it.",
+    "tags": [],
+    "dishRatings": [
+      {
+        "dishId": 122,
+        "rating": 2
+      },
+      {
+        "dishId": 124,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-10-08T16:49:00.805Z"
+  },
+  {
+    "id": "seed-14-6",
+    "restaurantId": 14,
+    "userId": 16,
+    "userName": "Aditya Bhat",
+    "rating": 4,
+    "text": "Grilled veg pasta was light and good. Quiet on weekdays.",
+    "tags": [
+      "Work friendly"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 123,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-09-23T16:49:00.805Z"
+  },
+  {
+    "id": "seed-15-1",
+    "restaurantId": 15,
+    "userId": 2,
+    "userName": "Rohan Mehta",
+    "rating": 2,
+    "text": "Momos were okay but the chicken filling was bland and the place is tiny. Not worth the hype for me.",
+    "tags": [
+      "Crowded"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 127,
+        "rating": 2
+      }
+    ],
+    "createdAt": "2026-11-09T16:49:00.805Z"
+  },
+  {
+    "id": "seed-15-2",
+    "restaurantId": 15,
+    "userId": 5,
+    "userName": "Priya Hegde",
+    "rating": 5,
+    "text": "Jhol momos are incredible, the sesame-tomato broth is addictive. Sepen sauce is lethal.",
+    "tags": [
+      "Value for money",
+      "Authentic"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 129,
+        "rating": 5
+      },
+      {
+        "dishId": 127,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-11-14T16:49:00.805Z"
+  },
+  {
+    "id": "seed-15-3",
+    "restaurantId": 15,
+    "userId": 9,
+    "userName": "Nisha Shetty",
+    "rating": 5,
+    "text": "Thukpa on a rainy evening. Perfect. Pan-fried paneer momos are crisp and creamy.",
+    "tags": [
+      "Cosy",
+      "Value for money"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 131,
+        "rating": 5
+      },
+      {
+        "dishId": 130,
+        "rating": 5
+      }
+    ],
+    "createdAt": "2026-11-08T16:49:00.805Z"
+  },
+  {
+    "id": "seed-15-4",
+    "restaurantId": 15,
+    "userId": 13,
+    "userName": "Shruti Kulkarni",
+    "rating": 4,
+    "text": "Veg momos are fresh with lots of ginger. Chilli potato is great with a beer.",
+    "tags": [
+      "Value for money"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 128,
+        "rating": 4
+      },
+      {
+        "dishId": 134,
+        "rating": 5
+      }
+    ],
+    "createdAt": "2026-10-31T16:49:00.805Z"
+  },
+  {
+    "id": "seed-15-5",
+    "restaurantId": 15,
+    "userId": 17,
+    "userName": "Kavya Reddy",
+    "rating": 5,
+    "text": "Shapale is crisp and juicy. Butter tea is an acquired taste but I acquired it.",
+    "tags": [
+      "Authentic"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 133,
+        "rating": 5
+      },
+      {
+        "dishId": 135,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-10-19T16:49:00.805Z"
+  },
+  {
+    "id": "seed-15-6",
+    "restaurantId": 15,
+    "userId": 22,
+    "userName": "Zoya Baig",
+    "rating": 4,
+    "text": "Thenthuk is hearty and vegan. Small place, expect to share a table.",
+    "tags": [
+      "Crowded"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 132,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-10-05T16:49:00.805Z"
+  },
+  {
+    "id": "seed-15-7",
+    "restaurantId": 15,
+    "userId": 7,
+    "userName": "Deepa Gowda",
+    "rating": 4,
+    "text": "Consistently good momos for under 200. Jhol is the move.",
+    "tags": [
+      "Value for money"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 129,
+        "rating": 5
+      }
+    ],
+    "createdAt": "2026-09-20T16:49:00.805Z"
+  },
+  {
+    "id": "seed-16-1",
+    "restaurantId": 16,
+    "userId": 4,
+    "userName": "Karthik Rao",
+    "rating": 5,
+    "text": "Tonkotsu broth is milky and deep, the egg is jammy. Best ramen in the city.",
+    "tags": [
+      "Worth the wait"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 136,
+        "rating": 5
+      },
+      {
+        "dishId": 140,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-11-13T16:49:00.805Z"
+  },
+  {
+    "id": "seed-16-2",
+    "restaurantId": 16,
+    "userId": 3,
+    "userName": "Meera Iyer",
+    "rating": 4,
+    "text": "White miso vegan ramen is creamy and comforting, a rare good vegan ramen. A bit salty.",
+    "tags": [
+      "Cosy"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 138,
+        "rating": 4
+      },
+      {
+        "dishId": 141,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-11-07T16:49:00.805Z"
+  },
+  {
+    "id": "seed-16-3",
+    "restaurantId": 16,
+    "userId": 10,
+    "userName": "Vikram Iyer",
+    "rating": 4,
+    "text": "Tantanmen is spicy and nutty. Karaage was crisp but small.",
+    "tags": [
+      "Pricey"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 139,
+        "rating": 5
+      },
+      {
+        "dishId": 142,
+        "rating": 3
+      }
+    ],
+    "createdAt": "2026-10-30T16:49:00.805Z"
+  },
+  {
+    "id": "seed-16-4",
+    "restaurantId": 16,
+    "userId": 14,
+    "userName": "Imran Pasha",
+    "rating": 3,
+    "text": "Shoyu ramen was underwhelming, broth too light. Counter seating is cramped.",
+    "tags": [
+      "Crowded",
+      "Pricey"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 137,
+        "rating": 2
+      }
+    ],
+    "createdAt": "2026-10-21T16:49:00.805Z"
+  },
+  {
+    "id": "seed-16-5",
+    "restaurantId": 16,
+    "userId": 18,
+    "userName": "Joel D'Souza",
+    "rating": 5,
+    "text": "Agedashi tofu is delicate and lovely. Matcha mochi to finish.",
+    "tags": [
+      "Date night"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 143,
+        "rating": 5
+      },
+      {
+        "dishId": 144,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-10-10T16:49:00.805Z"
+  },
+  {
+    "id": "seed-16-6",
+    "restaurantId": 16,
+    "userId": 23,
+    "userName": "Harsha Murthy",
+    "rating": 4,
+    "text": "Great ramen, slow service when full. Go before 7.",
+    "tags": [
+      "Crowded"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 136,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-09-25T16:49:00.805Z"
+  },
+  {
+    "id": "seed-17-1",
+    "restaurantId": 17,
+    "userId": 6,
+    "userName": "Sameer Khan",
+    "rating": 4,
+    "text": "Pork belly bao is sticky and rich. Kung pao has real Sichuan tingle.",
+    "tags": [
+      "Date night"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 145,
+        "rating": 5
+      },
+      {
+        "dishId": 149,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-11-12T16:49:00.805Z"
+  },
+  {
+    "id": "seed-17-2",
+    "restaurantId": 17,
+    "userId": 11,
+    "userName": "Farah Siddiqui",
+    "rating": 4,
+    "text": "Thai green curry (veg) is fresh and fragrant. Lychee iced tea is great.",
+    "tags": [
+      "Family friendly"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 147,
+        "rating": 4
+      },
+      {
+        "dishId": 153,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-11-05T16:49:00.805Z"
+  },
+  {
+    "id": "seed-17-3",
+    "restaurantId": 17,
+    "userId": 16,
+    "userName": "Aditya Bhat",
+    "rating": 3,
+    "text": "Dan dan noodles were oily. Crispy tofu bao was good.",
+    "tags": [
+      "Pricey"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 151,
+        "rating": 2
+      },
+      {
+        "dishId": 146,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-10-28T16:49:00.805Z"
+  },
+  {
+    "id": "seed-17-4",
+    "restaurantId": 17,
+    "userId": 3,
+    "userName": "Meera Iyer",
+    "rating": 4,
+    "text": "Plenty of vegan options, clearly marked. Sushi bowl was fresh but a bit plain.",
+    "tags": [
+      "Great service"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 152,
+        "rating": 3
+      },
+      {
+        "dishId": 147,
+        "rating": 5
+      }
+    ],
+    "createdAt": "2026-10-17T16:49:00.805Z"
+  },
+  {
+    "id": "seed-17-5",
+    "restaurantId": 17,
+    "userId": 19,
+    "userName": "Tanvi Joshi",
+    "rating": 4,
+    "text": "Basil fried rice is a solid weekday lunch. Whitefield needed this.",
+    "tags": [
+      "Quick"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 150,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-10-04T16:49:00.805Z"
+  },
+  {
+    "id": "seed-17-6",
+    "restaurantId": 17,
+    "userId": 12,
+    "userName": "Rahul Nair",
+    "rating": 3,
+    "text": "Red curry was too sweet for me. Nice interiors.",
+    "tags": [],
+    "dishRatings": [
+      {
+        "dishId": 148,
+        "rating": 3
+      }
+    ],
+    "createdAt": "2026-09-19T16:49:00.805Z"
+  },
+  {
+    "id": "seed-18-1",
+    "restaurantId": 18,
+    "userId": 2,
+    "userName": "Rohan Mehta",
+    "rating": 4,
+    "text": "Double smash has those crispy lace edges. Fries are excellent. Shake was too sweet.",
+    "tags": [
+      "Loud",
+      "Generous portions"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 154,
+        "rating": 4
+      },
+      {
+        "dishId": 159,
+        "rating": 5
+      },
+      {
+        "dishId": 162,
+        "rating": 3
+      }
+    ],
+    "createdAt": "2026-11-15T16:49:00.805Z"
+  },
+  {
+    "id": "seed-18-2",
+    "restaurantId": 18,
+    "userId": 4,
+    "userName": "Karthik Rao",
+    "rating": 5,
+    "text": "Nashville hot chicken burger is properly hot and crunchy. Best burger in Koramangala.",
+    "tags": [
+      "Loud"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 156,
+        "rating": 5
+      }
+    ],
+    "createdAt": "2026-11-11T16:49:00.805Z"
+  },
+  {
+    "id": "seed-18-3",
+    "restaurantId": 18,
+    "userId": 8,
+    "userName": "Arjun Menon",
+    "rating": 5,
+    "text": "BBQ bacon burger with onion rings is outrageous. Loud music, great vibe.",
+    "tags": [
+      "Loud"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 155,
+        "rating": 5
+      },
+      {
+        "dishId": 159,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-11-06T16:49:00.805Z"
+  },
+  {
+    "id": "seed-18-4",
+    "restaurantId": 18,
+    "userId": 13,
+    "userName": "Shruti Kulkarni",
+    "rating": 4,
+    "text": "Crispy paneer burger is legit, not a sad veg option. Buffalo wings are tangy.",
+    "tags": [
+      "Value for money"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 157,
+        "rating": 4
+      },
+      {
+        "dishId": 161,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-10-29T16:49:00.805Z"
+  },
+  {
+    "id": "seed-18-5",
+    "restaurantId": 18,
+    "userId": 3,
+    "userName": "Meera Iyer",
+    "rating": 4,
+    "text": "Beyond smash is a great vegan burger, the bun is vegan too. Fries are vegan. Loud though.",
+    "tags": [
+      "Loud"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 158,
+        "rating": 4
+      },
+      {
+        "dishId": 159,
+        "rating": 5
+      }
+    ],
+    "createdAt": "2026-10-23T16:49:00.805Z"
+  },
+  {
+    "id": "seed-18-6",
+    "restaurantId": 18,
+    "userId": 20,
+    "userName": "Manoj Kumar",
+    "rating": 4,
+    "text": "Loaded cheese fries are a meal. Late-night open is a blessing.",
+    "tags": [
+      "Generous portions"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 160,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-10-11T16:49:00.805Z"
+  },
+  {
+    "id": "seed-18-7",
+    "restaurantId": 18,
+    "userId": 17,
+    "userName": "Kavya Reddy",
+    "rating": 5,
+    "text": "Smash burger every Friday. Never miss.",
+    "tags": [
+      "Quick"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 154,
+        "rating": 5
+      }
+    ],
+    "createdAt": "2026-09-27T16:49:00.805Z"
+  },
+  {
+    "id": "seed-19-1",
+    "restaurantId": 19,
+    "userId": 5,
+    "userName": "Priya Hegde",
+    "rating": 4,
+    "text": "Gongura chicken burger is a brilliant idea, tangy and spicy. Mango thokku fries too.",
+    "tags": [
+      "Value for money"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 163,
+        "rating": 5
+      },
+      {
+        "dishId": 167,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-11-11T16:49:00.805Z"
+  },
+  {
+    "id": "seed-19-2",
+    "restaurantId": 19,
+    "userId": 9,
+    "userName": "Nisha Shetty",
+    "rating": 3,
+    "text": "Classic cheeseburger was overcooked. Paneer tikka burger is the better choice.",
+    "tags": [],
+    "dishRatings": [
+      {
+        "dishId": 165,
+        "rating": 2
+      },
+      {
+        "dishId": 164,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-11-03T16:49:00.805Z"
+  },
+  {
+    "id": "seed-19-3",
+    "restaurantId": 19,
+    "userId": 12,
+    "userName": "Rahul Nair",
+    "rating": 4,
+    "text": "Filter coffee shake is genius. Aloo tikki burger is a good cheap lunch.",
+    "tags": [
+      "Value for money",
+      "Quick"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 171,
+        "rating": 5
+      },
+      {
+        "dishId": 166,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-10-25T16:49:00.805Z"
+  },
+  {
+    "id": "seed-19-4",
+    "restaurantId": 19,
+    "userId": 15,
+    "userName": "Lakshmi Prasad",
+    "rating": 3,
+    "text": "Chicken popcorn was soggy by the time it arrived. Rose falooda shake was nice.",
+    "tags": [],
+    "dishRatings": [
+      {
+        "dishId": 169,
+        "rating": 2
+      },
+      {
+        "dishId": 170,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-10-16T16:49:00.805Z"
+  },
+  {
+    "id": "seed-19-5",
+    "restaurantId": 19,
+    "userId": 21,
+    "userName": "Sneha Rao",
+    "rating": 4,
+    "text": "Masala onion rings are a great snack. Fun menu.",
+    "tags": [
+      "Quick"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 168,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-10-02T16:49:00.805Z"
+  },
+  {
+    "id": "seed-19-6",
+    "restaurantId": 19,
+    "userId": 23,
+    "userName": "Harsha Murthy",
+    "rating": 4,
+    "text": "Good, cheap, creative. Not life-changing.",
+    "tags": [
+      "Value for money"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 164,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-09-17T16:49:00.805Z"
+  },
+  {
+    "id": "seed-20-1",
+    "restaurantId": 20,
+    "userId": 1,
+    "userName": "Ananya Rao",
+    "rating": 5,
+    "text": "Masala puri like the old Gandhi Bazaar carts, hot peas gravy and loads of sev. Mirchi bajji is properly spicy.",
+    "tags": [
+      "Authentic",
+      "Value for money"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 172,
+        "rating": 5
+      },
+      {
+        "dishId": 178,
+        "rating": 5
+      }
+    ],
+    "createdAt": "2026-11-08T16:49:00.805Z"
+  },
+  {
+    "id": "seed-20-2",
+    "restaurantId": 20,
+    "userId": 7,
+    "userName": "Deepa Gowda",
+    "rating": 5,
+    "text": "Pani puri water has a real kick. Samosa chaat is huge.",
+    "tags": [
+      "Value for money",
+      "Crowded"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 173,
+        "rating": 4
+      },
+      {
+        "dishId": 176,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-11-12T16:49:00.805Z"
+  },
+  {
+    "id": "seed-20-3",
+    "restaurantId": 20,
+    "userId": 11,
+    "userName": "Farah Siddiqui",
+    "rating": 5,
+    "text": "Dahi puri balanced perfectly between sweet and tangy. Cheap and brilliant.",
+    "tags": [
+      "Value for money"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 174,
+        "rating": 5
+      },
+      {
+        "dishId": 175,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-11-04T16:49:00.805Z"
+  },
+  {
+    "id": "seed-20-4",
+    "restaurantId": 20,
+    "userId": 14,
+    "userName": "Imran Pasha",
+    "rating": 4,
+    "text": "Samosas fried in front of you. Kulfi falooda to cool down.",
+    "tags": [
+      "Quick"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 177,
+        "rating": 4
+      },
+      {
+        "dishId": 180,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-10-26T16:49:00.805Z"
+  },
+  {
+    "id": "seed-20-5",
+    "restaurantId": 20,
+    "userId": 18,
+    "userName": "Joel D'Souza",
+    "rating": 3,
+    "text": "Pav bhaji had too much butter even for me, and it is chaotic at 7pm.",
+    "tags": [
+      "Crowded"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 179,
+        "rating": 3
+      }
+    ],
+    "createdAt": "2026-10-14T16:49:00.805Z"
+  },
+  {
+    "id": "seed-20-6",
+    "restaurantId": 20,
+    "userId": 22,
+    "userName": "Zoya Baig",
+    "rating": 4,
+    "text": "Best evening snack stop in Basavanagudi. Hygiene is better than the carts.",
+    "tags": [
+      "Family friendly"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 172,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-10-01T16:49:00.805Z"
+  },
+  {
+    "id": "seed-21-1",
+    "restaurantId": 21,
+    "userId": 1,
+    "userName": "Ananya Rao",
+    "rating": 4,
+    "text": "Cheese chilli paddu is fun and actually spicy. The green chutney is so good I bought the jar.",
+    "tags": [
+      "Value for money"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 183,
+        "rating": 4
+      },
+      {
+        "dishId": 189,
+        "rating": 5
+      }
+    ],
+    "createdAt": "2026-11-14T16:49:00.805Z"
+  },
+  {
+    "id": "seed-21-2",
+    "restaurantId": 21,
+    "userId": 10,
+    "userName": "Vikram Iyer",
+    "rating": 4,
+    "text": "Ragi paddu is crisp and healthy-ish. Idli vada combo is standard.",
+    "tags": [
+      "Quick"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 182,
+        "rating": 5
+      },
+      {
+        "dishId": 186,
+        "rating": 3
+      }
+    ],
+    "createdAt": "2026-11-06T16:49:00.805Z"
+  },
+  {
+    "id": "seed-21-3",
+    "restaurantId": 21,
+    "userId": 16,
+    "userName": "Aditya Bhat",
+    "rating": 3,
+    "text": "Plain paddu was a bit dense. Open butter masala dosa was great though.",
+    "tags": [],
+    "dishRatings": [
+      {
+        "dishId": 181,
+        "rating": 3
+      },
+      {
+        "dishId": 187,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-10-29T16:49:00.805Z"
+  },
+  {
+    "id": "seed-21-4",
+    "restaurantId": 21,
+    "userId": 19,
+    "userName": "Tanvi Joshi",
+    "rating": 4,
+    "text": "Sweet banana appe is a lovely end. Kids love this place.",
+    "tags": [
+      "Family friendly"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 185,
+        "rating": 5
+      }
+    ],
+    "createdAt": "2026-10-18T16:49:00.805Z"
+  },
+  {
+    "id": "seed-21-5",
+    "restaurantId": 21,
+    "userId": 23,
+    "userName": "Harsha Murthy",
+    "rating": 3,
+    "text": "Lemon sevai was dry and the masala paddu came cold. Chutney is still top.",
+    "tags": [],
+    "dishRatings": [
+      {
+        "dishId": 188,
+        "rating": 2
+      },
+      {
+        "dishId": 184,
+        "rating": 3
+      }
+    ],
+    "createdAt": "2026-10-04T16:49:00.805Z"
+  },
+  {
+    "id": "seed-21-6",
+    "restaurantId": 21,
+    "userId": 6,
+    "userName": "Sameer Khan",
+    "rating": 4,
+    "text": "Paddu with chutney and coffee is a perfect cheap breakfast.",
+    "tags": [
+      "Value for money"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 181,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-09-21T16:49:00.805Z"
+  },
+  {
+    "id": "seed-22-1",
+    "restaurantId": 22,
+    "userId": 4,
+    "userName": "Karthik Rao",
+    "rating": 5,
+    "text": "Three saarus on one thali. Pepper rasam clears the sinuses. Naati koli saaru on Sunday is outstanding.",
+    "tags": [
+      "Authentic",
+      "Generous portions"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 190,
+        "rating": 5
+      },
+      {
+        "dishId": 192,
+        "rating": 5
+      },
+      {
+        "dishId": 194,
+        "rating": 5
+      }
+    ],
+    "createdAt": "2026-11-13T16:49:00.805Z"
+  },
+  {
+    "id": "seed-22-2",
+    "restaurantId": 22,
+    "userId": 8,
+    "userName": "Arjun Menon",
+    "rating": 4,
+    "text": "Andhra thali is hot and generous. Ulavacharu is smoky and unusual.",
+    "tags": [
+      "Generous portions"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 191,
+        "rating": 4
+      },
+      {
+        "dishId": 196,
+        "rating": 5
+      }
+    ],
+    "createdAt": "2026-11-05T16:49:00.805Z"
+  },
+  {
+    "id": "seed-22-3",
+    "restaurantId": 22,
+    "userId": 12,
+    "userName": "Rahul Nair",
+    "rating": 4,
+    "text": "Bassaru with ragi mudde is real home food. Curd rice with pomegranate is a nice touch.",
+    "tags": [
+      "Authentic"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 195,
+        "rating": 4
+      },
+      {
+        "dishId": 197,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-10-27T16:49:00.805Z"
+  },
+  {
+    "id": "seed-22-4",
+    "restaurantId": 22,
+    "userId": 17,
+    "userName": "Kavya Reddy",
+    "rating": 3,
+    "text": "Mutton chops were tough. Kayi holige was good.",
+    "tags": [],
+    "dishRatings": [
+      {
+        "dishId": 193,
+        "rating": 2
+      },
+      {
+        "dishId": 198,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-10-15T16:49:00.805Z"
+  },
+  {
+    "id": "seed-22-5",
+    "restaurantId": 22,
+    "userId": 20,
+    "userName": "Manoj Kumar",
+    "rating": 4,
+    "text": "Simple, honest thali. Service is quick and kind.",
+    "tags": [
+      "Great service",
+      "Quick"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 190,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-10-03T16:49:00.805Z"
+  },
+  {
+    "id": "seed-22-6",
+    "restaurantId": 22,
+    "userId": 9,
+    "userName": "Nisha Shetty",
+    "rating": 4,
+    "text": "Pepper rasam in a glass is a great idea. Rajajinagar regulars know.",
+    "tags": [
+      "Authentic"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 194,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-09-18T16:49:00.805Z"
+  },
+  {
+    "id": "seed-23-1",
+    "restaurantId": 23,
+    "userId": 3,
+    "userName": "Meera Iyer",
+    "rating": 4,
+    "text": "Vegan chocolate torte is rich and fudgy, and the vegan mango panna cotta is fresh. Wish there were more vegan cupcakes.",
+    "tags": [
+      "Cosy"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 204,
+        "rating": 5
+      },
+      {
+        "dishId": 205,
+        "rating": 4
+      },
+      {
+        "dishId": 201,
+        "rating": 3
+      }
+    ],
+    "createdAt": "2026-11-15T16:49:00.805Z"
+  },
+  {
+    "id": "seed-23-2",
+    "restaurantId": 23,
+    "userId": 7,
+    "userName": "Deepa Gowda",
+    "rating": 5,
+    "text": "Jaggery coconut cheesecake is unique and delicious. Tres leches soaked perfectly.",
+    "tags": [
+      "Cosy"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 203,
+        "rating": 5
+      },
+      {
+        "dishId": 202,
+        "rating": 5
+      }
+    ],
+    "createdAt": "2026-11-09T16:49:00.805Z"
+  },
+  {
+    "id": "seed-23-3",
+    "restaurantId": 23,
+    "userId": 11,
+    "userName": "Farah Siddiqui",
+    "rating": 4,
+    "text": "Red velvet cupcake is moist. Hot chocolate is thick.",
+    "tags": [
+      "Family friendly"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 199,
+        "rating": 4
+      },
+      {
+        "dishId": 207,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-11-01T16:49:00.805Z"
+  },
+  {
+    "id": "seed-23-4",
+    "restaurantId": 23,
+    "userId": 15,
+    "userName": "Lakshmi Prasad",
+    "rating": 4,
+    "text": "Eggless chocolate cupcake is the best eggless cake I have had.",
+    "tags": [
+      "Value for money"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 200,
+        "rating": 5
+      }
+    ],
+    "createdAt": "2026-10-21T16:49:00.805Z"
+  },
+  {
+    "id": "seed-23-5",
+    "restaurantId": 23,
+    "userId": 19,
+    "userName": "Tanvi Joshi",
+    "rating": 3,
+    "text": "Gulab jamun cheesecake jar was too sweet. Nice idea though.",
+    "tags": [],
+    "dishRatings": [
+      {
+        "dishId": 206,
+        "rating": 2
+      }
+    ],
+    "createdAt": "2026-10-09T16:49:00.805Z"
+  },
+  {
+    "id": "seed-23-6",
+    "restaurantId": 23,
+    "userId": 22,
+    "userName": "Zoya Baig",
+    "rating": 4,
+    "text": "Great dessert stop after dinner in Whitefield.",
+    "tags": [
+      "Cosy"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 202,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-09-24T16:49:00.805Z"
+  },
+  {
+    "id": "seed-24-1",
+    "restaurantId": 24,
+    "userId": 3,
+    "userName": "Meera Iyer",
+    "rating": 5,
+    "text": "Tofu scramble that actually tastes of something. Vegan mushroom risotto is creamy without any dairy. The glasshouse in morning light is gorgeous.",
+    "tags": [
+      "Cosy",
+      "Work friendly"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 208,
+        "rating": 5
+      },
+      {
+        "dishId": 210,
+        "rating": 5
+      }
+    ],
+    "createdAt": "2026-11-18T04:49:00.805Z"
+  },
+  {
+    "id": "seed-24-2",
+    "restaurantId": 24,
+    "userId": 6,
+    "userName": "Sameer Khan",
+    "rating": 4,
+    "text": "Buddha bowl is fresh and filling. Pricey for a bowl.",
+    "tags": [
+      "Pricey"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 209,
+        "rating": 4
+      },
+      {
+        "dishId": 214,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-11-10T16:49:00.805Z"
+  },
+  {
+    "id": "seed-24-3",
+    "restaurantId": 24,
+    "userId": 10,
+    "userName": "Vikram Iyer",
+    "rating": 5,
+    "text": "Vegan berry cheesecake fooled my non-vegan friend. Oat latte is good.",
+    "tags": [
+      "Cosy"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 216,
+        "rating": 5
+      },
+      {
+        "dishId": 215,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-11-03T16:49:00.805Z"
+  },
+  {
+    "id": "seed-24-4",
+    "restaurantId": 24,
+    "userId": 13,
+    "userName": "Shruti Kulkarni",
+    "rating": 5,
+    "text": "Eggs Benedict for the non-vegans is excellent too. Lovely light.",
+    "tags": [
+      "Date night"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 213,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-10-25T16:49:00.805Z"
+  },
+  {
+    "id": "seed-24-5",
+    "restaurantId": 24,
+    "userId": 18,
+    "userName": "Joel D'Souza",
+    "rating": 3,
+    "text": "Vegan pesto pizza base was soggy. Service was slow.",
+    "tags": [
+      "Pricey"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 211,
+        "rating": 2
+      },
+      {
+        "dishId": 212,
+        "rating": 4
+      }
+    ],
+    "createdAt": "2026-10-13T16:49:00.805Z"
+  },
+  {
+    "id": "seed-24-6",
+    "restaurantId": 24,
+    "userId": 21,
+    "userName": "Sneha Rao",
+    "rating": 5,
+    "text": "My go-to for clean, tasty food. Green juice every Saturday.",
+    "tags": [
+      "Work friendly"
+    ],
+    "dishRatings": [
+      {
+        "dishId": 214,
+        "rating": 5
+      },
+      {
+        "dishId": 209,
+        "rating": 5
+      }
+    ],
+    "createdAt": "2026-09-29T16:49:00.805Z"
+  }
+]

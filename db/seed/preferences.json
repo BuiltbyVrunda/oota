@@ -1,0 +1,58 @@
+[
+  {
+    "userId": 1,
+    "cuisineIds": [
+      1,
+      2,
+      3,
+      10
+    ],
+    "diet": "veg",
+    "allergens": [],
+    "spiceLevel": 3,
+    "flavours": [
+      "spicy",
+      "crispy",
+      "tangy"
+    ],
+    "onboarded": true
+  },
+  {
+    "userId": 2,
+    "cuisineIds": [
+      6,
+      8,
+      7,
+      16
+    ],
+    "diet": "any",
+    "allergens": [],
+    "spiceLevel": 2,
+    "flavours": [
+      "smoky",
+      "rich",
+      "spicy"
+    ],
+    "onboarded": true
+  },
+  {
+    "userId": 3,
+    "cuisineIds": [
+      10,
+      12,
+      17,
+      18
+    ],
+    "diet": "vegan",
+    "allergens": [
+      "dairy"
+    ],
+    "spiceLevel": 0,
+    "flavours": [
+      "fresh",
+      "creamy",
+      "sweet"
+    ],
+    "onboarded": true
+  }
+]

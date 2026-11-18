@@ -1,0 +1,30 @@
+[
+  {
+    "userId": 1,
+    "restaurantId": 1
+  },
+  {
+    "userId": 1,
+    "restaurantId": 6
+  },
+  {
+    "userId": 2,
+    "restaurantId": 4
+  },
+  {
+    "userId": 2,
+    "restaurantId": 9
+  },
+  {
+    "userId": 2,
+    "restaurantId": 18
+  },
+  {
+    "userId": 3,
+    "restaurantId": 24
+  },
+  {
+    "userId": 3,
+    "restaurantId": 11
+  }
+]

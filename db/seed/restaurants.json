@@ -1,0 +1,610 @@
+[
+  {
+    "id": 1,
+    "slug": "tuppa-and-co",
+    "name": "Tuppa & Co.",
+    "description": "Ghee (tuppa) is the point here. Thin, lacy dosas roasted until they shatter, a chutney trio ground every two hours, and filter coffee pulled the long way.",
+    "area": "Jayanagar",
+    "address": "41, 11th Main Road, 4th Block, Jayanagar, Bengaluru",
+    "priceLevel": 1,
+    "costForTwo": 300,
+    "isPureVeg": true,
+    "opensAt": "06:30",
+    "closesAt": "22:00",
+    "coverUrl": "https://images.unsplash.com/photo-1668236543090-82eba5ee5976?w=1200&h=700&fit=crop&q=70&auto=format",
+    "galleryUrls": [
+      "https://images.unsplash.com/photo-1787024231387-edccb8c44700?w=800&h=600&fit=crop&q=70&auto=format",
+      "https://images.unsplash.com/photo-1680359871322-aabe6b33eff5?w=800&h=600&fit=crop&q=70&auto=format",
+      "https://images.unsplash.com/photo-1668236482744-b48b28650f12?w=800&h=600&fit=crop&q=70&auto=format"
+    ],
+    "cuisineIds": [
+      1
+    ],
+    "avgRating": 4.5,
+    "reviewCount": 6,
+    "trendingScore": 88
+  },
+  {
+    "id": 2,
+    "slug": "sanje-darshini",
+    "name": "Sanje Darshini",
+    "description": "A stand-and-eat Udupi darshini that fills up at dawn. Rava idli, khara bath and a kesari bath that sells out before ten.",
+    "area": "Malleshwaram",
+    "address": "8th Cross, Sampige Road, Malleshwaram, Bengaluru",
+    "priceLevel": 1,
+    "costForTwo": 250,
+    "isPureVeg": true,
+    "opensAt": "06:00",
+    "closesAt": "21:30",
+    "coverUrl": "https://images.unsplash.com/photo-1694849789325-914b71ab4075?w=1200&h=700&fit=crop&q=70&auto=format",
+    "galleryUrls": [
+      "https://images.unsplash.com/photo-1683533678059-63c6a0e9e3ef?w=800&h=600&fit=crop&q=70&auto=format",
+      "https://images.unsplash.com/photo-1680359871322-aabe6b33eff5?w=800&h=600&fit=crop&q=70&auto=format",
+      "https://images.unsplash.com/photo-1633383718081-22ac93e3db65?w=800&h=600&fit=crop&q=70&auto=format"
+    ],
+    "cuisineIds": [
+      2,
+      1
+    ],
+    "avgRating": 4.2,
+    "reviewCount": 6,
+    "trendingScore": 74
+  },
+  {
+    "id": 3,
+    "slug": "bale-ele-meals",
+    "name": "Bale Ele Meals",
+    "description": "Unlimited banana-leaf meals the way Old Bengaluru weddings do them: kosambari, palya, saaru, huli, payasa, and someone always coming round with more ghee.",
+    "area": "Basavanagudi",
+    "address": "22, DVG Road, Basavanagudi, Bengaluru",
+    "priceLevel": 2,
+    "costForTwo": 450,
+    "isPureVeg": true,
+    "opensAt": "11:30",
+    "closesAt": "22:30",
+    "coverUrl": "https://images.unsplash.com/photo-1625398407796-82650a8c135f?w=1200&h=700&fit=crop&q=70&auto=format",
+    "galleryUrls": [
+      "https://images.unsplash.com/photo-1786227905994-235e1799292e?w=800&h=600&fit=crop&q=70&auto=format",
+      "https://images.unsplash.com/photo-1633383718081-22ac93e3db65?w=800&h=600&fit=crop&q=70&auto=format",
+      "https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=800&h=600&fit=crop&q=70&auto=format"
+    ],
+    "cuisineIds": [
+      3
+    ],
+    "avgRating": 4.2,
+    "reviewCount": 6,
+    "trendingScore": 69
+  },
+  {
+    "id": 4,
+    "slug": "hosa-biryani-mane",
+    "name": "Hosa Biryani Mane",
+    "description": "Seeraga samba donne biryani, cooked in copper and sealed with dough. Comes in a palm-leaf donne with an onion raita and a brinjal gravy that people order on its own.",
+    "area": "Koramangala",
+    "address": "5th Block, 80 Feet Road, Koramangala, Bengaluru",
+    "priceLevel": 2,
+    "costForTwo": 600,
+    "isPureVeg": false,
+    "opensAt": "11:00",
+    "closesAt": "23:30",
+    "coverUrl": "https://images.unsplash.com/photo-1631515243349-e0cb75fb8d3a?w=1200&h=700&fit=crop&q=70&auto=format",
+    "galleryUrls": [
+      "https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=800&h=600&fit=crop&q=70&auto=format",
+      "https://images.unsplash.com/photo-1767114915989-c6ab3c8fc42e?w=800&h=600&fit=crop&q=70&auto=format",
+      "https://images.unsplash.com/photo-1521917441209-e886f0404a7b?w=800&h=600&fit=crop&q=70&auto=format"
+    ],
+    "cuisineIds": [
+      6
+    ],
+    "avgRating": 4.3,
+    "reviewCount": 7,
+    "trendingScore": 95
+  },
+  {
+    "id": 5,
+    "slug": "kempu-kitchen",
+    "name": "Kempu Kitchen",
+    "description": "Kempu means red, and the gunpowder, gongura and Guntur chillies make sure you notice. Andhra meals with podi, pappu and a pickle cart.",
+    "area": "HSR Layout",
+    "address": "27th Main, Sector 1, HSR Layout, Bengaluru",
+    "priceLevel": 2,
+    "costForTwo": 700,
+    "isPureVeg": false,
+    "opensAt": "12:00",
+    "closesAt": "23:00",
+    "coverUrl": "https://images.unsplash.com/photo-1767114915989-c6ab3c8fc42e?w=1200&h=700&fit=crop&q=70&auto=format",
+    "galleryUrls": [
+      "https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=800&h=600&fit=crop&q=70&auto=format",
+      "https://images.unsplash.com/photo-1786227905994-235e1799292e?w=800&h=600&fit=crop&q=70&auto=format",
+      "https://images.unsplash.com/photo-1765741836925-5363bbaa6507?w=800&h=600&fit=crop&q=70&auto=format"
+    ],
+    "cuisineIds": [
+      4
+    ],
+    "avgRating": 4,
+    "reviewCount": 6,
+    "trendingScore": 81
+  },
+  {
+    "id": 6,
+    "slug": "degree-kaapi-co",
+    "name": "Degree Kaapi Co.",
+    "description": "Chicory-blend degree coffee in brass dabarahs, with a small, sharp South Indian breakfast menu and a back room full of laptops after eleven.",
+    "area": "Indiranagar",
+    "address": "12th Main, HAL 2nd Stage, Indiranagar, Bengaluru",
+    "priceLevel": 2,
+    "costForTwo": 350,
+    "isPureVeg": true,
+    "opensAt": "07:00",
+    "closesAt": "22:00",
+    "coverUrl": "https://images.unsplash.com/photo-1668236482744-b48b28650f12?w=1200&h=700&fit=crop&q=70&auto=format",
+    "galleryUrls": [
+      "https://images.unsplash.com/photo-1507133750040-4a8f57021571?w=800&h=600&fit=crop&q=70&auto=format",
+      "https://images.unsplash.com/photo-1787024231387-edccb8c44700?w=800&h=600&fit=crop&q=70&auto=format",
+      "https://images.unsplash.com/photo-1609534655988-3f5225c13553?w=800&h=600&fit=crop&q=70&auto=format"
+    ],
+    "cuisineIds": [
+      10,
+      1
+    ],
+    "avgRating": 4.2,
+    "reviewCount": 6,
+    "trendingScore": 77
+  },
+  {
+    "id": 7,
+    "slug": "nagara-tandoor",
+    "name": "Nagara Tandoor",
+    "description": "Clay ovens, slow dal, and a butter chicken that keeps the regulars loyal. Big tables, low lights, very good naan.",
+    "area": "Indiranagar",
+    "address": "100 Feet Road, Indiranagar, Bengaluru",
+    "priceLevel": 4,
+    "costForTwo": 1400,
+    "isPureVeg": false,
+    "opensAt": "12:00",
+    "closesAt": "23:30",
+    "coverUrl": "https://images.unsplash.com/photo-1606471191009-63994c53433b?w=1200&h=700&fit=crop&q=70&auto=format",
+    "galleryUrls": [
+      "https://images.unsplash.com/photo-1772730064951-89b427965dbc?w=800&h=600&fit=crop&q=70&auto=format",
+      "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&h=600&fit=crop&q=70&auto=format",
+      "https://images.unsplash.com/photo-1766832255363-c9f060ade8b0?w=800&h=600&fit=crop&q=70&auto=format"
+    ],
+    "cuisineIds": [
+      7,
+      8
+    ],
+    "avgRating": 4.2,
+    "reviewCount": 6,
+    "trendingScore": 72
+  },
+  {
+    "id": 8,
+    "slug": "dhaba-number-9",
+    "name": "Dhaba Number 9",
+    "description": "Highway-dhaba food for the tech-park crowd: kadai paneer in iron woks, tandoori rotis by the stack, and lassi in steel glasses.",
+    "area": "Whitefield",
+    "address": "ITPL Main Road, Whitefield, Bengaluru",
+    "priceLevel": 3,
+    "costForTwo": 800,
+    "isPureVeg": false,
+    "opensAt": "11:30",
+    "closesAt": "23:59",
+    "coverUrl": "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=1200&h=700&fit=crop&q=70&auto=format",
+    "galleryUrls": [
+      "https://images.unsplash.com/photo-1772730065344-4cf131b39951?w=800&h=600&fit=crop&q=70&auto=format",
+      "https://images.unsplash.com/photo-1772730064970-a7b2735c93b9?w=800&h=600&fit=crop&q=70&auto=format",
+      "https://images.unsplash.com/photo-1667388968964-4aa652df0a9b?w=800&h=600&fit=crop&q=70&auto=format"
+    ],
+    "cuisineIds": [
+      7
+    ],
+    "avgRating": 3.7,
+    "reviewCount": 6,
+    "trendingScore": 66
+  },
+  {
+    "id": 9,
+    "slug": "kebab-kothi",
+    "name": "Kebab Kothi",
+    "description": "Evening-only charcoal grill on Mosque Road. Seekh, boti, and a smoked chicken tikka that is worth the wait for a table.",
+    "area": "Frazer Town",
+    "address": "Mosque Road, Frazer Town, Bengaluru",
+    "priceLevel": 3,
+    "costForTwo": 900,
+    "isPureVeg": false,
+    "opensAt": "16:00",
+    "closesAt": "01:00",
+    "coverUrl": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=1200&h=700&fit=crop&q=70&auto=format",
+    "galleryUrls": [
+      "https://images.unsplash.com/photo-1616252980327-ec70572e5df9?w=800&h=600&fit=crop&q=70&auto=format",
+      "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=800&h=600&fit=crop&q=70&auto=format",
+      "https://images.unsplash.com/photo-1552960226-639240203497?w=800&h=600&fit=crop&q=70&auto=format"
+    ],
+    "cuisineIds": [
+      8
+    ],
+    "avgRating": 4.7,
+    "reviewCount": 7,
+    "trendingScore": 90
+  },
+  {
+    "id": 10,
+    "slug": "mangala-coast",
+    "name": "Mangala Coast",
+    "description": "Mangaluru coast cooking: kori rotti, fish gassi with kudampuli, neer dosa soft as cloth, and a crisp rava-fried fish of the day.",
+    "area": "Indiranagar",
+    "address": "Double Road, Indiranagar, Bengaluru",
+    "priceLevel": 3,
+    "costForTwo": 1000,
+    "isPureVeg": false,
+    "opensAt": "12:00",
+    "closesAt": "23:00",
+    "coverUrl": "https://images.unsplash.com/photo-1786222084052-fb6f27bfb135?w=1200&h=700&fit=crop&q=70&auto=format",
+    "galleryUrls": [
+      "https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=800&h=600&fit=crop&q=70&auto=format",
+      "https://images.unsplash.com/photo-1633383718081-22ac93e3db65?w=800&h=600&fit=crop&q=70&auto=format",
+      "https://images.unsplash.com/photo-1636405189493-181ecf851006?w=800&h=600&fit=crop&q=70&auto=format"
+    ],
+    "cuisineIds": [
+      5
+    ],
+    "avgRating": 4.2,
+    "reviewCount": 6,
+    "trendingScore": 79
+  },
+  {
+    "id": 11,
+    "slug": "forno-verde",
+    "name": "Forno Verde",
+    "description": "Wood-fired Neapolitan pizza with a 48-hour dough, a cashew-mozzarella vegan menu, and pasta rolled in the window.",
+    "area": "Indiranagar",
+    "address": "13th Cross, HAL 2nd Stage, Indiranagar, Bengaluru",
+    "priceLevel": 4,
+    "costForTwo": 1500,
+    "isPureVeg": false,
+    "opensAt": "12:00",
+    "closesAt": "23:00",
+    "coverUrl": "https://images.unsplash.com/photo-1598023696416-0193a0bcd302?w=1200&h=700&fit=crop&q=70&auto=format",
+    "galleryUrls": [
+      "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800&h=600&fit=crop&q=70&auto=format",
+      "https://images.unsplash.com/photo-1498579150354-977475b7ea0b?w=800&h=600&fit=crop&q=70&auto=format",
+      "https://images.unsplash.com/photo-1538334421852-687c439c92f4?w=800&h=600&fit=crop&q=70&auto=format"
+    ],
+    "cuisineIds": [
+      12
+    ],
+    "avgRating": 4.2,
+    "reviewCount": 6,
+    "trendingScore": 84
+  },
+  {
+    "id": 12,
+    "slug": "trattoria-ulsoor",
+    "name": "Trattoria Ulsoor",
+    "description": "Checkered tablecloths by the lake, handmade pasta, and a tiramisu that the owner refuses to change.",
+    "area": "Ulsoor",
+    "address": "Ulsoor Lake Road, Ulsoor, Bengaluru",
+    "priceLevel": 4,
+    "costForTwo": 1600,
+    "isPureVeg": false,
+    "opensAt": "12:30",
+    "closesAt": "23:00",
+    "coverUrl": "https://images.unsplash.com/photo-1516100882582-96c3a05fe590?w=1200&h=700&fit=crop&q=70&auto=format",
+    "galleryUrls": [
+      "https://images.unsplash.com/photo-1786654735906-6e472c374c46?w=800&h=600&fit=crop&q=70&auto=format",
+      "https://images.unsplash.com/photo-1777333033656-0b8e6a37b2fa?w=800&h=600&fit=crop&q=70&auto=format",
+      "https://images.unsplash.com/photo-1498579150354-977475b7ea0b?w=800&h=600&fit=crop&q=70&auto=format"
+    ],
+    "cuisineIds": [
+      12
+    ],
+    "avgRating": 3.8,
+    "reviewCount": 6,
+    "trendingScore": 61
+  },
+  {
+    "id": 13,
+    "slug": "slow-roast-and-crumb",
+    "name": "Slow Roast & Crumb",
+    "description": "Micro-roastery and bakery. Laminated croissants out at 8, single-origin Chikmagalur pour-overs, and a cardamom bun people queue for.",
+    "area": "Koramangala",
+    "address": "7th Block, Koramangala, Bengaluru",
+    "priceLevel": 2,
+    "costForTwo": 600,
+    "isPureVeg": false,
+    "opensAt": "08:00",
+    "closesAt": "22:00",
+    "coverUrl": "https://images.unsplash.com/photo-1777544575746-96654957db13?w=1200&h=700&fit=crop&q=70&auto=format",
+    "galleryUrls": [
+      "https://images.unsplash.com/photo-1592663527359-cf6642f54cff?w=800&h=600&fit=crop&q=70&auto=format",
+      "https://images.unsplash.com/photo-1525351484163-7529414344d8?w=800&h=600&fit=crop&q=70&auto=format",
+      "https://images.unsplash.com/photo-1609534655988-3f5225c13553?w=800&h=600&fit=crop&q=70&auto=format"
+    ],
+    "cuisineIds": [
+      10,
+      11
+    ],
+    "avgRating": 4.2,
+    "reviewCount": 6,
+    "trendingScore": 83
+  },
+  {
+    "id": 14,
+    "slug": "bean-atlas",
+    "name": "Bean Atlas",
+    "description": "All-day brunch with plants everywhere. Eggs your way, sourdough, smoothie bowls and an iced filter-coffee tonic.",
+    "area": "HSR Layout",
+    "address": "19th Main, Sector 3, HSR Layout, Bengaluru",
+    "priceLevel": 2,
+    "costForTwo": 700,
+    "isPureVeg": false,
+    "opensAt": "08:00",
+    "closesAt": "23:00",
+    "coverUrl": "https://images.unsplash.com/photo-1759216279330-c5a83a0a1ebe?w=1200&h=700&fit=crop&q=70&auto=format",
+    "galleryUrls": [
+      "https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?w=800&h=600&fit=crop&q=70&auto=format",
+      "https://images.unsplash.com/photo-1525351484163-7529414344d8?w=800&h=600&fit=crop&q=70&auto=format",
+      "https://images.unsplash.com/photo-1507133750040-4a8f57021571?w=800&h=600&fit=crop&q=70&auto=format"
+    ],
+    "cuisineIds": [
+      10,
+      17
+    ],
+    "avgRating": 3.8,
+    "reviewCount": 6,
+    "trendingScore": 70
+  },
+  {
+    "id": 15,
+    "slug": "momo-mandala",
+    "name": "Momo Mandala",
+    "description": "Tiny Tibetan kitchen with bamboo steamers stacked to the ceiling. Jhol momos, thukpa and a sepen chilli sauce that is not a joke.",
+    "area": "Koramangala",
+    "address": "6th Block, Koramangala, Bengaluru",
+    "priceLevel": 2,
+    "costForTwo": 400,
+    "isPureVeg": false,
+    "opensAt": "12:00",
+    "closesAt": "22:30",
+    "coverUrl": "https://images.unsplash.com/photo-1694923450868-b432a8ee52aa?w=1200&h=700&fit=crop&q=70&auto=format",
+    "galleryUrls": [
+      "https://images.unsplash.com/photo-1664138218128-2dcf791a9d27?w=800&h=600&fit=crop&q=70&auto=format",
+      "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=800&h=600&fit=crop&q=70&auto=format",
+      "https://images.unsplash.com/photo-1647999019630-dabe1a837693?w=800&h=600&fit=crop&q=70&auto=format"
+    ],
+    "cuisineIds": [
+      15
+    ],
+    "avgRating": 4.1,
+    "reviewCount": 7,
+    "trendingScore": 86
+  },
+  {
+    "id": 16,
+    "slug": "ginza-noodle-bar",
+    "name": "Ginza Noodle Bar",
+    "description": "Eighteen-hour tonkotsu, a shoyu chicken ramen and a white miso vegan bowl. Counter seating facing the broth pots.",
+    "area": "Indiranagar",
+    "address": "80 Feet Road, Indiranagar, Bengaluru",
+    "priceLevel": 4,
+    "costForTwo": 1300,
+    "isPureVeg": false,
+    "opensAt": "12:00",
+    "closesAt": "23:00",
+    "coverUrl": "https://images.unsplash.com/photo-1638866281450-3933540af86a?w=1200&h=700&fit=crop&q=70&auto=format",
+    "galleryUrls": [
+      "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=800&h=600&fit=crop&q=70&auto=format",
+      "https://images.unsplash.com/photo-1612927601601-6638404737ce?w=800&h=600&fit=crop&q=70&auto=format",
+      "https://images.unsplash.com/photo-1765741836925-5363bbaa6507?w=800&h=600&fit=crop&q=70&auto=format"
+    ],
+    "cuisineIds": [
+      13
+    ],
+    "avgRating": 4.2,
+    "reviewCount": 6,
+    "trendingScore": 76
+  },
+  {
+    "id": 17,
+    "slug": "bao-and-basil",
+    "name": "Bao & Basil",
+    "description": "Thai basil, Sichuan pepper and steamed bao. Bright bowls, a strong vegetarian half of the menu, and a lychee iced tea.",
+    "area": "Whitefield",
+    "address": "Varthur Road, Whitefield, Bengaluru",
+    "priceLevel": 3,
+    "costForTwo": 1100,
+    "isPureVeg": false,
+    "opensAt": "12:00",
+    "closesAt": "23:00",
+    "coverUrl": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=1200&h=700&fit=crop&q=70&auto=format",
+    "galleryUrls": [
+      "https://images.unsplash.com/photo-1612927601601-6638404737ce?w=800&h=600&fit=crop&q=70&auto=format",
+      "https://images.unsplash.com/photo-1647999019630-dabe1a837693?w=800&h=600&fit=crop&q=70&auto=format",
+      "https://images.unsplash.com/photo-1538334421852-687c439c92f4?w=800&h=600&fit=crop&q=70&auto=format"
+    ],
+    "cuisineIds": [
+      14
+    ],
+    "avgRating": 3.7,
+    "reviewCount": 6,
+    "trendingScore": 64
+  },
+  {
+    "id": 18,
+    "slug": "smash-yard",
+    "name": "Smash Yard",
+    "description": "Smashed double patties with crisp lace edges, potato buns, and fries done twice. Loud music, louder shakes.",
+    "area": "Koramangala",
+    "address": "1st Block, Koramangala, Bengaluru",
+    "priceLevel": 3,
+    "costForTwo": 800,
+    "isPureVeg": false,
+    "opensAt": "12:00",
+    "closesAt": "00:30",
+    "coverUrl": "https://images.unsplash.com/photo-1561758033-d89a9ad46330?w=1200&h=700&fit=crop&q=70&auto=format",
+    "galleryUrls": [
+      "https://images.unsplash.com/photo-1550547660-d9450f859349?w=800&h=600&fit=crop&q=70&auto=format",
+      "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&h=600&fit=crop&q=70&auto=format",
+      "https://images.unsplash.com/photo-1521917441209-e886f0404a7b?w=800&h=600&fit=crop&q=70&auto=format"
+    ],
+    "cuisineIds": [
+      16
+    ],
+    "avgRating": 4.4,
+    "reviewCount": 7,
+    "trendingScore": 92
+  },
+  {
+    "id": 19,
+    "slug": "patty-and-pickle",
+    "name": "Patty & Pickle",
+    "description": "Burgers with an Indian relish bar: gongura mayo, mango thokku, and a paneer patty that holds its own.",
+    "area": "HSR Layout",
+    "address": "24th Main, Sector 2, HSR Layout, Bengaluru",
+    "priceLevel": 2,
+    "costForTwo": 700,
+    "isPureVeg": false,
+    "opensAt": "12:00",
+    "closesAt": "23:30",
+    "coverUrl": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=1200&h=700&fit=crop&q=70&auto=format",
+    "galleryUrls": [
+      "https://images.unsplash.com/photo-1561758033-d89a9ad46330?w=800&h=600&fit=crop&q=70&auto=format",
+      "https://images.unsplash.com/photo-1550547660-d9450f859349?w=800&h=600&fit=crop&q=70&auto=format",
+      "https://images.unsplash.com/photo-1552960226-639240203497?w=800&h=600&fit=crop&q=70&auto=format"
+    ],
+    "cuisineIds": [
+      16
+    ],
+    "avgRating": 3.7,
+    "reviewCount": 6,
+    "trendingScore": 58
+  },
+  {
+    "id": 20,
+    "slug": "chaat-gully",
+    "name": "Chaat Gully",
+    "description": "Gandhi Bazaar evening chaat: masala puri drowned in hot peas gravy, crisp pani puri, and samosas fried in front of you.",
+    "area": "Basavanagudi",
+    "address": "Gandhi Bazaar Main Road, Basavanagudi, Bengaluru",
+    "priceLevel": 1,
+    "costForTwo": 250,
+    "isPureVeg": true,
+    "opensAt": "16:00",
+    "closesAt": "22:30",
+    "coverUrl": "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=1200&h=700&fit=crop&q=70&auto=format",
+    "galleryUrls": [
+      "https://images.unsplash.com/photo-1657196118354-f25f29fe636d?w=800&h=600&fit=crop&q=70&auto=format",
+      "https://images.unsplash.com/photo-1683533678059-63c6a0e9e3ef?w=800&h=600&fit=crop&q=70&auto=format",
+      "https://images.unsplash.com/photo-1683533678033-f5d60f0a3437?w=800&h=600&fit=crop&q=70&auto=format"
+    ],
+    "cuisineIds": [
+      9
+    ],
+    "avgRating": 4.3,
+    "reviewCount": 6,
+    "trendingScore": 80
+  },
+  {
+    "id": 21,
+    "slug": "appe-adda",
+    "name": "Appe Adda",
+    "description": "Paddu (appe) in every form, from plain to ragi to cheese-chilli, with a green chutney that people buy by the jar.",
+    "area": "Jayanagar",
+    "address": "9th Block, East End Road, Jayanagar, Bengaluru",
+    "priceLevel": 1,
+    "costForTwo": 280,
+    "isPureVeg": true,
+    "opensAt": "07:00",
+    "closesAt": "21:30",
+    "coverUrl": "https://images.unsplash.com/photo-1657196118354-f25f29fe636d?w=1200&h=700&fit=crop&q=70&auto=format",
+    "galleryUrls": [
+      "https://images.unsplash.com/photo-1683533678033-f5d60f0a3437?w=800&h=600&fit=crop&q=70&auto=format",
+      "https://images.unsplash.com/photo-1680359871322-aabe6b33eff5?w=800&h=600&fit=crop&q=70&auto=format",
+      "https://images.unsplash.com/photo-1683533678059-63c6a0e9e3ef?w=800&h=600&fit=crop&q=70&auto=format"
+    ],
+    "cuisineIds": [
+      1
+    ],
+    "avgRating": 3.7,
+    "reviewCount": 6,
+    "trendingScore": 62
+  },
+  {
+    "id": 22,
+    "slug": "saaru-and-sons",
+    "name": "Saaru & Sons",
+    "description": "Three generations of rasam (saaru). Thali meals with both Karnataka and Andhra sides, plus a Sunday naati koli saaru.",
+    "area": "Rajajinagar",
+    "address": "Dr Rajkumar Road, Rajajinagar, Bengaluru",
+    "priceLevel": 2,
+    "costForTwo": 500,
+    "isPureVeg": false,
+    "opensAt": "11:30",
+    "closesAt": "22:30",
+    "coverUrl": "https://images.unsplash.com/photo-1786227905994-235e1799292e?w=1200&h=700&fit=crop&q=70&auto=format",
+    "galleryUrls": [
+      "https://images.unsplash.com/photo-1625398407796-82650a8c135f?w=800&h=600&fit=crop&q=70&auto=format",
+      "https://images.unsplash.com/photo-1767114915989-c6ab3c8fc42e?w=800&h=600&fit=crop&q=70&auto=format",
+      "https://images.unsplash.com/photo-1667388968964-4aa652df0a9b?w=800&h=600&fit=crop&q=70&auto=format"
+    ],
+    "cuisineIds": [
+      3,
+      4
+    ],
+    "avgRating": 4,
+    "reviewCount": 6,
+    "trendingScore": 67
+  },
+  {
+    "id": 23,
+    "slug": "sweet-shed",
+    "name": "Sweet Shed",
+    "description": "Cupcakes, tres leches, and a jaggery-coconut cheesecake. Half the counter is eggless and a third is vegan.",
+    "area": "Whitefield",
+    "address": "Hope Farm Junction, Whitefield, Bengaluru",
+    "priceLevel": 2,
+    "costForTwo": 450,
+    "isPureVeg": false,
+    "opensAt": "11:00",
+    "closesAt": "23:00",
+    "coverUrl": "https://images.unsplash.com/photo-1615557509870-98972c5e1396?w=1200&h=700&fit=crop&q=70&auto=format",
+    "galleryUrls": [
+      "https://images.unsplash.com/photo-1763683943943-c2ac7a370251?w=800&h=600&fit=crop&q=70&auto=format",
+      "https://images.unsplash.com/photo-1777544575746-96654957db13?w=800&h=600&fit=crop&q=70&auto=format",
+      "https://images.unsplash.com/photo-1609534655988-3f5225c13553?w=800&h=600&fit=crop&q=70&auto=format"
+    ],
+    "cuisineIds": [
+      18,
+      11
+    ],
+    "avgRating": 4,
+    "reviewCount": 6,
+    "trendingScore": 73
+  },
+  {
+    "id": 24,
+    "slug": "greenhouse-5",
+    "name": "Greenhouse 5",
+    "description": "A glasshouse café that went plant-forward early. Vegan-friendly menu, cold-pressed juices, and a tofu scramble that converts sceptics.",
+    "area": "Koramangala",
+    "address": "5th Block, Jyoti Nivas College Road, Koramangala, Bengaluru",
+    "priceLevel": 3,
+    "costForTwo": 1200,
+    "isPureVeg": false,
+    "opensAt": "09:00",
+    "closesAt": "23:00",
+    "coverUrl": "https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?w=1200&h=700&fit=crop&q=70&auto=format",
+    "galleryUrls": [
+      "https://images.unsplash.com/photo-1759216279330-c5a83a0a1ebe?w=800&h=600&fit=crop&q=70&auto=format",
+      "https://images.unsplash.com/photo-1763683943943-c2ac7a370251?w=800&h=600&fit=crop&q=70&auto=format",
+      "https://images.unsplash.com/photo-1498579150354-977475b7ea0b?w=800&h=600&fit=crop&q=70&auto=format"
+    ],
+    "cuisineIds": [
+      10,
+      17
+    ],
+    "avgRating": 4.5,
+    "reviewCount": 6,
+    "trendingScore": 78
+  }
+]

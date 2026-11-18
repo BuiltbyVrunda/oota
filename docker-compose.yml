@@ -1,6 +1,7 @@
 services:
   postgres:
     image: postgres:16-alpine
+    container_name: oota-postgres
     environment:
       POSTGRES_USER: oota
       POSTGRES_PASSWORD: oota
@@ -10,23 +11,28 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql/data
       - ./db/postgres/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
+      - ./db/postgres/realtime.sql:/docker-entrypoint-initdb.d/02-realtime.sql:ro
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U oota -d oota"]
       interval: 5s
       timeout: 3s
       retries: 10
 
+  # Single-node replica set so the backend can use Mongo change streams (live UI updates).
   mongo:
     image: mongo:7
+    container_name: oota-mongo
+    command: ["--replSet", "rs0", "--bind_ip_all"]
     ports:
       - "27017:27017"
     volumes:
       - mongodata:/data/db
     healthcheck:
-      test: ["CMD", "mongosh", "--quiet", "--eval", "db.runCommand({ ping: 1 }).ok"]
+      # initiates the replica set on first boot, then just reports health
+      test: ["CMD", "mongosh", "--quiet", "--eval", "try { rs.status().ok } catch (e) { rs.initiate({ _id: 'rs0', members: [{ _id: 0, host: 'localhost:27017' }] }).ok }"]
       interval: 5s
       timeout: 5s
-      retries: 10
+      retries: 20
 
 volumes:
   pgdata:

@@ -89,13 +89,13 @@ function readCard(): CardColourId {
   if (validCard(fromUrl)) return fromUrl
   try {
     const v = window.localStorage.getItem(C_KEY)
-    return validCard(v) ? v : 'spice'
+    return validCard(v) ? v : 'clear'
   } catch {
-    return 'spice'
+    return 'clear'
   }
 }
 
-let card: CardColourId = typeof window === 'undefined' ? 'spice' : readCard()
+let card: CardColourId = typeof window === 'undefined' ? 'clear' : readCard()
 if (typeof document !== 'undefined') document.documentElement.dataset.card = card
 
 export function setCardColour(id: CardColourId) {
@@ -106,5 +106,5 @@ export function setCardColour(id: CardColourId) {
 }
 
 export function useCardColour(): CardColourId {
-  return useSyncExternalStore((cb) => { cListeners.add(cb); return () => cListeners.delete(cb) }, () => card, () => 'spice')
+  return useSyncExternalStore((cb) => { cListeners.add(cb); return () => cListeners.delete(cb) }, () => card, () => 'clear')
 }

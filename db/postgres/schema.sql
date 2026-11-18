@@ -54,6 +54,8 @@ CREATE TABLE restaurants (
     -- cache of the MongoDB review aggregate, written by the review-sync service
     avg_rating     NUMERIC(2,1) NOT NULL DEFAULT 0 CHECK (avg_rating BETWEEN 0 AND 5),
     review_count   INTEGER      NOT NULL DEFAULT 0 CHECK (review_count >= 0),
+    -- [extension] popularity 0-100 for the "Trending in Bengaluru" tier (the UI's Restaurant.trendingScore)
+    trending_score SMALLINT     NOT NULL DEFAULT 50 CHECK (trending_score BETWEEN 0 AND 100),
     created_at     TIMESTAMPTZ  NOT NULL DEFAULT now()
 );
 CREATE INDEX idx_restaurants_city_area ON restaurants (city, area);

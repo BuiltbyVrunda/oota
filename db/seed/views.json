@@ -1,0 +1,57 @@
+[
+  {
+    "userId": 1,
+    "restaurantId": 1,
+    "at": "2026-11-18T09:37:00.805Z"
+  },
+  {
+    "userId": 1,
+    "restaurantId": 5,
+    "at": "2026-11-17T16:49:00.805Z"
+  },
+  {
+    "userId": 1,
+    "restaurantId": 6,
+    "at": "2026-11-16T16:49:00.805Z"
+  },
+  {
+    "userId": 1,
+    "restaurantId": 21,
+    "at": "2026-11-14T16:49:00.805Z"
+  },
+  {
+    "userId": 2,
+    "restaurantId": 4,
+    "at": "2026-11-18T12:01:00.805Z"
+  },
+  {
+    "userId": 2,
+    "restaurantId": 9,
+    "at": "2026-11-17T16:49:00.805Z"
+  },
+  {
+    "userId": 2,
+    "restaurantId": 18,
+    "at": "2026-11-15T16:49:00.805Z"
+  },
+  {
+    "userId": 2,
+    "restaurantId": 7,
+    "at": "2026-11-12T16:49:00.805Z"
+  },
+  {
+    "userId": 3,
+    "restaurantId": 24,
+    "at": "2026-11-18T10:49:00.805Z"
+  },
+  {
+    "userId": 3,
+    "restaurantId": 11,
+    "at": "2026-11-17T12:01:00.805Z"
+  },
+  {
+    "userId": 3,
+    "restaurantId": 23,
+    "at": "2026-11-15T16:49:00.805Z"
+  }
+]

@@ -1,0 +1,6 @@
+import type { RequestHandler } from 'express'
+import type { ZodType } from 'zod'
+
+/** Validates req.body / req.query and replaces it with the parsed value (typed via res.locals). */
+export const body = (schema: ZodType): RequestHandler => (req, _res, next) => { req.body = schema.parse(req.body); next() }
+export const query = (schema: ZodType): RequestHandler => (req, res, next) => { res.locals.query = schema.parse(req.query); next() }

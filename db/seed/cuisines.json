@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1,
+    "slug": "south-indian",
+    "name": "South Indian",
+    "imageUrl": "https://images.unsplash.com/photo-1787024231387-edccb8c44700?w=480&h=600&fit=crop&q=70&auto=format"
+  },
+  {
+    "id": 2,
+    "slug": "udupi",
+    "name": "Udupi",
+    "imageUrl": "https://images.unsplash.com/photo-1694849789325-914b71ab4075?w=480&h=600&fit=crop&q=70&auto=format"
+  },
+  {
+    "id": 3,
+    "slug": "karnataka-meals",
+    "name": "Karnataka Meals",
+    "imageUrl": "https://images.unsplash.com/photo-1625398407796-82650a8c135f?w=480&h=600&fit=crop&q=70&auto=format"
+  },
+  {
+    "id": 4,
+    "slug": "andhra",
+    "name": "Andhra",
+    "imageUrl": "https://images.unsplash.com/photo-1767114915989-c6ab3c8fc42e?w=480&h=600&fit=crop&q=70&auto=format"
+  },
+  {
+    "id": 5,
+    "slug": "coastal",
+    "name": "Coastal",
+    "imageUrl": "https://images.unsplash.com/photo-1786222084052-fb6f27bfb135?w=480&h=600&fit=crop&q=70&auto=format"
+  },
+  {
+    "id": 6,
+    "slug": "biryani",
+    "name": "Biryani",
+    "imageUrl": "https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=480&h=600&fit=crop&q=70&auto=format"
+  },
+  {
+    "id": 7,
+    "slug": "north-indian",
+    "name": "North Indian",
+    "imageUrl": "https://images.unsplash.com/photo-1772730065344-4cf131b39951?w=480&h=600&fit=crop&q=70&auto=format"
+  },
+  {
+    "id": 8,
+    "slug": "mughlai",
+    "name": "Mughlai",
+    "imageUrl": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=480&h=600&fit=crop&q=70&auto=format"
+  },
+  {
+    "id": 9,
+    "slug": "street-food",
+    "name": "Street Food",
+    "imageUrl": "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=480&h=600&fit=crop&q=70&auto=format"
+  },
+  {
+    "id": 10,
+    "slug": "cafe",
+    "name": "Café",
+    "imageUrl": "https://images.unsplash.com/photo-1507133750040-4a8f57021571?w=480&h=600&fit=crop&q=70&auto=format"
+  },
+  {
+    "id": 11,
+    "slug": "bakery",
+    "name": "Bakery",
+    "imageUrl": "https://images.unsplash.com/photo-1777544575746-96654957db13?w=480&h=600&fit=crop&q=70&auto=format"
+  },
+  {
+    "id": 12,
+    "slug": "italian",
+    "name": "Italian",
+    "imageUrl": "https://images.unsplash.com/photo-1498579150354-977475b7ea0b?w=480&h=600&fit=crop&q=70&auto=format"
+  },
+  {
+    "id": 13,
+    "slug": "japanese",
+    "name": "Japanese",
+    "imageUrl": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=480&h=600&fit=crop&q=70&auto=format"
+  },
+  {
+    "id": 14,
+    "slug": "pan-asian",
+    "name": "Pan-Asian",
+    "imageUrl": "https://images.unsplash.com/photo-1612927601601-6638404737ce?w=480&h=600&fit=crop&q=70&auto=format"
+  },
+  {
+    "id": 15,
+    "slug": "tibetan",
+    "name": "Tibetan",
+    "imageUrl": "https://images.unsplash.com/photo-1664138218128-2dcf791a9d27?w=480&h=600&fit=crop&q=70&auto=format"
+  },
+  {
+    "id": 16,
+    "slug": "american",
+    "name": "American",
+    "imageUrl": "https://images.unsplash.com/photo-1550547660-d9450f859349?w=480&h=600&fit=crop&q=70&auto=format"
+  },
+  {
+    "id": 17,
+    "slug": "continental",
+    "name": "Continental",
+    "imageUrl": "https://images.unsplash.com/photo-1525351484163-7529414344d8?w=480&h=600&fit=crop&q=70&auto=format"
+  },
+  {
+    "id": 18,
+    "slug": "desserts",
+    "name": "Desserts",
+    "imageUrl": "https://images.unsplash.com/photo-1763683943943-c2ac7a370251?w=480&h=600&fit=crop&q=70&auto=format"
+  }
+]
