@@ -3,11 +3,11 @@ import { cn } from '../../utils/cn'
 /* Five soft spice lights as plain radial gradients on one fixed layer. No CSS blur, no animation:
    the browser paints it once, so scrolling and the glass above it stay smooth. */
 const FIELD = [
-  'radial-gradient(60vmax 50vmax at 4% 0%, color-mix(in srgb, var(--amb-a) min(100%, calc(var(--amb-a-o) * var(--amb-k, 1) * 100%)), transparent), transparent 70%)',
-  'radial-gradient(52vmax 46vmax at 100% 18%, color-mix(in srgb, var(--amb-b) min(100%, calc(var(--amb-b-o) * var(--amb-k, 1) * 100%)), transparent), transparent 70%)',
-  'radial-gradient(56vmax 46vmax at 46% 108%, color-mix(in srgb, var(--amb-c) min(100%, calc(var(--amb-c-o) * var(--amb-k, 1) * 100%)), transparent), transparent 70%)',
-  'radial-gradient(40vmax 38vmax at 0% 92%, color-mix(in srgb, var(--amb-d) min(100%, calc(var(--amb-d-o) * var(--amb-k, 1) * 100%)), transparent), transparent 70%)',
-  'radial-gradient(34vmax 30vmax at 62% 44%, color-mix(in srgb, var(--amb-e) min(100%, calc(var(--amb-e-o) * var(--amb-k, 1) * 100%)), transparent), transparent 70%)',
+  'radial-gradient(60vmax 50vmax at 4% 0%, color-mix(in srgb, var(--amb-a) min(100%, calc(var(--amb-a-o) * var(--amb-k, 0) * 100%)), transparent), transparent 70%)',
+  'radial-gradient(52vmax 46vmax at 100% 18%, color-mix(in srgb, var(--amb-b) min(100%, calc(var(--amb-b-o) * var(--amb-k, 0) * 100%)), transparent), transparent 70%)',
+  'radial-gradient(56vmax 46vmax at 46% 108%, color-mix(in srgb, var(--amb-c) min(100%, calc(var(--amb-c-o) * var(--amb-k, 0) * 100%)), transparent), transparent 70%)',
+  'radial-gradient(40vmax 38vmax at 0% 92%, color-mix(in srgb, var(--amb-d) min(100%, calc(var(--amb-d-o) * var(--amb-k, 0) * 100%)), transparent), transparent 70%)',
+  'radial-gradient(34vmax 30vmax at 62% 44%, color-mix(in srgb, var(--amb-e) min(100%, calc(var(--amb-e-o) * var(--amb-k, 0) * 100%)), transparent), transparent 70%)',
 ].join(', ')
 
 /** Tiny (40px) version of a photo, upscaled: looks like a heavy blur but costs nothing. */

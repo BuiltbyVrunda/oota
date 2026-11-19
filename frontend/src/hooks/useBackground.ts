@@ -11,7 +11,7 @@ export const BACKGROUNDS = [
 export type BackgroundId = (typeof BACKGROUNDS)[number]['id']
 
 const KEY = 'oota:v1:bg'
-const DEFAULT: BackgroundId = 'coastal'
+const DEFAULT: BackgroundId = 'kokum' // chosen by Vrunda
 const listeners = new Set<() => void>()
 const valid = (v: string | null): v is BackgroundId => BACKGROUNDS.some((b) => b.id === v)
 
@@ -42,6 +42,7 @@ export function useBackground(): BackgroundId {
 
 /* ---- background colour strength (0–2×), a multiplier on the ambient spice light ---- */
 const K_KEY = 'oota:v1:bg-strength'
+const K_DEFAULT = 0 // default: plain ground, no ambient spice light (chosen by Vrunda)
 const kListeners = new Set<() => void>()
 
 function readStrength(): number {
@@ -49,13 +50,13 @@ function readStrength(): number {
   if (fromUrl >= 0 && fromUrl <= 2 && new URLSearchParams(window.location.search).has('bgk')) return fromUrl
   try {
     const v = Number(window.localStorage.getItem(K_KEY))
-    return window.localStorage.getItem(K_KEY) !== null && v >= 0 && v <= 2 ? v : 1
+    return window.localStorage.getItem(K_KEY) !== null && v >= 0 && v <= 2 ? v : K_DEFAULT
   } catch {
-    return 1
+    return K_DEFAULT
   }
 }
 
-let strength = typeof window === 'undefined' ? 1 : readStrength()
+let strength = typeof window === 'undefined' ? K_DEFAULT : readStrength()
 if (typeof document !== 'undefined') document.documentElement.style.setProperty('--amb-k', String(strength))
 
 export function setBackgroundStrength(k: number) {
@@ -66,7 +67,7 @@ export function setBackgroundStrength(k: number) {
 }
 
 export function useBackgroundStrength(): number {
-  return useSyncExternalStore((cb) => { kListeners.add(cb); return () => kListeners.delete(cb) }, () => strength, () => 1)
+  return useSyncExternalStore((cb) => { kListeners.add(cb); return () => kListeners.delete(cb) }, () => strength, () => K_DEFAULT)
 }
 
 /* ---- card colour (tint of every glass card) ---- */

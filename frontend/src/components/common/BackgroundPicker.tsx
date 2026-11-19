@@ -17,7 +17,7 @@ export function BackgroundPicker() {
             <div data-bg={b.id} className="relative h-28 overflow-hidden bg-ground">
               {(['a', 'b', 'c', 'd', 'e'] as const).map((v, i) => (
                 <span key={v} aria-hidden className="absolute size-28 rounded-full blur-2xl"
-                  style={{ background: `var(--amb-${v})`, opacity: `min(1, calc(var(--amb-${v}-o) * var(--amb-k, 1)))`, left: `${[-10, 55, 30, -5, 70][i]}%`, top: `${[-30, -10, 45, 40, 50][i]}%` }} />
+                  style={{ background: `var(--amb-${v})`, opacity: `min(1, calc(var(--amb-${v}-o) * var(--amb-k, 0)))`, left: `${[-10, 55, 30, -5, 70][i]}%`, top: `${[-30, -10, 45, 40, 50][i]}%` }} />
               ))}
               <span aria-hidden className="absolute inset-0" style={{ background: 'var(--amb-pattern)' }} />
               <span aria-hidden className="liquid-flat tint-haldi absolute bottom-3 left-3 right-10 h-9 rounded-[10px]" />
